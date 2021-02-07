@@ -1,0 +1,35 @@
+
+ .my-firebaseui-container {
+  background-color: transparent;
+  width: 100%;
+ }
+  .firebaseui-form-actions .mdl-button--raised.mdl-button--colored.firebaseui-button {
+    color: white;
+    background-color: black;
+  }
+
+  .firebaseui-form-actions .mdl-button--raised.mdl-button--colored.firebaseui-button:hover {
+    color: white;
+    background: #242424;
+  }
+
+
+
+  .firebaseui-form-actions .mdl-button--primary.mdl-button--primary {
+    background-color: white;
+    color: black;
+  }
+
+  .firebaseui-form-actions .mdl-button--primary.mdl-button--primary:hover {
+  background: #242424;
+  color: #fff;
+}
+
+  .firebaseui-container.mdl-card .mdl-textfield__label {
+    border-color:black;
+  }
+
+  .firebaseui-idp-button:hover{
+    transform: scale(1.08);
+  }
+  
