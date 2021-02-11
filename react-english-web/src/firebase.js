@@ -4,7 +4,7 @@ import React from 'react';
 import './components/pages/SignUp.css';
 import MainPage from'./components/pages/MainPage'
 import './firebase-styling.global.css'; // Import globally.
-import { Redirect } from 'react-router-dom';
+import { Button } from './components/Button';
 
 firebase.initializeApp({
     apiKey: "AIzaSyDEQgwjdPPsuxKfX9PIO-EdgLqWRgjZFJc",
@@ -38,12 +38,25 @@ firebase.initializeApp({
     render() {
       return (
         <>
-          {this.state.isSignedIn ? (
+          {this.state.isSignedIn ? 
+          // User is sigend in, display the main page content.
+          (
             <MainPage signOut={() => firebase.auth().signOut()} 
             userName={firebase.auth().currentUser.displayName}
             profilePicture={firebase.auth().currentUser.photoURL}/>
-          ) : (
+          ) : 
+          // User is signed out, dispaly login options.
+          (
+
             <div  className='sign-in-container'>
+            <Button
+                className='btns'
+                buttonStyle='btn--outline'
+                buttonSize='btn--large'
+                linkTo='/'
+            >
+                בית <i className='fas fa-home'/>
+            </Button>
             <StyledFirebaseAuth
               className='my-firebaseui-container'
               uiConfig={this.uiConfig}
