@@ -37,7 +37,7 @@ function Cards() {
               path='/Services'
             />
             <CardItem
-              src='images/img-8.jpg'
+              src='images/img-6.jpg'
               text='להבין את השפה ברחוב'
               label='אנגלית מדוברת'
               path='/Services'

@@ -55,7 +55,7 @@ function Navbar(props) {
               </Link>
             </li>
           </ul>
-          {button && <Button buttonStyle='btn--outline' onClick={props.signOut}>התנתקות</Button>}
+          {button && <Button buttonStyle='btn--outline' onClick={props.signOut} linkTo='/sign-up'>התנתקות</Button>}
         </div>
       </nav>
     </>
