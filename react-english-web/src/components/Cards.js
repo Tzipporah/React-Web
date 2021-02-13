@@ -13,13 +13,13 @@ function Cards() {
               src='images/getting_better.jpg'
               text='להתחיל את האנגלית שלך פה'
               label='מתחילים'
-              path='/services'
+              path='/cards2'
             />
             <CardItem
               src='images/academ.jpg'
               text='חיים קלים באקדמיה'
               label='תלמידים'
-              path='/services'
+              path='/Services'
             />
           </ul>
           <ul className='cards__items'>
@@ -28,19 +28,19 @@ function Cards() {
               src='/images/starting.jpg'
               text='אנגלית למי שרוצה להשתפר'
               label='מתקדמים'
-              path='/services'
+              path='/Services'
             />
             <CardItem
               src='images/business.jpg'
               text='הצלחה בעסקים. מקצועיות'
               label='אנגלית עיסקית'
-              path='/products'
+              path='/Services'
             />
             <CardItem
               src='images/img-8.jpg'
               text='להבין את השפה ברחוב'
               label='אנגלית מדוברת'
-              path='/sign-up'
+              path='/Services'
             />
           </ul>
         </div>
