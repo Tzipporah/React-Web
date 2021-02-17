@@ -3,7 +3,6 @@ import axios from 'axios';
 import './Learn.css';
 import { Container } from "@material-ui/core";
 import Definitions from "../Definitions";
-import Navbar from '../Navbar';
 import Footer from '../Footer';
 
 
