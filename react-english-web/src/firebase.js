@@ -34,16 +34,17 @@ firebase.initializeApp({
     }
 
     
-  
+    
     render() {
       return (
         <>
           {this.state.isSignedIn ? 
           // User is sigend in, display the main page content.
           (
-            <MainPage signOut={() => firebase.auth().signOut()} 
-            userName={firebase.auth().currentUser.displayName}
-            profilePicture={firebase.auth().currentUser.photoURL}/>
+            <MainPage 
+                signOut={() => firebase.auth().signOut()} 
+                userName={firebase.auth().currentUser.displayName}
+                profilePicture={firebase.auth().currentUser.photoURL}/>
           ) : 
           // User is signed out, dispaly login options.
           (

@@ -3,6 +3,10 @@ import axios from 'axios';
 import './Learn.css';
 import { Container } from "@material-ui/core";
 import Definitions from "../Definitions";
+import Navbar from '../Navbar';
+import Footer from '../Footer';
+
+
 
 function Learn() { 
 
@@ -43,6 +47,10 @@ function Learn() {
 
     return(
         <div className="learn">
+            {/* <Navbar 
+                signOut={params.signOut}
+                userName={params.userName}
+                profilePicture={params.profilePicture}/> */}
             <Container maxWidth="md">
                 {word===""?(""):
                 <Definitions 
@@ -52,6 +60,7 @@ function Learn() {
                 />}
                 <button onClick={handleClick}>{btn}</button>
             </Container>
+            <Footer />
         </div>
     );
 
