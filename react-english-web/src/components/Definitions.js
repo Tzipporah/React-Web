@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../Learn.css';
+import './pages/Learn.css';
 
 const Definitions = ({word, meanings, wordHe}) =>
 {
@@ -20,7 +20,8 @@ const Definitions = ({word, meanings, wordHe}) =>
                 <hr/>
                 {meanings[0] && word &&
                     (<audio 
-                        src={(meanings[0].phonetics[0] && meanings[0].phonetics[0].audio) || (meanings[1].phonetics[0] && meanings[1].phonetics[0].audio)}
+                        src={(meanings[0].phonetics[0] && meanings[0].phonetics[0].audio) 
+                            || (meanings[1].phonetics[0] && meanings[1].phonetics[0].audio)}
                         controls />)}
                 <hr/>
             </div>

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Learn.css';
 import { Container } from "@material-ui/core";
-import Definitions from "./components/Definitions/Definitions";
+import Definitions from "../Definitions";
 
 function Learn() { 
 
@@ -19,6 +19,7 @@ function Learn() {
                 `http://api.dictionaryapi.dev/api/v2/entries/en/${word}`
             );
             setMeanings(data.data);
+            console.log(meanings);
         } catch (error) {
             console.log(error);
         }
