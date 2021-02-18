@@ -12,14 +12,14 @@ const Definitions = ({word, meanings, wordHe}) =>
                         || (meanings[1].phonetics[0] && meanings[1].phonetics[0].audio)}
                         controls />)}   
                 <hr/>
-                <span>
-                    <b>:המילה באנגלית</b>
+                <span className="span">
+                    <b className="b">:המילה באנגלית</b>
                     <br/>
                     {word}
                 </span>
                 <hr/>
-                <span>
-                    <b>:המילה בעברית</b>
+                <span className="span">
+                    <b className="b">:המילה בעברית</b>
                     <br/>
                     {wordHe}
                 </span>
