@@ -1,0 +1,21 @@
+.learn{
+    text-align: center;
+}
+
+hr{
+    background:"black";
+    width: "100%";
+}
+
+.btn-learn,.h1_learn{
+    font: 30px Aharoni, sans-serif;
+    margin: 5px;
+    padding: 5px;
+    background-color: #ddd;
+    border: solid;
+}
+
+.span,.b{
+    font: 30px 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}

@@ -1,10 +1,16 @@
 import React from 'react';
 import './Cards.css';
 import CardItem from './CardItem';
+import Navbar from './Navbar';
 
 function Cards2() {
+
   return (
     <div className='cards'>
+      {/* <Navbar 
+        signOut={params.signOut}
+        userName={params.userName}
+        profilePicture={params.profilePicture}/> */}
       <h1>.אנגלית ברמה המתאימה לך</h1>
       <div className='cards__container'>
         <div className='cards__wrapper'>
@@ -13,7 +19,7 @@ function Cards2() {
               src='images/getting_better.jpg'
               text='לימוד מילים'
               label='לימוד'
-              path='/'
+              path='/learn'
             />
             <CardItem
               src='images/academ.jpg'

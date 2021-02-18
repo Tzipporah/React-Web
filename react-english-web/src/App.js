@@ -1,13 +1,13 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './App.css';
 import Home from './components/pages/Home';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import SignUp from './components/pages/SignUp';
 import Cards2 from './components/Cards2'
 import Test from './components/pages/Test'
-import firebase from 'firebase';
-import styleFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth'
+import Cards2 from './components/Cards2';
+import Learn from './components/pages/Learn';
 
 function App() {
   return (
@@ -18,6 +18,7 @@ function App() {
           <Route path='/sign-up' component={SignUp} />
           <Route path='/cards2' component={Cards2} />
           <Route path='/Test' component={Test} />
+          <Route path='/learn' component={Learn}/>
         </Switch>
       </Router>
     </>
