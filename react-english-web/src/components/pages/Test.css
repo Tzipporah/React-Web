@@ -1,0 +1,32 @@
+body {
+    background-color: #C8D0D2;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* Style the card look itself */
+    border-radius: .25rem; /*rounded*/
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, .3);
+    background-color: white;
+    height: 150px;
+    width: 150px;
+}
+
+/*flip effect*/
+
+
+.card .front,
+.card .back {
+    position: absolute;
+    padding: 1rem;
+    /* We handle the card size dinamicly, thus height and width located here*/
+    backface-visibility: hidden;
+}
+
+.card .back {
+    /* Locate the answer*/
+    transform: rotateY(180deg)
+}

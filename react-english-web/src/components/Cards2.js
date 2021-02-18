@@ -31,7 +31,7 @@ function Cards2() {
               src='images/academ.jpg'
               text='לימוד ע"י משחק'
               label='מבחן'
-              path='/Services'
+              path='/Test'
             />
           </ul>
         </div>
