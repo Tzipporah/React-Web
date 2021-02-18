@@ -33,7 +33,7 @@ function Navbar(props) {
         <div className='navbar-container'>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
             {props.userName}
-            <i class='fas fa-glasses' />
+            <i className='fas fa-glasses' />
           </Link>
           <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />

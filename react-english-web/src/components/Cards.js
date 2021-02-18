@@ -19,28 +19,28 @@ function Cards() {
               src='images/academ.jpg'
               text='חיים קלים באקדמיה'
               label='תלמידים'
-              path='/Services'
+              path='/cards2'
             />
           </ul>
           <ul className='cards__items'>
-          
+
             <CardItem
               src='/images/starting.jpg'
               text='אנגלית למי שרוצה להשתפר'
               label='מתקדמים'
-              path='/Services'
+              path='/cards2'
             />
             <CardItem
               src='images/business.jpg'
               text='הצלחה בעסקים. מקצועיות'
               label='אנגלית עיסקית'
-              path='/Services'
+              path='/cards2'
             />
             <CardItem
               src='images/img-6.jpg'
               text='להבין את השפה ברחוב'
               label='אנגלית מדוברת'
-              path='/Services'
+              path='/cards2'
             />
           </ul>
         </div>

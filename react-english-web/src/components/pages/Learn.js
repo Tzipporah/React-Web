@@ -5,12 +5,16 @@ import { Container } from "@material-ui/core";
 import Definitions from "../Definitions";
 import Navbar from '../Navbar';
 import Footer from '../Footer';
+import words from '../../words/level1'
 
 
 
 function Learn() { 
 
-    const arr = [["I","אני"], ["Yes","כן"], ["No","לא"], ["My", "שלי"], ["Hello", "שלום"], ["OK", "בסדר"]]
+    let arr = []
+    words.words.map((word) => {
+        arr[word.i] = [word.en,word.he]
+    })
     const [i, setI] = useState(0);
     const [word, setWord] = useState("");
     const [wordHe, setWordHe] = useState("");
@@ -23,7 +27,6 @@ function Learn() {
                 `http://api.dictionaryapi.dev/api/v2/entries/en/${word}`
             );
             setMeanings(data.data);
-            console.log(meanings);
         } catch (error) {
             console.log(error);
         }
@@ -51,14 +54,25 @@ function Learn() {
                 signOut={params.signOut}
                 userName={params.userName}
                 profilePicture={params.profilePicture}/> */}
-            <Container maxWidth="md">
+            <h1>
+                לימוד אנגלית בכיף  
+            </h1>
+            <img
+                className='image'
+                alt='Travel Image'
+                src='https://h-flowers.co.il/wp-content/uploads/2020/07/907e5_1SPLIT202007SPLIT05100427.jpg'
+            />
+            <Container maxWidth="md" className="container-learn">
+                <button className = "btn-learn" onClick={handleClick}>
+                    {btn}
+                </button>
                 {word===""?(""):
                 <Definitions 
+                    className = "definitions"
                     word={word} 
                     meanings={meanings}
                     wordHe={wordHe} 
                 />}
-                <button onClick={handleClick}>{btn}</button>
             </Container>
             <Footer />
         </div>
