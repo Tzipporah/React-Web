@@ -6,7 +6,6 @@ import Home from './components/pages/Home';
 import SignUp from './components/pages/SignUp';
 import Cards2 from './components/Cards2'
 import Test from './components/pages/Test'
-import Cards2 from './components/Cards2';
 import Learn from './components/pages/Learn';
 
 function App() {
