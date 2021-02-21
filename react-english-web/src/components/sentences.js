@@ -42,8 +42,8 @@ const sentences = ({page,level}) =>
             <div class="sentenc">
             <div class="select">
             <Select class="col-md-8 col-offset-4" options={ technologyList } styles = { customStyles } />
-            <p>{page}</p>
             </div>
+            <p>{page}</p>
             </div>
         </div>     
     );
