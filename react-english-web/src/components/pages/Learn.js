@@ -12,11 +12,11 @@ import { Button } from '../Button';
 function Learn({ match }) { 
 
     const level = match.params.level;
-
+    // const [i, setI] = useState(-1); // arr's index
     let arr = []
     // Introducing the Hebrew and English words into the arr from the words file by levels
-    words[level].map((word) => {
-        arr[word.i] = [word.en, word.he]
+    words[level].map((word, index = 0) => {
+        arr[index++] = [word.en, word.he]
     })
     const [i, setI] = useState(0); // arr's index
     const [word, setWord] = useState(""); // The word in english

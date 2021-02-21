@@ -8,9 +8,13 @@ const authReducer = (state = initState, action) => {
   switch(action.type){
     case 'SIGNOUT_SUCCESS':
       /*console.log(state);*/
-      return state
+      return {
+        ...state
+      }
     default:
-      return state
+      return {
+        ...state
+      }
   }
 };
 

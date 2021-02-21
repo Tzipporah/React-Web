@@ -7,10 +7,11 @@ const Definitions = ({word, meanings, wordHe}) =>
         <div className = "definitions">
             <div className = "subTitle">
                 {meanings[0] && word && 
-                    (<audio
+                    <audio
                         src={(meanings[0].phonetics[0] && meanings[0].phonetics[0].audio) 
                         || (meanings[1].phonetics[0] && meanings[1].phonetics[0].audio)}
-                        controls />)}   
+                        controls />
+                }   
                 <hr/>
                 <span className="span">
                     <b className="b">:המילה באנגלית</b>
