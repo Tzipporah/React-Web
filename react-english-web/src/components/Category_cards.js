@@ -1,8 +1,8 @@
 import React from 'react';
-import './Cards.css';
+import './Category_cards.css';
 import CardItem from './CardItem';
 
-function Cards() {
+function Category_cards() {
   return (
     <div className='cards'>
       <h1>.אנגלית ברמה המתאימה לך</h1>
@@ -13,13 +13,13 @@ function Cards() {
               src='images/getting_better.jpg'
               text='להתחיל את האנגלית שלך פה'
               label='מתחילים'
-              path='/cards2'
+              path='/Learning_cards'
             />
             <CardItem
               src='images/academ.jpg'
               text='חיים קלים באקדמיה'
               label='תלמידים'
-              path='/cards2'
+              path='/Learning_cards'
             />
           </ul>
           <ul className='cards__items'>
@@ -28,19 +28,19 @@ function Cards() {
               src='/images/starting.jpg'
               text='אנגלית למי שרוצה להשתפר'
               label='מתקדמים'
-              path='/cards2'
+              path='/Learning_cards'
             />
             <CardItem
               src='images/business.jpg'
               text='הצלחה בעסקים. מקצועיות'
               label='אנגלית עיסקית'
-              path='/cards2'
+              path='/Learning_cards'
             />
             <CardItem
               src='images/img-6.jpg'
               text='להבין את השפה ברחוב'
               label='אנגלית מדוברת'
-              path='/cards2'
+              path='/Learning_cards'
             />
           </ul>
         </div>
@@ -49,4 +49,4 @@ function Cards() {
   );
 }
 
-export default Cards;
+export default Category_cards;

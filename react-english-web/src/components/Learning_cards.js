@@ -1,9 +1,9 @@
 import React from 'react';
-import './Cards.css';
+import './Category_cards.css';
 import CardItem from './CardItem';
 import Navbar from './Navbar';
 
-function Cards2() {
+function Learning_cards() {
 
   return (
     <div className='cards'>
@@ -43,4 +43,4 @@ function Cards2() {
   );
 }
 
-export default Cards2;
+export default Learning_cards;
