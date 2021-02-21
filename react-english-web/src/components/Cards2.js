@@ -7,10 +7,7 @@ function Cards2() {
 
   return (
     <div className='cards'>
-      {/* <Navbar 
-        signOut={params.signOut}
-        userName={params.userName}
-        profilePicture={params.profilePicture}/> */}
+      {<Navbar /> }
       <h1>.אנגלית ברמה המתאימה לך</h1>
       <div className='cards__container'>
         <div className='cards__wrapper'>
