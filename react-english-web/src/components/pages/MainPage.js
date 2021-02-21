@@ -1,17 +1,17 @@
 import React from 'react';
 import '../../App.css';
 import Navbar from '../Navbar'
-import Cards from '../Cards'
+import Levels_cards from '../Levels_cards'
+import Footer from '../Footer'
 
-export default function MainPage(props) {
+
+export default function MainPage() {
+
   return (
     <>
-    <Navbar
-      signOut={props.signOut}
-      userName={props.userName}
-      profilePicture={props.profilePicture}
-    />
-    <Cards />
+      <Navbar/>
+      <Levels_cards/>
+      <Footer/>
     </>
   );
 }

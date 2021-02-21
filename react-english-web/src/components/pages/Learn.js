@@ -3,24 +3,28 @@ import axios from 'axios';
 import './Learn.css';
 import { Container } from "@material-ui/core";
 import Definitions from "../Definitions";
-import Navbar from '../Navbar';
 import Footer from '../Footer';
-import words from '../../words/level1'
+import Navbar from '../Navbar'
+import words from '../../words/levels.json';
+import { Button } from '../Button';
 
 
+function Learn({ match }) { 
 
-function Learn() { 
-
+    const level = match.params.level;
+    
     let arr = []
-    words.words.map((word) => {
-        arr[word.i] = [word.en,word.he]
+    // Introducing the Hebrew and English words into the arr from the words file by levels
+    words[level].map((word, index = 0) => {
+        arr[index++] = [word.en, word.he]
     })
-    const [i, setI] = useState(0);
-    const [word, setWord] = useState("");
-    const [wordHe, setWordHe] = useState("");
+    const [i, setI] = useState(0); // arr's index
+    const [word, setWord] = useState(""); // The word in english
+    const [wordHe, setWordHe] = useState(""); // The word in hebrew
     const [meanings, setMeanings] = useState([]);
-    const [btn, setBtn] = useState("קבל מילה");
-
+    const [btn, setBtn] = useState("קבל מילה"); // The words above the button
+    const [end, setEnd] = useState(false) // Flag - If the words are over
+   
     const dictionaryApi = async() =>{
         try {
             const data = await axios.get(
@@ -36,26 +40,32 @@ function Learn() {
         dictionaryApi();
     },[word])
 
+    // Set new word of arr to word and wordHe
     function handleClick() {
-        if (i < arr.length){
-            setI(i+1)
+        setI(i+1)
+        if (i == arr.length){
+            setBtn("חזרה שוב על המילים")
+            setEnd(true)
+        }
+        else{
             setWord(arr[i][0])
             setWordHe(arr[i][1])
             setBtn("המילה הבאה")
+            if (i == arr.length - 1)
+                setBtn("סיום")
         }
-        
-        if(i >= arr.length-1)
-            setBtn("סיום")
+    }
+
+    // Refresh the Page to start again
+    function refreshPage() {
+        window.location.reload(false);
     }
 
     return(
         <div className="learn">
-            {/* <Navbar 
-                signOut={params.signOut}
-                userName={params.userName}
-                profilePicture={params.profilePicture}/> */}
+            <Navbar/>
             <h1>
-                לימוד אנגלית בכיף  
+                .לימוד אנגלית בכיף  
             </h1>
             <img
                 className='image'
@@ -63,16 +73,27 @@ function Learn() {
                 src='https://h-flowers.co.il/wp-content/uploads/2020/07/907e5_1SPLIT202007SPLIT05100427.jpg'
             />
             <Container maxWidth="md" className="container-learn">
-                <button className = "btn-learn" onClick={handleClick}>
-                    {btn}
-                </button>
-                {word===""?(""):
-                <Definitions 
-                    className = "definitions"
-                    word={word} 
-                    meanings={meanings}
-                    wordHe={wordHe} 
-                />}
+                {!end ? 
+                (
+                    <>
+                        <Button onClick={handleClick}><h1 className="h1_learn">{btn}</h1></Button>   
+                        {word===""?(""):
+                        // Calls to Definitions component
+                        <Definitions 
+                            className = "definitions"
+                            word={word} 
+                            meanings={meanings}
+                            wordHe={wordHe} 
+                        />}
+                    </>
+                )
+                :
+                (
+                    <>
+                        <Button onClick={refreshPage}><h1 className="h1_learn">{btn}</h1></Button>
+                        <Button linkTo={`/Categories_cards/${level}`}><h1 className="h1_learn">חזרה לעמוד הקודם</h1></Button>
+                    </>
+                )}
             </Container>
             <Footer />
         </div>
