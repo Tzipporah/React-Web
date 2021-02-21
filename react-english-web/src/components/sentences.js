@@ -1,17 +1,17 @@
 import React from 'react';
 import Select from 'react-select';
 import './pages/Word_completion.css';
-import words from '../words/level1'
+import words from '../words/levels.json'
 
-const sentences = ({word,picture,sentece}) =>
+const sentences = ({page,level}) =>
 {
     let array1 = []
-    words.words.map((word) => {
-        array1[word.i] = [word.en]
+    words[level].map((word, index=0) => {
+        array1[index++] = [word.en]
     })
     
     var technologyList = [];
-    array1.forEach(function(element) {
+    array1.map((element) =>{
         technologyList.push({ label:element, value: element })
     });
 
@@ -33,14 +33,17 @@ const sentences = ({word,picture,sentece}) =>
         })
       }
       
-
+      let story = ""
+      function put_image(word){
+        
+      }
     return( 
         <div class="main">
             <div class="sentenc">
             <div class="select">
             <Select class="col-md-8 col-offset-4" options={ technologyList } styles = { customStyles } />
             </div>
-            <p>{sentece}</p>
+            <p>{word}</p>
             <img src={picture}></img>
             </div>
         </div>

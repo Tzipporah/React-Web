@@ -2,28 +2,33 @@
     "beginners":[
         {
             "en":"I",
-            "he":"אני"
+            "he":"אני",
+            "picture": "../images/img-1.jpg"
         },
         {
             "en":"Yes",
-            "he":"כן"
+            "he":"כן",
+            "picture": "../images/img-2.jpg"
         },
         {
             "en":"No",
-            "he":"לא"
+            "he":"לא",
+            "picture": "../images/img-3.jpg"
         },
         {
             "en":"My",
-            "he":"שלי"
+            "he":"שלי",
+            "picture": "../images/img-1.jpg"
         },
         {
             "en":"Hello",
-            "he":"שלום"
-            
+            "he":"שלום",
+            "picture": "../images/img-1.jpg"   
         },
         {
             "en":"OK",
-            "he":"בסדר"
+            "he":"בסדר",
+            "picture": "../images/img-6.jpg"
         }
     ],
     "students":[
