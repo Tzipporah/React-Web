@@ -1,5 +1,5 @@
 import React from 'react';
-import './Category_cards.css';
+import './Levels_cards.css';
 import CardItem from './CardItem';
 
 function Category_cards() {
@@ -13,13 +13,13 @@ function Category_cards() {
               src='images/getting_better.jpg'
               text='להתחיל את האנגלית שלך פה'
               label='מתחילים'
-              path='/Learning_cards'
+              path='/Categories_cards/beginners'
             />
             <CardItem
               src='images/academ.jpg'
               text='חיים קלים באקדמיה'
               label='תלמידים'
-              path='/Learning_cards'
+              path='/Categories_cards/students'
             />
           </ul>
           <ul className='cards__items'>
@@ -28,19 +28,19 @@ function Category_cards() {
               src='/images/starting.jpg'
               text='אנגלית למי שרוצה להשתפר'
               label='מתקדמים'
-              path='/Learning_cards'
+              path='/Categories_cards/advancers'
             />
             <CardItem
               src='images/business.jpg'
               text='הצלחה בעסקים. מקצועיות'
               label='אנגלית עיסקית'
-              path='/Learning_cards'
+              path='/Categories_cards/business'
             />
             <CardItem
               src='images/img-6.jpg'
               text='להבין את השפה ברחוב'
               label='אנגלית מדוברת'
-              path='/Learning_cards'
+              path='/Categories_cards/spoken'
             />
           </ul>
         </div>

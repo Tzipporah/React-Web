@@ -5,16 +5,18 @@ import { Container } from "@material-ui/core";
 import Definitions from "../Definitions";
 import Footer from '../Footer';
 import Navbar from '../Navbar'
-import words from '../../words/level1';
+import words from '../../words/levels.json';
 import { Button } from '../Button';
 
 
-function Learn() { 
+function Learn({ match }) { 
+
+    const level = match.params.level;
 
     let arr = []
-    // Introducing the Hebrew and English words into the arr from the words file by category
-    words.words.map((word) => {
-        arr[word.i] = [word.en,word.he]
+    // Introducing the Hebrew and English words into the arr from the words file by levels
+    words[level].map((word) => {
+        arr[word.i] = [word.en, word.he]
     })
     const [i, setI] = useState(0); // arr's index
     const [word, setWord] = useState(""); // The word in english
@@ -63,7 +65,7 @@ function Learn() {
         <div className="learn">
             <Navbar/>
             <h1>
-                לימוד אנגלית בכיף  
+                .לימוד אנגלית בכיף  
             </h1>
             <img
                 className='image'
@@ -89,7 +91,7 @@ function Learn() {
                 (
                     <>
                         <Button onClick={refreshPage}><h1 className="h1_learn">{btn}</h1></Button>
-                        <Button linkTo='/Learning_cards' buttonSize='btn--medium' buttonStyle='btn--outline'><h1 className="h1_learn">חזרה לעמוד הקודם</h1></Button>
+                        <Button linkTo={`/Categories_cards/${level}`}><h1 className="h1_learn">חזרה לעמוד הקודם</h1></Button>
                     </>
                 )}
             </Container>
