@@ -2,9 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import FlashcardList from '../Tests/FlashcardList';
 import './Test.css'
 import axios from 'axios'
+import { Button } from '../Button'
+import Navbar from '../Navbar'
+import Fotter from '../Footer'
 
-
-function Test() {
+function Test({ match }) {
+    const level = match.params.level
     const [flashcards, setFlashcards] = useState([])
     const [categories, setCategories] = useState([])
   
@@ -56,7 +59,9 @@ function Test() {
     }
   
     return (
-      <>
+      <>  
+      <Navbar/>
+      <div className = "test-body">
         <form className="header" onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="category">Category</label>
@@ -71,12 +76,14 @@ function Test() {
             <input type="number" id="amount" min="1" step="1" defaultValue={10} ref={amountEl} />
           </div>
           <div className="form-group">
-            <button className="btn">Generate</button>
+            <Button className="test-btn">Generate</Button>
           </div>
         </form>
         <div className="container">
           <FlashcardList flashcards={flashcards} />
         </div>
+      </div>
+      <Fotter/>
       </>
     );
   }

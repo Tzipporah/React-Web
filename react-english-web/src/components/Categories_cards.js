@@ -38,7 +38,7 @@ function Learning_cards({ match }) {
                 src='../images/academ.jpg'
                 text='למדת - נבחנת -הצלחת'
                 label='מבחן'
-                path='/Test'
+                path={`/Test/${level}`}
               />
             </ul>
           </div>
