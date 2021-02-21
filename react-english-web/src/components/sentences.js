@@ -34,7 +34,7 @@ const sentences = ({page,level}) =>
       }
       
       let story = ""
-      function put_image(word){
+      function put_image_instead_word(word){
         
       }
     return( 
@@ -43,13 +43,10 @@ const sentences = ({page,level}) =>
             <div class="select">
             <Select class="col-md-8 col-offset-4" options={ technologyList } styles = { customStyles } />
             </div>
-            <p>{word}</p>
-            <img src={picture}></img>
+            <p>{page}</p>
+            
             </div>
-        </div>
-        
-        
-    
+        </div>     
     );
 }
 

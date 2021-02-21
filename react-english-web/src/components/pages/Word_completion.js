@@ -21,7 +21,7 @@ function Word_completion({ match }) {
     const [word, setWord] = useState("");
     const [word_picture, setWord_picture] = useState("");
     const [word_sentece, setWord_sentece] = useState("");
-    const [btn, setBtn] = useState("להשלמת המשפטים");
+    const [btn, setBtn] = useState("לעמוד הבא");
     const [page, setPage] = useState(0);
     
     function handleClick() {
@@ -50,7 +50,7 @@ function Word_completion({ match }) {
                 page = {story_arr[page]}
                 level = {level}
             />
-           <Button className = "btn-senteces" onClick={handleClick}>
+           <Button class = "btn-senteces" onClick={handleClick}>
                     {btn}
             </Button>
        </Container>
