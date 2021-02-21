@@ -1,0 +1,41 @@
+{
+    "beginners":[
+        {
+            "en":"I",
+            "he":"אני",
+            "picture": "../images/img-1.jpg"
+        },
+        {
+            "en":"Yes",
+            "he":"כן",
+            "picture": "../images/img-2.jpg"
+        },
+        {
+            "en":"No",
+            "he":"לא",
+            "picture": "../images/img-3.jpg"
+        },
+        {
+            "en":"My",
+            "he":"שלי",
+            "picture": "../images/img-1.jpg"
+        },
+        {
+            "en":"Hello",
+            "he":"שלום",
+            "picture": "../images/img-1.jpg"   
+        },
+        {
+            "en":"OK",
+            "he":"בסדר",
+            "picture": "../images/img-6.jpg"
+        }
+    ],
+    "students":[
+        {
+            "en":"Teacher",
+            "he":"מורה"
+        } 
+    ]
+
+}

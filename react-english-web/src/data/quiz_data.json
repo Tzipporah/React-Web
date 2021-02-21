@@ -1,0 +1,251 @@
+{
+    "family": [
+        {
+            "id": 0,
+            "question": "אח",
+            "options": ["Brother", "Aunt", "Sister", "Niece"],
+            "answer": "Brother"
+        },
+        {
+            "id": 1,
+            "question": "אבא",
+            "options": ["Father", "Mother", "Brother", "Grandfather"],
+            "answer": "Father"
+        },
+        {
+            "id": 2,
+            "question": "סבא",
+            "options": ["Grandfather", "Father", "Grandmother", "Nephew"],
+            "answer": "Grandfather"
+        },
+        {
+            "id": 3,
+            "question": "אחיין",
+            "options": ["Nephew", "Aunt", "Granmother", "Niece"],
+            "answer": "Nephew"
+        },
+        {
+            "id": 4,
+            "question": "אחיינית",
+            "options": ["Niece", "Granmother", "Nephew", "Sister"],
+            "answer": "Niece"
+        },
+        {
+            "id": 5,
+            "question": "אחות",
+            "options": ["Sister", "Aunt", "Nephew", "Brother"],
+            "answer": "Sister"
+        },
+        {
+            "id": 6,
+            "question": "אמא",
+            "options": ["Mother", "Uncle", "Sister", "Nephew"],
+            "answer": "Mother"
+        },
+        {
+            "id": 7,
+            "question": "סבתא",
+            "options": ["Granmother", "Mother", "Sister", "Niece"],
+            "answer": "Granmother"
+        },
+        {
+            "id": 8,
+            "question": "דודה",
+            "options": ["Aunt", "Uncle", "Granmother", "Father"],
+            "answer": "Aunt"
+        },
+        {
+            "id": 9,
+            "question": "דוד",
+            "options": ["Uncle", "Aunt", "Father", "Brother"],
+            "answer": "Uncle"
+        }
+    ],
+    "Shapes": [
+        {
+            "id": 0,
+            "question": "עיגול",
+            "options": ["Circle", "Square", "Rectangle", "Heart"],
+            "answer": "Circle"
+        },
+        {
+            "id": 1,
+            "question": "ריבוע",
+            "options": ["Square", "Heart", "Rhombus", "Pentagon"],
+            "answer": "Square"
+        },
+        {
+            "id": 2,
+            "question": "משולש",
+            "options": ["Rectangle", "Pentagon", "Ellipse", "Rhombus"],
+            "answer": "Rectangle"
+        },
+        {
+            "id": 3,
+            "question": "לב",
+            "options": ["Heart", "Pentagon", "Circle", "Ellipse"],
+            "answer": "Heart"
+        },
+        {
+            "id": 4,
+            "question": "מחומש",
+            "options": ["Pentagon", "Trapeziod", "Diamond", "Circle"],
+            "answer": "Pentagon"
+        },
+        {
+            "id": 5,
+            "question": "כוכב",
+            "options": ["Star", "Ellipse", "Diamond", "Square"],
+            "answer": "Star"
+        },
+        {
+            "id": 6,
+            "question": "אליפסה",
+            "options": ["Ellipse", "Diamond", "Trapeziod", "Rectangle"],
+            "answer": "Ellipse"
+        },
+        {
+            "id": 7,
+            "question": "יהלום",
+            "options": ["Diamond", "Trapeziod", "Pentagon", "Circle"],
+            "answer": "Diamond"
+        },
+        {
+            "id": 8,
+            "question": "מעויין",
+            "options": ["Rhombus", "Diamond", "Black", "Rectangle"],
+            "answer": "Rhombus"
+        },
+        {
+            "id": 9,
+            "question": "טרפז",
+            "options": ["Trapeziod", "Heart", "Rhombus", "Square"],
+            "answer": "Trapeziod"
+        }
+    ],
+    "Colors": [
+        {
+            "id": 0,
+            "question": "אדום",
+            "options": ["Red", "Black", "White", "Purple"],
+            "answer": "Red"
+        },
+        {
+            "id": 1,
+            "question": "צהוב",
+            "options": ["Yellow", "Green", "Red", "Black"],
+            "answer": "Yellow"
+        },
+        {
+            "id": 2,
+            "question": "כחול",
+            "options": ["Blue", "Green", "Brown", "Orange"],
+            "answer": "Blue"
+        },
+        {
+            "id": 3,
+            "question": "ירוק",
+            "options": ["Green", "Yellow", "White", "Red"],
+            "answer": "Green"
+        },
+        {
+            "id": 4,
+            "question": "שחור",
+            "options": ["Black", "Green", "White", "Purple"],
+            "answer": "Black"
+        },
+        {
+            "id": 5,
+            "question": "לבן",
+            "options": ["White", "Orange", "Grey", "Blue"],
+            "answer": "White"
+        },
+        {
+            "id": 6,
+            "question": "אפור",
+            "options": ["Grey", "Red", "Blue", "Green"],
+            "answer": "Grey"
+        },
+        {
+            "id": 7,
+            "question": "כתום",
+            "options": ["Orange", "Red", "Grey", "Black"],
+            "answer": "Orange"
+        },
+        {
+            "id": 8,
+            "question": "סגול",
+            "options": ["Purple", "Grey", "Black", "Brown"],
+            "answer": "Purple"
+        },
+        {
+            "id": 9,
+            "question": "חום",
+            "options": ["Brown", "White", "Grey", "Yellow"],
+            "answer": "Brown"
+        }
+    ],
+    "games": [
+        {
+            "id": 0,
+            "question": "כדור",
+            "options": ["Ball", "Doll", "Ruttle", "Kite"],
+            "answer": "Ball"
+        },
+        {
+            "id": 1,
+            "question": "בובה",
+            "options": ["Doll", "Teddy bear", "Ruttle", "Puzzle"],
+            "answer": "Doll"
+        },
+        {
+            "id": 2,
+            "question": "רעשן",
+            "options": ["Ruttle", "Rocking horse", "Bike", "Puzzle"],
+            "answer": "Ruttle"
+        },
+        {
+            "id": 3,
+            "question": "אופניים",
+            "options": ["Bike", "Kite", "Puzzle", "Ruttle"],
+            "answer": "Bike"
+        },
+        {
+            "id": 4,
+            "question": "פאזל",
+            "options": ["Puzzle", "Green", "Bike", "Ball"],
+            "answer": "Puzzle"
+        },
+        {
+            "id": 5,
+            "question": "דובי",
+            "options": ["Teddy bear", "Ball", "Rocking horse", "Doll"],
+            "answer": "Teddy bear"
+        },
+        {
+            "id": 6,
+            "question": "בלון",
+            "options": ["Balloon", "Rocking horse", "Ball", "Kite"],
+            "answer": "Balloon"
+        },
+        {
+            "id": 7,
+            "question": "עפיפון",
+            "options": ["Kite", "Balloon", "Teddy Bear", "Rocking horse"],
+            "answer": "Kite"
+        },
+        {
+            "id": 8,
+            "question": "סוס-נדנדה",
+            "options": ["Rocking horse", "Teddy bear", "Robot", "Ball"],
+            "answer": "Rocking horse"
+        },
+        {
+            "id": 9,
+            "question": "רובוט",
+            "options": ["Robot", "Doll", "Balloon", "Teddy bear"],
+            "answer": "Robot"
+        }
+    ]
+}
+    
