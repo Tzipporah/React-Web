@@ -1,4 +1,4 @@
-body {
+.test-body {
     background-color: #C8D0D2;
     margin: 0;
     font-weight: bold; /* same as 700 */
@@ -34,7 +34,7 @@ body {
 
   }
   
-  .btn {
+  .test-btn {
     background-color: hsl(200, 100%, 50%);
     color: white;
     padding: .5em 1em;
@@ -43,7 +43,7 @@ body {
     cursor: pointer;
   }
   
-  .btn:hover {
+  .test-btn:hover {
     background-color: hsl(200, 100%, 40%);
   }
   

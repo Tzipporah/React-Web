@@ -19,7 +19,7 @@ function App() {
           <Route path='/sign-up' component={SignUp} />
           <Route path='/main-page' component={MainPage} />
           <Route path='/Categories_cards/:level' component={Categories_cards} />
-          <Route path='/Test' component={Test} />
+          <Route path='/Test/:level' component={Test} />
           <Route path='/learn/:level' component={Learn} />
           <Route path='/word_completion/:level' component={Word_completion} />
         </Switch>
