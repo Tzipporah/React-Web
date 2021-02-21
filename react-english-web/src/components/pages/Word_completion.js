@@ -1,8 +1,8 @@
 import { Container } from '@material-ui/core';
 import { useEffect, useState } from 'react';
 import './Word_completion.css';
-import words from '../../words/levels.json'
-import stories from '../../words/stories.json'
+import words from '../../data/levels.json'
+import stories from '../../data/stories.json'
 import Sentences from '../sentences';
 import { Button } from '../Button'
 

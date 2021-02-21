@@ -1,7 +1,7 @@
 import React from 'react';
 import Select from 'react-select';
 import './pages/Word_completion.css';
-import words from '../words/levels.json'
+import words from '../data/levels.json'
 
 const sentences = ({page,level}) =>
 {
@@ -43,8 +43,8 @@ const sentences = ({page,level}) =>
             <div class="select">
             <Select class="col-md-8 col-offset-4" options={ technologyList } styles = { customStyles } />
             </div>
-            <p>{word}</p>
-            <img src={picture}></img>
+            {/* <p>{word}</p>
+            <img src={picture}></img> */}
             </div>
         </div>
         
