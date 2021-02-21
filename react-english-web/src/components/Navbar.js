@@ -2,8 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
+import { connect } from 'react-redux'
+import { signOut } from '../store/actions/authActions'
 
 function Navbar(props) {
+
+  //console.log(props)
+  const { user } = props
+  const userName = user.displayName
+  const profilePicture = user.photoURL
+
+  
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
@@ -32,7 +41,7 @@ function Navbar(props) {
       <nav className='navbar'>
         <div className='navbar-container'>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-            {props.userName}
+            {userName}
             <i className='fas fa-glasses' />
           </Link>
           <div className='menu-icon' onClick={handleClick}>
@@ -62,4 +71,16 @@ function Navbar(props) {
   );
 }
 
-export default Navbar;
+const mapStateToProps = (state) => {
+  return {
+    user: state.firebase.auth
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signOut: () => dispatch(signOut())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

@@ -25,7 +25,6 @@ function HeroSection() {
           className='btns'
           buttonStyle='btn--primary'
           buttonSize='btn--large'
-          onClick={console.log('hey')}
           linkTo='/sign-up'
         >
           הרשמה <i className='fas fa-portrait' />

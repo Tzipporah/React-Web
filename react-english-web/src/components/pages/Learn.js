@@ -3,25 +3,27 @@ import axios from 'axios';
 import './Learn.css';
 import { Container } from "@material-ui/core";
 import Definitions from "../Definitions";
-import Navbar from '../Navbar';
 import Footer from '../Footer';
-import words from '../../words/level1';
+import Navbar from '../Navbar'
+import words from '../../words/levels.json';
 import { Button } from '../Button';
 
 
-function Learn() { 
+function Learn({ match }) { 
 
+    const level = match.params.level;
+    
     let arr = []
-    // Introducing the Hebrew and English words into the arr from the words file by category
-    words.words.map((word) => {
-        arr[word.i] = [word.en,word.he]
+    // Introducing the Hebrew and English words into the arr from the words file by levels
+    words[level].map((word, index = 0) => {
+        arr[index++] = [word.en, word.he]
     })
-    const [i, setI] = useState(0);
-    const [word, setWord] = useState("");
-    const [wordHe, setWordHe] = useState("");
+    const [i, setI] = useState(0); // arr's index
+    const [word, setWord] = useState(""); // The word in english
+    const [wordHe, setWordHe] = useState(""); // The word in hebrew
     const [meanings, setMeanings] = useState([]);
-    const [btn, setBtn] = useState("קבל מילה");
-    const [end, setEnd] = useState(false)
+    const [btn, setBtn] = useState("קבל מילה"); // The words above the button
+    const [end, setEnd] = useState(false) // Flag - If the words are over
    
     const dictionaryApi = async() =>{
         try {
@@ -38,10 +40,11 @@ function Learn() {
         dictionaryApi();
     },[word])
 
+    // Set new word of arr to word and wordHe
     function handleClick() {
         setI(i+1)
         if (i == arr.length){
-            setBtn("חזרה לעמוד הקודם")
+            setBtn("חזרה שוב על המילים")
             setEnd(true)
         }
         else{
@@ -53,18 +56,16 @@ function Learn() {
         }
     }
 
+    // Refresh the Page to start again
     function refreshPage() {
         window.location.reload(false);
     }
 
     return(
         <div className="learn">
-            {/* <Navbar 
-                signOut={params.signOut}
-                userName={params.userName}
-                profilePicture={params.profilePicture}/> */}
+            <Navbar/>
             <h1>
-                לימוד אנגלית בכיף  
+                .לימוד אנגלית בכיף  
             </h1>
             <img
                 className='image'
@@ -75,8 +76,9 @@ function Learn() {
                 {!end ? 
                 (
                     <>
-                        <button className = "btn-learn" onClick={handleClick}>{btn}</button>   
+                        <Button onClick={handleClick}><h1 className="h1_learn">{btn}</h1></Button>   
                         {word===""?(""):
+                        // Calls to Definitions component
                         <Definitions 
                             className = "definitions"
                             word={word} 
@@ -88,8 +90,8 @@ function Learn() {
                 :
                 (
                     <>
-                        <button className = "btn-learn" onClick={refreshPage}>חזרה שוב על המילים</button>
-                        <Button linkTo='/cards2' buttonStyle='btn--primary'><h1 className="h1_learn">{btn}</h1></Button>
+                        <Button onClick={refreshPage}><h1 className="h1_learn">{btn}</h1></Button>
+                        <Button linkTo={`/Categories_cards/${level}`}><h1 className="h1_learn">חזרה לעמוד הקודם</h1></Button>
                     </>
                 )}
             </Container>

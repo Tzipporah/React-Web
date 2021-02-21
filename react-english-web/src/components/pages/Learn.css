@@ -1,4 +1,5 @@
 .learn{
+    background-color: #fff;
     text-align: center;
 }
 
@@ -7,8 +8,8 @@ hr{
     width: "100%";
 }
 
-.btn-learn,.h1_learn{
-    font: 30px Aharoni, sans-serif;
+.h1_learn{
+    font-size: 30px ;
     margin: 5px;
     padding: 5px;
     background-color: #ddd;
@@ -16,6 +17,5 @@ hr{
 }
 
 .span,.b{
-    font: 30px 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+    font-size: 30px ;
 }
