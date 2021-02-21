@@ -1,34 +1,80 @@
 {
     "beginners":[
         {
+            "en":"Air",
+            "he":"אויר"
+        },
+        {
+            "en":"Catch",
+            "he":"לתפוס"
+        },
+        {
+            "en":"Color",
+            "he":"צבע"
+        },
+        {
+            "en":"Farmer",
+            "he":"איכר"
+        },
+        {
+            "en":"Fox",
+            "he":"שועל"
+        },
+        {
+            "en":"Grape",
+            "he":"ענב"
+        },
+        {
+            "en":"High",
+            "he":"גבוה"
+        },
+        {
+            "en":"Home",
+            "he":"בית"
+        },
+        {
+            "en":"Hungry",
+            "he":"רעב"
+        },
+        {
             "en":"I",
-            "he":"אני",
-            "picture": "../images/img-1.jpg"
+            "he":"אני"
         },
         {
-            "en":"Yes",
-            "he":"כן",
-            "picture": "../images/img-2.jpg"
+            "en":"Jump",
+            "he":"בטן"
         },
         {
-            "en":"No",
-            "he":"לא",
-            "picture": "../images/img-3.jpg"
+            "en":"Low",
+            "he":"נמוך"
         },
         {
-            "en":"My",
-            "he":"שלי",
-            "picture": "../images/img-1.jpg"
+            "en":"Mouth",
+            "he":"פה"
         },
         {
-            "en":"Hello",
-            "he":"שלום",
-            "picture": "../images/img-1.jpg"   
+            "en":"One",
+            "he":"אחד"
         },
         {
-            "en":"OK",
-            "he":"בסדר",
-            "picture": "../images/img-6.jpg"
+            "en":"Purple",
+            "he":"סגול"
+        },
+        {
+            "en":"Ready",
+            "he":"מוכן"
+        },
+        {
+            "en":"Sour",
+            "he":"חמוץ"
+        },
+        {
+            "en":"Stomach",
+            "he":"בטן"
+        },
+        {
+            "en":"Wall",
+            "he":"קיר"
         }
     ],
     "students":[
