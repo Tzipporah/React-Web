@@ -1,13 +1,20 @@
 import { Container } from '@material-ui/core';
 import { useEffect, useState } from 'react';
 import './Word_completion.css';
-import words from '../../words/level1'
+import words from '../../words/levels.json'
+import stories from '../../words/stories.json'
 import Sentences from '../sentences';
+import { Button } from '../Button'
 
-function Word_completion() { 
+function Word_completion({ match }) { 
+    const level = match.params.level;
     let arr = []
-    words.words.map((word) => {
-        arr[word.i] = [word.en,word.en, word.he, word.picture, word.sentece]
+    words[level].map((word, index=0) => {
+        arr[index++] = [word.en, word.he, word.picture]
+    })
+    let story_arr =[]
+    stories[level].map((page, index=0) => {
+        story_arr[index++] = page.story
     })
     const [i, setI] = useState(0);
     const [arr_t, setArr] = useState("");
@@ -15,10 +22,10 @@ function Word_completion() {
     const [word_picture, setWord_picture] = useState("");
     const [word_sentece, setWord_sentece] = useState("");
     const [btn, setBtn] = useState("להשלמת המשפטים");
-    
+    const [page, setPage] = useState(0);
     
     function handleClick() {
-        if (i < arr.length){
+       /* if (i < arr.length){
             setI(i+1)
             setWord(arr[i][0])
             setWord_picture(arr[i][3])
@@ -28,19 +35,24 @@ function Word_completion() {
         }
         
         if(i >= arr.length-1)
+            setBtn("סיום")*/
+        if (page < story_arr.length-1){
+            setPage(page+1)
+            setBtn("לעמוד הבא")
+        }     
+        else
             setBtn("סיום")
     }
     return(
        <Container class="container">
             <Sentences 
                 className="sentenc"
-                word={words} 
-                picture={word_picture}
-                sentece={word_sentece} 
+                page = {story_arr[page]}
+                level = {level}
             />
-           <button className = "btn-senteces" onClick={handleClick}>
+           <Button className = "btn-senteces" onClick={handleClick}>
                     {btn}
-            </button>
+            </Button>
        </Container>
     );
 }
