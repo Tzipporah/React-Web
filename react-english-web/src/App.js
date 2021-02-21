@@ -7,6 +7,7 @@ import Categories_cards from './components/Categories_cards';
 import MainPage from './components/pages/MainPage';
 import Test from './components/pages/Test';
 import Learn from './components/pages/Learn';
+import Word_completion from './components/pages/Word_completion'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/Categories_cards/:level' component={Categories_cards} />
           <Route path='/Test' component={Test} />
           <Route path='/learn/:level' component={Learn} />
+          <Route path='/word_completion/:level' component={Word_completion} />
         </Switch>
       </Router>
     </>
