@@ -11,33 +11,33 @@ function Cards2() {
         signOut={params.signOut}
         userName={params.userName}
         profilePicture={params.profilePicture}/> */}
-      <h1>.אנגלית ברמה המתאימה לך</h1>
       <div className='cards__container'>
         <div className='cards__wrapper'>
           <ul className='cards__items'>
             <CardItem
-              src='images/getting_better.jpg'
-              text='לימוד מילים'
-              label='לימוד'
-              path='/learn'
+              src='images/exam.jpg'
+              text='מבחן על הנלמד'
+              label='מבחן'
+              path='/Services'
+              
             />
             <CardItem
-              src='images/academ.jpg'
+              src='images/game.jpg'
               text='לימוד ע"י משחק'
               label='משחק'
               path='/Services'
             />
             <CardItem
-              src='images/academ.jpg'
-              text='לימוד ע"י משחק'
+              src='images/Completion_sentences.jpg'
+              text='לימוד ע"י השלמת מילים'
               label='השלמת מילים'
-              path='/Services'
+              path='/Word_completion'
             />
             <CardItem
-              src='images/academ.jpg'
-              text='לימוד ע"י משחק'
-              label='מבחן'
-              path='/Services'
+              src='images/pexels-pixabay-278890.jpg'
+              text='לימוד מילים'
+              label='לימוד'
+              path='/learn'
             />
           </ul>
         </div>
