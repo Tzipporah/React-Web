@@ -41,7 +41,7 @@ function Navbar(props) {
       <nav className='navbar'>
         <div className='navbar-container'>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-            {props.userName}
+            {userName}
             <i className='fas fa-glasses' />
           </Link>
           <div className='menu-icon' onClick={handleClick}>
