@@ -1,49 +1,91 @@
-import react, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import FlashcardList from '../Tests/FlashcardList';
 import './Test.css'
+import axios from 'axios'
+import { Button } from '../Button'
+import Navbar from '../Navbar'
+import Fotter from '../Footer'
 
-function Test(){
-    const [flashcards, setFlashCards] = useState(SAMPLE_FLASHCARDS)
-    return (
-        <FlashcardList flashcards={flashcards}/>
-    );
-}
-
-const SAMPLE_FLASHCARDS = [
-    {
-        id: 1,
-        question: 'What is uncle?',
-        answer: 'דוד',
-        options: [
-            'דוד',
-            'דודה',
-            'סבא',
-            'אחיין'
-        ]
-    },
-
-    {
-        id: 2,
-        question: 'What is niece?',
-        answer: 'אחיינית',
-        options: [
-            'אחיינית',
-            'דודה',
-            'סבא',
-            'אחיין'
-        ]
-    },
-
-    {
-        id: 3,
-        question: 'What is grandmother?????',
-        answer: 'סבתא',
-        options: [
-            '!!!סבתא',
-            'דודה',
-            'סבא',
-            'אחיין'
-        ]
+function Test({ match }) {
+    const level = match.params.level
+    const [flashcards, setFlashcards] = useState([])
+    const [categories, setCategories] = useState([])
+  
+    const categoryEl = useRef()
+    const amountEl = useRef()
+  
+    useEffect(() => {
+      axios
+        .get('https://opentdb.com/api_category.php')
+        .then(res => {
+          setCategories(res.data.trivia_categories)
+        })
+    }, [])
+  
+    useEffect(() => {
+     
+    }, [])
+  
+    function decodeString(str) {
+      const textArea = document.createElement('textarea')
+      textArea.innerHTML= str
+      return textArea.value
     }
-]
-export default Test;
+  
+    function handleSubmit(e) {
+      e.preventDefault()
+      axios
+      .get('https://opentdb.com/api.php', {
+        params: {
+          amount: amountEl.current.value,
+          category: categoryEl.current.value
+        }
+      })
+      .then(res => {
+        setFlashcards(res.data.results.map((questionItem, index) => {
+          const answer = decodeString(questionItem.correct_answer)
+          const options = [
+            ...questionItem.incorrect_answers.map(a => decodeString(a)),
+            answer
+          ]
+          return {
+            id: `${index}-${Date.now()}`,
+            question: decodeString(questionItem.question),
+            answer: answer,
+            options: options.sort(() => Math.random() - .5)
+          }
+        }))
+      })
+    }
+  
+    return (
+      <>  
+      <Navbar/>
+      <div className = "test-body">
+        <form className="header" onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="category">Category</label>
+            <select id="category" ref={categoryEl}>
+              {categories.map(category => {
+                return <option value={category.id} key={category.id}>{category.name}</option>
+              })}
+            </select>
+          </div>
+          <div className="form-group">
+            <label htmlFor="amount">Number of Questions</label>
+            <input type="number" id="amount" min="1" step="1" defaultValue={10} ref={amountEl} />
+          </div>
+          <div className="form-group">
+            <Button className="test-btn">Generate</Button>
+          </div>
+        </form>
+        <div className="container">
+          <FlashcardList flashcards={flashcards} />
+        </div>
+      </div>
+      <Fotter/>
+      </>
+    );
+  }
+  
+  export default Test;

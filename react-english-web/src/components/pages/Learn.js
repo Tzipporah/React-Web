@@ -5,14 +5,14 @@ import { Container } from "@material-ui/core";
 import Definitions from "../Definitions";
 import Footer from '../Footer';
 import Navbar from '../Navbar'
-import words from '../../words/levels.json';
+import words from '../../data/levels.json';
 import { Button } from '../Button';
 
 
 function Learn({ match }) { 
 
     const level = match.params.level;
-    // const [i, setI] = useState(-1); // arr's index
+    
     let arr = []
     // Introducing the Hebrew and English words into the arr from the words file by levels
     words[level].map((word, index = 0) => {
@@ -24,7 +24,7 @@ function Learn({ match }) {
     const [meanings, setMeanings] = useState([]);
     const [btn, setBtn] = useState("קבל מילה"); // The words above the button
     const [end, setEnd] = useState(false) // Flag - If the words are over
-   
+
     const dictionaryApi = async() =>{
         try {
             const data = await axios.get(
