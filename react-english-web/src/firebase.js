@@ -1,7 +1,7 @@
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
 import React from 'react';
 import './components/pages/SignUp.css';
-import MainPage from'./components/pages/MainPage'
+import  { Redirect } from 'react-router-dom'
 import './firebase-styling.global.css'; // Import globally.
 import { Button } from './components/Button';
 import firebase from './config/fbconfig'
@@ -26,19 +26,15 @@ class Firebase extends React.Component {
     componentDidMount = () => {
       firebase.auth().onAuthStateChanged(user => {
         this.setState({ isSignedIn: !!user })
-        /*console.log("user", user)*/
       })
     }
 
 
     render() {
       
-      //this.state.isSignedIn?true:false
       const returnComp = this.state.isSignedIn ? 
           // User is sigend in, display the main page content.
-          <>
-            <MainPage/>
-          </>
+          <Redirect to='/main-page'  />
           : 
           // User is signed out, dispaly login options.
           <>
@@ -62,7 +58,6 @@ class Firebase extends React.Component {
     }
   }
   
-
 
   export default Firebase
   
