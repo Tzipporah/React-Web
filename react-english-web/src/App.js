@@ -8,12 +8,14 @@ import MainPage from './components/pages/MainPage';
 import Test from './components/pages/Test';
 import Learn from './components/pages/Learn';
 import Word_completion from './components/pages/Word_completion'
+import ScrollToTop from './ScrollToTop'
 
 
 function App() {
   return (
     <>
       <Router>
+        <ScrollToTop>
         <Switch>
           <Route path='/' exact component={Home} />
           <Route path='/sign-up' component={SignUp} />
@@ -23,9 +25,12 @@ function App() {
           <Route path='/learn/:level' component={Learn} />
           <Route path='/word_completion/:level' component={Word_completion} />
         </Switch>
+        </ScrollToTop>
       </Router>
+      
     </>
   );
+  
 }
 
 export default App;
