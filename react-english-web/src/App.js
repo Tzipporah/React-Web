@@ -9,6 +9,7 @@ import Test from './components/pages/Test';
 import Learn from './components/pages/Learn';
 import Word_completion from './components/pages/Word_completion'
 import ScrollToTop from './ScrollToTop'
+import Game from './components/pages/Game'
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path='/Test/:level' component={Test} />
           <Route path='/learn/:level' component={Learn} />
           <Route path='/word_completion/:level' component={Word_completion} />
+          <Route path='/game/:level' component={Game} />
         </Switch>
         </ScrollToTop>
       </Router>
