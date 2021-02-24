@@ -52,6 +52,11 @@ function Navbar(props) {
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li className='nav-item'>
+              <Link to='/personal-info' className='nav-links' onClick={closeMobileMenu}>
+                איזור אישי
+              </Link>
+            </li>
+          <li className='nav-item'>
               <Link to='/Categories_cards/spoken' className='nav-links' onClick={closeMobileMenu}>
                 אנגלית מדוברת
               </Link>
