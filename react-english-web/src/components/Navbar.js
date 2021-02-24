@@ -51,6 +51,31 @@ function Navbar(props) {
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+          <li className='nav-item'>
+              <Link to='/Categories_cards/spoken' className='nav-links' onClick={closeMobileMenu}>
+                אנגלית מדוברת
+              </Link>
+            </li>
+          <li className='nav-item'>
+              <Link to='/Categories_cards/business' className='nav-links' onClick={closeMobileMenu}>
+                אנגלית עסקית
+              </Link>
+            </li>
+          <li className='nav-item'>
+            <Link to='/Categories_cards/advancers' className='nav-links' onClick={closeMobileMenu}>
+                מתקדמים
+              </Link>
+            </li>
+          <li className='nav-item'>
+              <Link to='/Categories_cards/students' className='nav-links' onClick={closeMobileMenu}>
+                תלמידים
+              </Link>
+            </li> 
+          <li className='nav-item'>
+              <Link to='/Categories_cards/beginners' className='nav-links' onClick={closeMobileMenu}>
+                מתחילים
+              </Link>
+            </li>
             <li className='nav-item'>
               <Link to='/main-page' className='nav-links' onClick={closeMobileMenu}>
                 בית
@@ -66,8 +91,11 @@ function Navbar(props) {
                 התנתקות
               </Link>
             </li>
-          </ul>
+            </ul>
+            <li>
           {button && <Button buttonStyle='btn--outline' onClick={props.signOut} linkTo='/sign-up'>התנתקות</Button>}
+          </li>
+          
         </div>
       </nav>
     </>

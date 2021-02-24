@@ -17,16 +17,16 @@ function Learning_cards({ match }) {
           <div className='cards__wrapper'>
             <ul className='cards__items'>
               <CardItem
-                src='../images/learn_word.jpg'
+                src='../images/learn_word2.jpg'
                 text='לימוד מילים'
                 label='לימוד'
                 path={`/learn/${level}`}
               />
               <CardItem
-                src='../images/academ.jpg'
+                src='../images/game.jpg'
                 text='לימוד ע"י משחק'
                 label='משחק'
-                path={`/Services/${level}`}
+                path={`/game/${level}`}
               />
               <CardItem
                 src='../images/Completion_sentences.jpg'
@@ -35,7 +35,7 @@ function Learning_cards({ match }) {
                 path={`/word_completion/${level}`}
               />
               <CardItem
-                src='../images/academ.jpg'
+                src='../images/exam.jpg'
                 text='למדת - נבחנת -הצלחת'
                 label='מבחן'
                 path={`/Test/${level}`}

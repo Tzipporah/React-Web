@@ -5,6 +5,8 @@ import words from '../../data/levels.json'
 import stories from '../../data/stories.json'
 import Sentences from '../sentences';
 import { Button } from '../Button'
+import Footer from '../Footer';
+import Navbar from '../Navbar'
 
 function Word_completion({ match }) { 
     const level = match.params.level;
@@ -44,16 +46,25 @@ function Word_completion({ match }) {
             setBtn("סיום")
     }
     return(
-       <Container class="container">
+        <>
+            <Navbar/>
+            <div className='word_completion'>
+            <div className='container'>
+            <div className='page'>
             <Sentences 
                 className="sentenc"
                 page = {story_arr[page]}
                 level = {level}
             />
-           <Button class = "btn-senteces" onClick={handleClick}>
+           <button class = "btn-senteces" onClick={handleClick}>
                     {btn}
-            </Button>
-       </Container>
+            </button>
+            </div>
+            </div>
+            </div>
+            <Footer />
+        </>
+       
     );
 }
 export default Word_completion;
