@@ -26,7 +26,7 @@ function Learning_cards({ match }) {
                 src='../images/game.jpg'
                 text='לימוד ע"י משחק'
                 label='משחק'
-                path={`/Services/${level}`}
+                path={`/game/${level}`}
               />
               <CardItem
                 src='../images/Completion_sentences.jpg'

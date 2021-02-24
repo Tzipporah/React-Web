@@ -15,5 +15,28 @@
         {
             "story":"Finally, the fox decided it was time to give up and go home. While he walked away, he muttered, “I’m sure the grapes were sour anyway.”"
         }
+    ],
+    "students":[
+        {
+            "story":"White blood cell, also called leukocyte or white corpuscle, a cellular component of the blood that lacks hemoglobin, has a nucleus, is capable of motility, and defends the body against infection and disease."
+        },
+        {
+            "story":"The defense is made by ingesting foreign materials and cellular debris, by destroying infectious agents and cancer cells, or by producing antibodies."
+        },
+        {
+            "story":"A healthy adult human has between 4,500 and 11,000 white blood cells per cubic millimetre of blood. Fluctuations in white cell number occur during the day;"
+        },
+        {
+            "story":"lower values are obtained during rest and higher values during exercise."
+        },
+        {
+            "story":"An abnormal increase in white cell number is known as leukocytosis, whereas an abnormal decrease in number is known as leukopenia."
+        },
+        {
+            "story":"White cell count may increase in response to intense physical exertion, convulsions, acute emotional reactions, pain, pregnancy, labour, and certain disease states, such as infections and intoxications."
+        },
+        {
+            "story":"The count may decrease in response to certain types of infections or drugs or in association with certain conditions, such as chronic anemia, malnutrition, or anaphylaxis."
+        }
     ]
 }

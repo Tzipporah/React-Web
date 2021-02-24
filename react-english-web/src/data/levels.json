@@ -25,6 +25,10 @@
             "he":"ענב"
         },
         {
+            "en":"He",
+            "he":"הוא"
+        },
+        {
             "en":"High",
             "he":"גבוה"
         },
@@ -79,9 +83,95 @@
     ],
     "students":[
         {
-            "en":"Teacher",
-            "he":"מורה"
-        } 
-    ]
-
+            "en":"Antibodies",
+            "he":"נוגדנים"
+        },
+        {
+            "en":"Blood",
+            "he":"דם"
+        },
+        {
+            "en":"Capable",
+            "he":"בעל יכולת"
+        },
+        {
+            "en":"Cell",
+            "he":"תא"
+        },
+        {
+            "en":"Component",
+            "he":"רכיב"
+        },
+        {
+            "en":"Debris",
+            "he":"פסולת"
+        },
+        {
+            "en":"Decrease",
+            "he":"ירידה"
+        },
+        {
+            "en":"Defense",
+            "he":"הגנה"
+        },
+        {
+            "en":"Disease",
+            "he":"מחלה"
+        },
+        {
+            "en":"Drug",
+            "he":"תרופה"
+        },
+        {
+            "en":"Exertion",
+            "he":"מאמץ"
+        },
+        {
+            "en":"Fluctuation",
+            "he":"תנודה"
+        },
+        {
+            "en":"Human",
+            "he":"בן אנוש"
+        },
+        {
+            "en":"Increase",
+            "he":"עליה"
+        },
+        {
+            "en":"Infection",
+            "he":"זיהום"
+        },
+        {
+            "en":"Intoxication",
+            "he":"הרעלה"
+        },
+        {
+            "en":"Lack",
+            "he":"חוסר"
+        },
+        {
+            "en":"Material",
+            "he":"חומר"
+        },
+        {
+            "en":"Nucleus",
+            "he":"גרעין"
+        },
+        {
+            "en":"Pain",
+            "he":"כאב"
+        },
+        {
+            "en":"Rest",
+            "he":"מנוחה"
+        },
+        {
+            "en":"Value",
+            "he":"ערך"
+        }
+    ],
+    "advancers":[],
+    "business":[],
+    "spoken":[]
 }

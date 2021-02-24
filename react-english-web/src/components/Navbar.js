@@ -7,7 +7,7 @@ import { signOut } from '../store/actions/authActions'
 
 function Navbar(props) {
 
-  //console.log(props)
+  console.log(props)
   const { user } = props
   const userName = user.displayName
   const profilePicture = user.photoURL
@@ -19,9 +19,12 @@ function Navbar(props) {
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => {
     setClick(false);
-    props.signOut()
   }
 
+  const closeMobileMenuAndSignOut = () => {
+    closeMobileMenu();
+    props.signOut();
+  }
   const showButton = () => {
     if (window.innerWidth <= 960) {
       setButton(false);
@@ -48,8 +51,33 @@ function Navbar(props) {
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+          <li className='nav-item'>
+              <Link to='/Categories_cards/spoken' className='nav-links' onClick={closeMobileMenu}>
+                אנגלית מדוברת
+              </Link>
+            </li>
+          <li className='nav-item'>
+              <Link to='/Categories_cards/business' className='nav-links' onClick={closeMobileMenu}>
+                אנגלית עסקית
+              </Link>
+            </li>
+          <li className='nav-item'>
+            <Link to='/Categories_cards/advancers' className='nav-links' onClick={closeMobileMenu}>
+                מתקדמים
+              </Link>
+            </li>
+          <li className='nav-item'>
+              <Link to='/Categories_cards/students' className='nav-links' onClick={closeMobileMenu}>
+                תלמידים
+              </Link>
+            </li> 
+          <li className='nav-item'>
+              <Link to='/Categories_cards/beginners' className='nav-links' onClick={closeMobileMenu}>
+                מתחילים
+              </Link>
+            </li>
             <li className='nav-item'>
-              <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+              <Link to='/main-page' className='nav-links' onClick={closeMobileMenu}>
                 בית
               </Link>
             </li>
@@ -58,13 +86,16 @@ function Navbar(props) {
               <Link
                 to='/sign-up'
                 className='nav-links-mobile'
-                onClick={closeMobileMenu}
+                onClick={closeMobileMenuAndSignOut}
               >
                 התנתקות
               </Link>
             </li>
-          </ul>
+            </ul>
+            <li>
           {button && <Button buttonStyle='btn--outline' onClick={props.signOut} linkTo='/sign-up'>התנתקות</Button>}
+          </li>
+          
         </div>
       </nav>
     </>

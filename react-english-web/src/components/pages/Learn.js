@@ -7,6 +7,7 @@ import Footer from '../Footer';
 import Navbar from '../Navbar'
 import words from '../../data/levels.json';
 import { Button } from '../Button';
+import CtegorySection from '../CategorySection'
 
 
 function Learn({ match }) { 
@@ -22,7 +23,7 @@ function Learn({ match }) {
     const [word, setWord] = useState(""); // The word in english
     const [wordHe, setWordHe] = useState(""); // The word in hebrew
     const [meanings, setMeanings] = useState([]);
-    const [btn, setBtn] = useState("קבל מילה"); // The words above the button
+    const [btn, setBtn] = useState("אני רוצה ללמוד"); // The words above the button
     const [end, setEnd] = useState(false) // Flag - If the words are over
 
     const dictionaryApi = async() =>{
@@ -44,13 +45,13 @@ function Learn({ match }) {
     function handleClick() {
         setI(i+1)
         if (i == arr.length){
-            setBtn("חזרה שוב על המילים")
+            setBtn("<< חזרה ללימוד")
             setEnd(true)
         }
         else{
             setWord(arr[i][0])
             setWordHe(arr[i][1])
-            setBtn("המילה הבאה")
+            setBtn("<< למילה הבאה")
             if (i == arr.length - 1)
                 setBtn("סיום")
         }
@@ -61,42 +62,58 @@ function Learn({ match }) {
         window.location.reload(false);
     }
 
+    
     return(
-        <div className="learn">
-            <Navbar/>
-            <h1>
-                .לימוד אנגלית בכיף  
-            </h1>
-            <img
-                className='image'
-                alt='Travel Image'
-                src='https://h-flowers.co.il/wp-content/uploads/2020/07/907e5_1SPLIT202007SPLIT05100427.jpg'
-            />
+        <>
+        <Navbar/>
+        <CtegorySection
+        videoLink='/videos/Pexels Learn.mp4'
+        title='.לימוד אנגלית בכיף'
+        >
+        
             <Container maxWidth="md" className="container-learn">
                 {!end ? 
                 (
                     <>
-                        <Button onClick={handleClick}><h1 className="h1_learn">{btn}</h1></Button>   
+                        <Button onClick={handleClick}
+                                className='btns'
+                                buttonStyle='btn--outline'
+                                buttonSize='btn--large' 
+                        ><h3>{btn}</h3></Button>   
                         {word===""?(""):
                         // Calls to Definitions component
+                        <div className="learn">
                         <Definitions 
                             className = "definitions"
                             word={word} 
                             meanings={meanings}
                             wordHe={wordHe} 
-                        />}
+                        />
+                        </div>}
                     </>
                 )
                 :
                 (
                     <>
-                        <Button onClick={refreshPage}><h1 className="h1_learn">{btn}</h1></Button>
-                        <Button linkTo={`/Categories_cards/${level}`}><h1 className="h1_learn">חזרה לעמוד הקודם</h1></Button>
+                        <Button onClick={refreshPage}
+                        className='btns'
+                        buttonStyle='btn--primary'
+                        buttonSize='btn--large'>
+                            {btn}
+                        </Button>
+                        <Button linkTo={`/Categories_cards/${level}`}
+                        className='btns'
+                        buttonStyle='btn--outline'
+                        buttonSize='btn--large'>
+                            עמוד קודם {'>>'}
+                        </Button>
                     </>
                 )}
             </Container>
-            <Footer />
-        </div>
+            
+        </CtegorySection>
+        <Footer />
+        </>
     );
 
 }
