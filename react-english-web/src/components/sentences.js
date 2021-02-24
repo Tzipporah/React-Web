@@ -28,22 +28,40 @@ const sentences = ({page,level}) =>
           ...provided,
           marginTop: "5%",
           width: 100,
-          height: 40,
-          right: -100,
+          height: 40,  
         })
       }
       
-      let story = ""
-      function put_image_instead_word(word){
-        
+      
+      function splitMulti(str, tokens){
+        var tempChar = tokens[0]; // We can use the first token as a temporary join character
+        for(var i = 1; i < tokens.length; i++){
+            str = str.split(tokens[i]).join(tempChar);
+        }
+        str = str.split(tempChar);
+        return str;
       }
+      function to_lower_case(arr){
+        let i
+          for (i=0; i< arr.length; i++){
+            arr[i] = [arr[i][0].toLowerCase()+" "]
+          }
+          return arr
+      }
+      
+      const text = splitMulti(page.toLowerCase(),to_lower_case(array1) )
+      const last_index = text[text.length-1]
+      const text_slice = text.slice(0,text.length-1)
+      const listItems = text_slice.map((line) =>
+        <div class="sentenc">
+           <p>{line}</p>
+           <Select class="col-md-8 col-offset-4" options={ technologyList } styles = { customStyles } />
+        </div> 
+        );
     return( 
         <div class="main">
-            <div class="sentenc">
-            <div class="select">
-            <Select class="col-md-8 col-offset-4" options={ technologyList } styles = { customStyles } />
-            </div>
-            <p>{page}</p>
+            <div class="story">
+            <div>{listItems} <p>{last_index}</p> </div>
             </div>
         </div>     
     );

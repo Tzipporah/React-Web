@@ -4,86 +4,30 @@ import './Test.css'
 import axios from 'axios'
 import { Button } from '../Button'
 import Navbar from '../Navbar'
-import Fotter from '../Footer'
+import Footer from '../Footer'
+import Quiz from '../Tests/Quiz';
+import { createQuestions } from '../Tests/CreateQuestions'
+import words from '../../data/levels.json';
+
 
 function Test({ match }) {
     const level = match.params.level
-    const [flashcards, setFlashcards] = useState([])
-    const [categories, setCategories] = useState([])
-  
-    const categoryEl = useRef()
-    const amountEl = useRef()
-  
-    useEffect(() => {
-      axios
-        .get('https://opentdb.com/api_category.php')
-        .then(res => {
-          setCategories(res.data.trivia_categories)
-        })
-    }, [])
-  
-    useEffect(() => {
-     
-    }, [])
-  
-    function decodeString(str) {
-      const textArea = document.createElement('textarea')
-      textArea.innerHTML= str
-      return textArea.value
-    }
-  
-    function handleSubmit(e) {
-      e.preventDefault()
-      axios
-      .get('https://opentdb.com/api.php', {
-        params: {
-          amount: amountEl.current.value,
-          category: categoryEl.current.value
-        }
-      })
-      .then(res => {
-        setFlashcards(res.data.results.map((questionItem, index) => {
-          const answer = decodeString(questionItem.correct_answer)
-          const options = [
-            ...questionItem.incorrect_answers.map(a => decodeString(a)),
-            answer
-          ]
-          return {
-            id: `${index}-${Date.now()}`,
-            question: decodeString(questionItem.question),
-            answer: answer,
-            options: options.sort(() => Math.random() - .5)
-          }
-        }))
-      })
-    }
-  
+    
+    let arr = []
+    // Introducing the Hebrew and English words into the arr from the words file by levels
+    words[level].map((word, index = 0) => {
+        arr[index++] = [word.en, word.he]
+    })
+
+    createQuestions(arr)
+
     return (
       <>  
       <Navbar/>
       <div className = "test-body">
-        <form className="header" onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="category">Category</label>
-            <select id="category" ref={categoryEl}>
-              {categories.map(category => {
-                return <option value={category.id} key={category.id}>{category.name}</option>
-              })}
-            </select>
-          </div>
-          <div className="form-group">
-            <label htmlFor="amount">Number of Questions</label>
-            <input type="number" id="amount" min="1" step="1" defaultValue={10} ref={amountEl} />
-          </div>
-          <div className="form-group">
-            <Button className="test-btn">Generate</Button>
-          </div>
-        </form>
-        <div className="container">
-          <FlashcardList flashcards={flashcards} />
-        </div>
+        <Quiz/>
       </div>
-      <Fotter/>
+      <Footer/>
       </>
     );
   }
