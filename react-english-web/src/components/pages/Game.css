@@ -1,6 +1,14 @@
 .p-game{
   font-size: 30px;
-}
-.game{
+  color: #fff;
   text-align: center;
+}
+
+.game-div{
+  position : absolute;
+  background-color: rgba(32, 29, 29, 0.6);
+  text-align: center;
+  padding: 20px;
+  font-size: 30px;
+  position : relative;
 }

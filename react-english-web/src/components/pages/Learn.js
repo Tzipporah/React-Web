@@ -6,7 +6,7 @@ import Footer from '../Footer';
 import Navbar from '../Navbar'
 import words from '../../data/levels.json';
 import { Button } from '../Button';
-import CtegorySection from '../CategorySection'
+import CategorySection from '../CategorySection'
 
 function Learn({ match }) { 
 
@@ -48,7 +48,7 @@ function Learn({ match }) {
     return(
         <>
         <Navbar/>
-        <CtegorySection
+        <CategorySection
             videoLink='/videos/Pexels Learn.mp4'
             title='.לימוד אנגלית בכיף'>
             <Container maxWidth="md" className="container-learn">
@@ -88,7 +88,7 @@ function Learn({ match }) {
                 </>
                 )}
             </Container>    
-        </CtegorySection>
+        </CategorySection>
         <Footer />
         </>
     );
