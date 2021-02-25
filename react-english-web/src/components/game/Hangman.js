@@ -45,7 +45,7 @@ class Hangman extends Component {
         onClick={this.handleGuess}
         disabled={this.state.guessed.has(letter)}
       >
-        <b>{letter}</b>
+        {letter}
       </button>
     ));
   }
