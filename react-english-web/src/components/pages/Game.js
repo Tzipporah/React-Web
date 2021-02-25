@@ -3,7 +3,8 @@ import Footer from '../Footer';
 import Navbar from '../Navbar';
 import words from '../../data/levels.json';
 import Hangman from '../game/Hangman';
-
+import { Container } from "@material-ui/core";
+import './Game.css'
 
 function Game({ match }) { 
 
@@ -27,14 +28,16 @@ function Game({ match }) {
     }
 
     return (
+
         <div>
             <Navbar />
-            <div>
-                <Hangman arr = {shuffleArray(arr)} end = {false} level = {level}/>
-            </div>
+            <Container maxWidth="md">
+                <Hangman arr = {shuffleArray(arr)} />
+            </Container>
             <Footer />
         </div>
-    )
+    )              
 }
+
 
 export default Game

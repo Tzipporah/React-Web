@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import VoiceWord from './VoiceWord'
 
 function Voice(props) {
 
     const word = props.word;
-    console.log(`http://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
     
     const [meanings, setMeanings] = useState([]);   
 
@@ -15,7 +14,6 @@ function Voice(props) {
                 `http://api.dictionaryapi.dev/api/v2/entries/en/${word}`
             );
             setMeanings(data.data);
-            console.log(setMeanings)
         } catch (error) {
             console.log(error);
         }
@@ -25,13 +23,12 @@ function Voice(props) {
         dictionaryApi();
     },[word])
 
-    return (
-        <>
-        </>
-        // <audio
-        //     src={(meanings[0].phonetics[0] && meanings[0].phonetics[0].audio) 
-        //     || (meanings[1].phonetics[0] && meanings[1].phonetics[0].audio)}
-        //     controls />
+    return (        
+        <VoiceWord 
+            word={word} 
+            meanings={meanings}
+        />
+        
     )
 }
 

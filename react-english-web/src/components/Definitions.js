@@ -1,17 +1,13 @@
 import React from 'react';
 import './pages/Learn.css';
+import Voice from './Voice'
 
-const Definitions = ({word, meanings, wordHe}) =>
+const Definitions = ({word, wordHe}) =>
 {
     return(
         <div className = "definitions">
             <div className = "subTitle">
-                {meanings[0] && word && 
-                    <audio
-                        src={(meanings[0].phonetics[0] && meanings[0].phonetics[0].audio) 
-                        || (meanings[1].phonetics[0] && meanings[1].phonetics[0].audio)}
-                        controls />
-                }   
+                <Voice  word ={word}/>  
                 <hr/>
                 <span className="span">
                     <b className="b">:המילה באנגלית</b>
