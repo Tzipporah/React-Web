@@ -1,24 +1,21 @@
 import React, { Component } from 'react';
-import step0 from "../../images/game-images/0.jpg";
-import step1 from "../../images/game-images/1.jpg";
-import step2 from "../../images/game-images/2.jpg";
-import step3 from "../../images/game-images/3.jpg";
-import step4 from "../../images/game-images/4.jpg";
-import step5 from "../../images/game-images/5.jpg";
-import step6 from "../../images/game-images/6.jpg";
+import Image from './Image'
 import { Button } from "../Button"
-// import Voice from './Voice'
+import Voice from '../Voice'
+import Scoresheet from './Scoresheet'
 
 
 class Hangman extends Component {
   static defaultProps = {
-    maxWrong: 6,
-    images: [step0, step1, step2, step3, step4, step5, step6],
+    maxWrong: 6
   }
 
   constructor(props) {
     super(props);
     this.i = 0
+    this.score = 0
+    this.end = false
+    this.btn = "המילה הבאה"
     this.state = {
       mistake: 0,
       guessed: new Set([]),
@@ -42,8 +39,8 @@ class Hangman extends Component {
   generateButtons() {
     return "abcdefghijklmnopqrstuvwxyz".split("").map(letter => (
       <button
-        // className='btn btn-lg btn-primary m-2'
-        // key={letter}
+        className='btn btn-lg btn-primary m-2'
+        key={letter}
         value={letter}
         onClick={this.handleGuess}
         disabled={this.state.guessed.has(letter)}
@@ -54,15 +51,15 @@ class Hangman extends Component {
   }
 
   resetButton = () => {
-    if(this.i < this.props.arr.length-1)
-        this.i = this.i + 1
-    else
-        this.props.end = true
-    this.setState({
-      mistake: 0,
-      guessed: new Set([]),
-      answer: this.props.arr[this.i][0]
-    });
+      this.i = this.i + 1
+      this.setState({
+        mistake: 0,
+        guessed: new Set([])
+      });
+      if(this.i === this.props.arr.length-1)
+        this.btn = "סיום"
+      if(this.i < this.props.arr.length)
+        this.setState({answer: this.props.arr[this.i][0]});     
   }
 
   render() {
@@ -71,37 +68,46 @@ class Hangman extends Component {
     let gameStat = this.generateButtons();
 
     if (isWinner) {
-      gameStat = "You Won!!!"
+      gameStat = "!!!הצלחת"
+      this.score ++
     }
 
-    if (gameOver) {
-      gameStat = "You Lost!!!"
-    }
-    return (
-      <div className="Hangman container">
-        <h1 className='text-center'>Hangman</h1>
-        <div className="float-right">Wrong Guesses: {this.state.mistake} of {this.props.maxWrong}</div>
-        <div className="text-center">
-          <img src={this.props.images[this.state.mistake]} alt=""/>
+    if (gameOver) 
+      gameStat = "!!!נכשלת"
+
+    if(this.i != this.props.arr.length) { 
+      return (
+        <div className="game-div">
+            <p className="p-game">
+              {"ניחושים שגויים:\n"}
+              {`${this.state.mistake} \n מתוך ${this.props.maxWrong}`}  
+            </p>
+              <Image step = {this.state.mistake} />
+              <Voice  word ={this.props.arr[this.i][0]}/>
+              <p className="p-game">
+                :מה התרגום של המילה {this.props.arr[this.i][1]}
+              </p>
+              <br/>
+              <p className="p-game">
+                {!gameOver ? this.guessedWord() : this.state.answer}
+              </p>
+              <br />
+              <p className="p-game">{gameStat}</p>
+              {(isWinner || gameOver) 
+                ?
+                  <Button className='btn btn-info' onClick={this.resetButton}>{this.btn}</Button>
+                :
+                  ""
+              }
         </div>
-        <div className="text-center">
-          {/* <Voice  word ={this.props.arr[this.i][0]}/> */}
-          <p>:מה התרגום של המילה {this.props.arr[this.i][1]}</p>
-          <p>
-            {!gameOver ? this.guessedWord() : this.state.answer}
-          </p>
-          <p>{gameStat}</p>
-          {(isWinner || gameOver) 
-          ?( this.props.end
-          ?
-            <Button className='btn btn-info' linkTo={`/game/${this.props.level}`}>שחק שוב</Button>
-          :
-            <Button className='btn btn-info' onClick={this.resetButton}>מילה הבאה</Button>)
-            :""
+        )}
+        else{
+          return(
+            <div className="game-div">
+              <Scoresheet score={this.score} totalQuestions={this.props.arr.length} level={this.props.level}/>
+            </div>
+          )
         }
-        </div>
-      </div>
-    )
   }
 }
 

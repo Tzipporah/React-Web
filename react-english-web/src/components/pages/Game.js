@@ -3,7 +3,9 @@ import Footer from '../Footer';
 import Navbar from '../Navbar';
 import words from '../../data/levels.json';
 import Hangman from '../game/Hangman';
-
+import { Container } from "@material-ui/core";
+import CategorySection from '../CategorySection'
+import './Game.css'
 
 function Game({ match }) { 
 
@@ -27,14 +29,20 @@ function Game({ match }) {
     }
 
     return (
+
         <div>
             <Navbar />
-            <div>
-                <Hangman arr = {shuffleArray(arr)} end = {false} level = {level}/>
-            </div>
+            <CategorySection
+                videoLink='/videos/Pexels Learn.mp4'
+                title='משחק איש תלוי'>
+                {/* <Container maxWidth="md"> */}
+                    <Hangman arr = {shuffleArray(arr)} level = {level}/>
+                {/* </Container> */}
+            </CategorySection>
             <Footer />
         </div>
-    )
+    )              
 }
+
 
 export default Game
