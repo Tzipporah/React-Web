@@ -3,6 +3,8 @@ import Image from './Image'
 import { Button } from "../Button"
 import Voice from '../Voice'
 import Scoresheet from './Scoresheet'
+import { connect } from 'react-redux'
+import { updateProgress } from '../../store/actions/userProgressAction'
 
 
 class Hangman extends Component {
@@ -15,7 +17,7 @@ class Hangman extends Component {
     this.i = 0
     this.score = 0
     this.end = false
-    this.btn = "המילה הבאה"
+    this.btn = "<< למילה הבאה"
     this.state = {
       mistake: 0,
       guessed: new Set([]),
@@ -102,6 +104,8 @@ class Hangman extends Component {
         </div>
         )}
         else{
+          if ((this.score / this.props.arr.length) * 100 >= 70)
+            this.props.updateProgress('game', this.props.level)
           return(
             <div className="game-div">
               <Scoresheet score={this.score} totalQuestions={this.props.arr.length} level={this.props.level}/>
@@ -111,4 +115,10 @@ class Hangman extends Component {
   }
 }
 
-export default Hangman;
+const mapDispatchToProps = dispatch => {
+  return {
+    updateProgress: (category, level) => dispatch(updateProgress(category, level))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(Hangman);

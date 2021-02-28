@@ -23,6 +23,12 @@ const userProgressReducer = (state = initState, action) => {
           ...state,
           progressError: null
         } 
+        case 'UPDATE_PROGRESS':
+            console.log('update progress - success')
+            return {
+              ...state,
+              progressError: null
+            } 
       default:
         return state
     }

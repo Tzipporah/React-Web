@@ -4,19 +4,29 @@ import { connect } from 'react-redux'
 
 class PersonalInfo extends Component{
     
-    render(){
-        const { profile } = this.props
-        // console.log(profile)
+    levelProgress = (level) => {
+        
+        let category, totalLevelProgress = 0
+        for (category in this.props.profile[level]){
+            totalLevelProgress += parseInt(this.props.profile[level][category])
+            
+        }
+        return String(totalLevelProgress)
+    }
+    
+    render() {
+        
+        const levels = ['beginners', 'students', 'advancers', 'business', 'spoken']
         return (
             <>
-               <h1>hi</h1>
-               <ProgressBar done={profile.beginners}/>
-               <ProgressBar done={profile.students}/>
-               <ProgressBar done={profile.advancers}/>
-               <ProgressBar done={profile.business}/>
-               <ProgressBar done={profile.spoken}/>
-               
-           </>
+            {
+                levels.map((level) => {
+                    return (
+                        <ProgressBar done={this.levelProgress(level)}/> 
+                    )
+                })
+            }
+            </>
         )
     }
  
