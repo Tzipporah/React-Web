@@ -33,11 +33,8 @@ function Game({ match }) {
         <div>
             <Navbar />
             <CategorySection
-                videoLink='/videos/Pexels Learn.mp4'
-                title='משחק איש תלוי'>
-                {/* <Container maxWidth="md"> */}
-                    <Hangman arr = {shuffleArray(arr)} level = {level}/>
-                {/* </Container> */}
+                videoLink='/videos/Pexels Videos game.mp4'>
+                <Hangman arr = {shuffleArray(arr)} level = {level}/>
             </CategorySection>
             <Footer />
         </div>
