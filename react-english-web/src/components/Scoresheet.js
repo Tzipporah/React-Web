@@ -3,7 +3,7 @@ import { Button } from './Button'
 
 function Scoresheet(props) {
 
-    console.log(props)
+    // console.log(props)
 
     const [restart, setRestart] = useState(false) // Hook to check if Restart button was clicked
 
@@ -19,11 +19,13 @@ function Scoresheet(props) {
     
     return (
         <div className="container small">
-            <h1>המשחק נגמר</h1><br />
-            <h3>{"הניקוד שלך הוא:\n"}
+            <p>המבחן נגמר</p><br />
+            <h3>{"הניקוד שלך :\n"}
               {`${props.score} \n מתוך ${props.totalQuestions}`}</h3>
-            <h4>זה: {props.score / props.totalQuestions * 100}% </h4>               
-            <Button onClick={handleClick}>שחק שוב</Button>        
+            <h4>ציון : {props.score / props.totalQuestions * 100}% </h4>               
+            <Button className='btns'
+                    buttonStyle='btn--outline'
+                    buttonSize='btn--large'onClick={handleClick}>{"<< מבחן חוזר"} </Button>        
         </div>
     )
 }

@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import Scoresheet from '../Scoresheet'
 import db from './db'
+import CategorySection from '../CategorySection'
+import './Quiz.css'
+import {Button} from '../Button'
 
 
 export class Quiz extends Component {
@@ -18,7 +21,7 @@ export class Quiz extends Component {
             option3: false,
             option4: false
         }
-        this.btn = "לשאלה הבאה"
+        this.btn = "<< לשאלה הבאה"
     }
     
     // Reads the question from IndexedDB and load them into the questionBank
@@ -96,26 +99,33 @@ export class Quiz extends Component {
         //  Quiz
         else if((currentIndex <= questionBank.length -1)) {
             return (
-                <div className="container">                    
-                    <h4>שאלה {currentIndex + 1} מתוך {questionBank.length} </h4>
-                    <h2> מה התרגום של המילה {currentQuestion.question}</h2>
+                <CategorySection 
+                videoLink='/videos/Pexels Videos 2450250.mp4'
+                title='בהצלחה'>
+                <div className="quiz-container">                    
+                    <p>שאלה {currentIndex + 1} \ {questionBank.length} </p>
+                    <p> מה התרגום של המילה {currentQuestion.question}</p>
                     <fieldset>
                         <div className="options"><input id="o1" onChange={this.setUserAnswer} type="radio" name="group1" value={currentQuestion.option1} checked={this.state.option1}/> {currentQuestion.option1}</div>
                         <div className="options"><input id="o2" onChange={this.setUserAnswer} type="radio" name="group1" value={currentQuestion.option2} checked={this.state.option2}/> {currentQuestion.option2}</div>
                         <div className="options"><input id="o3" onChange={this.setUserAnswer} type="radio" name="group1" value={currentQuestion.option3} checked={this.state.option3}/> {currentQuestion.option3}</div>
                         <div className="options"><input id="o4" onChange={this.setUserAnswer} type="radio" name="group1" value={currentQuestion.option4} checked={this.state.option4}/> {currentQuestion.option4}</div>
                     </fieldset> 
-                    <button className="button" onClick={this.nextQuestionHander} disabled = {this.state.disabled}>{this.btn}</button>                          
+                    <button className={this.state.disabled? '': 'next-btn'} onClick={this.nextQuestionHander} disabled = {this.state.disabled}>{this.btn}</button>                          
                 </div >
+                </CategorySection>
             )
         }
 
         else { // Quiz have ended so, we load the Scoresheet component
             return (
-                <div >
+                <CategorySection 
+                videoLink='/videos/Pexels Videos 2450250.mp4'>
+                <div  className="quiz-container">
                     <Scoresheet score={score} totalQuestions={questionBank.length} />
                     <br />               
                 </div>
+                </CategorySection>
             )
         }
     }
