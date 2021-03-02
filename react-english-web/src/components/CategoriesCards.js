@@ -7,12 +7,21 @@ import Footer from './Footer'
 function CategoriesCards({ match }) {
 
   const level = match.params.level;
+  const mapLeveltoHebrew = {
+    'spoken': 'אנגלית מדוברת - להבין את השפה ברחוב ',
+    'business': ' אנגלית עיסקית - הצלחה בעסקים. מקצועיות',
+    'advancers': 'מתקדמים - אנגלית למי שרוצה להשתפר',
+    'students': 'תלמידים - חיים קלים באקדמיה',
+    'beginners': 'מתחילים - להתחיל את האנגלית שלך פה'
+
+
+  }
  
   return (
     <>
       <Navbar />
       <div className='cards'>
-        <h1>.אנגלית ברמה המתאימה לך</h1>
+        <h1>{mapLeveltoHebrew[level]}</h1>
         <div className='cards__container'>
           <div className='cards__wrapper'>
             <ul className='cards__items'>
