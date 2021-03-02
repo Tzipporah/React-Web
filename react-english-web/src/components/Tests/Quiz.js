@@ -3,7 +3,8 @@ import Scoresheet from '../Scoresheet'
 import db from './db'
 import CategorySection from '../CategorySection'
 import './Quiz.css'
-import {Button} from '../Button'
+import { connect } from 'react-redux'
+import { updateProgress } from '../../store/actions/userProgressAction'
 
 
 export class Quiz extends Component {
@@ -88,7 +89,7 @@ export class Quiz extends Component {
         this.setState({disabled:false})
     }
 
-    render() {  
+    render() {
         const {currentIndex, questionBank, score} = this.state
         var currentQuestion = questionBank[currentIndex]    
         // If the loadQuestions has not finished running
@@ -118,9 +119,17 @@ export class Quiz extends Component {
         }
 
         else { // Quiz have ended so, we load the Scoresheet component
+            
+            let title = '): נכשלת במבחן'
+            // User passed the test
+            if (((score) / (questionBank.length)) * 100 >= 70){
+                this.props.updateProgress('Test', this.props.level)
+                title = '(: הצלחת במבחן'
+            }
             return (
                 <CategorySection 
-                videoLink='/videos/Pexels Videos 2450250.mp4'>
+                videoLink='/videos/Pexels Videos 2450250.mp4'
+                title={title}>
                 <div  className="quiz-container">
                     <Scoresheet score={score} totalQuestions={questionBank.length} />
                     <br />               
@@ -131,4 +140,10 @@ export class Quiz extends Component {
     }
 }
 
-export default Quiz
+const mapDispatchToProps = dispatch => {
+    return {
+      updateProgress: (category, level) => dispatch(updateProgress(category, level))
+    }
+}
+  
+export default connect(null, mapDispatchToProps)(Quiz)
