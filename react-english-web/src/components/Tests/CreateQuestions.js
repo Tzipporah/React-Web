@@ -1,5 +1,6 @@
 import db from './db'
 
+
 var state = 
 {
     question: '',
@@ -11,25 +12,28 @@ var state =
 }
 
 //the function gets an ordered array
-function createQuestions (arr)
+function createQuestions (arr, level)
 {
-    //all words are mixed
+    
+    // All words are mixed
     let words = mixArray(arr)
-    //All the data of a single question: question + 4 options + correct answer
+
+    // All the data of a single question: question + 4 options + correct answer
     let questionArr = new Array(6)
 
-    for (let index = 0; index < words.length; index++)
-    {
+    for (let index = 0; index < words.length; index++){
+        
         questionArr[0] = words[index][1]
 
         questionArr[5] = words[index][0]
-        getOptions( words[index][0], words ).map( (option, i) => {
+        getOptions( words[index][0], words ).forEach( (option, i) => {
             questionArr[++i] = option
         })
-
+        
         createQuestion(questionArr)
+        
+        insertData(index, level)
 
-        insertData(index)
     }
 }
 
@@ -54,7 +58,7 @@ function getOptions(correctWord, words) {
         const j = Math.floor(Math.random() * (words.length));
 
         //Not exists in the array
-        if( arr.indexOf( words[j][0]) == -1 )
+        if( arr.indexOf( words[j][0]) === -1 )
         {
             arr[index] = words[j][0]
             index ++;
@@ -79,14 +83,14 @@ function createQuestion(arr) {
 
     //the correct answer 
     state.answer = arr[5]
-
+    
 }
 
 //Insert data into IndexedDB
-function insertData(index) {
+function insertData(index, level) {
  
     //Actually Insert the data into the database
-    db.questions.put({
+    db[level].put({
         id: index,
         question: state.question, 
         option1: state.option1,

@@ -16,7 +16,7 @@ function Learn(props) {
     
     let arr = []
     // Introducing the Hebrew and English words into the arr from the words file by levels
-    words[level].map((word, index = 0) => {
+    words[level].forEach((word, index = 0) => {
         arr[index++] = [word.en, word.he]
     })
 
@@ -29,7 +29,7 @@ function Learn(props) {
     // Set new word of arr to word and wordHe
     function handleClick() {
         setI(i+1)
-        if (i == arr.length){
+        if (i === arr.length){
             setBtn("<< חזרה ללימוד")
             setEnd(true)
         }
@@ -37,7 +37,7 @@ function Learn(props) {
             setWord(arr[i][0])
             setWordHe(arr[i][1])
             setBtn("<< למילה הבאה")
-            if (i == arr.length - 1){
+            if (i === arr.length - 1){
                 setBtn("סיום")
                 console.log(props)
                 props.updateProgress('learn', level)
@@ -84,7 +84,7 @@ function Learn(props) {
                         buttonSize='btn--large'>
                         {btn}
                     </Button>
-                    <Button linkTo={`/Categories_cards/${level}`}
+                    <Button linkTo={`/categories-cards/${level}`}
                         className='btns'
                         buttonStyle='btn--outline'
                         buttonSize='btn--large'>

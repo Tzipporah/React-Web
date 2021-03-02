@@ -57,27 +57,27 @@ function Navbar(props) {
               </Link>
             </li>
           <li className='nav-item'>
-              <Link to='/Categories_cards/spoken' className='nav-links' onClick={closeMobileMenu}>
+              <Link to='/categories-cards/spoken' className='nav-links' onClick={closeMobileMenu}>
                 אנגלית מדוברת
               </Link>
             </li>
           <li className='nav-item'>
-              <Link to='/Categories_cards/business' className='nav-links' onClick={closeMobileMenu}>
+              <Link to='/categories-cards/business' className='nav-links' onClick={closeMobileMenu}>
                 אנגלית עסקית
               </Link>
             </li>
           <li className='nav-item'>
-            <Link to='/Categories_cards/advancers' className='nav-links' onClick={closeMobileMenu}>
+            <Link to='/categories-cards/advancers' className='nav-links' onClick={closeMobileMenu}>
                 מתקדמים
               </Link>
             </li>
           <li className='nav-item'>
-              <Link to='/Categories_cards/students' className='nav-links' onClick={closeMobileMenu}>
+              <Link to='/categories-cards/students' className='nav-links' onClick={closeMobileMenu}>
                 תלמידים
               </Link>
             </li> 
           <li className='nav-item'>
-              <Link to='/Categories_cards/beginners' className='nav-links' onClick={closeMobileMenu}>
+              <Link to='/categories-cards/beginners' className='nav-links' onClick={closeMobileMenu}>
                 מתחילים
               </Link>
             </li>

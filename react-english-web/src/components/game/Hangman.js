@@ -2,12 +2,10 @@ import React, { Component } from 'react';
 import Image from './Image'
 import { Button } from "../Button"
 import Voice from '../Voice'
-import Scoresheet from './Scoresheet'
+import Scoresheet from '../Scoresheet'
 import { connect } from 'react-redux'
 import { updateProgress } from '../../store/actions/userProgressAction'
 import { Container } from "@material-ui/core";
-
-
 
 class Hangman extends Component {
   static defaultProps = {
@@ -80,7 +78,7 @@ class Hangman extends Component {
     if (gameOver) 
       gameStat = "!נכשלת"
 
-    if(this.i != this.props.arr.length) { 
+    if(this.i !== this.props.arr.length) { 
       return (
         <Container className='game-div'>
             <Container className='p-game'>
@@ -106,7 +104,7 @@ class Hangman extends Component {
               
               
             {"ניחושים :\n"}
-            {`${this.state.mistake} \n \\ ${this.props.maxWrong}`}  
+            {`${this.props.maxWrong} \n / ${this.state.mistake}`}  
             
             </div>
             </div>

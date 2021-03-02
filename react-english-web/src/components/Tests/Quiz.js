@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Scoresheet from './Scoresheet'
+import Scoresheet from '../Scoresheet'
 import db from './db'
 
 
@@ -13,50 +13,43 @@ export class Quiz extends Component {
             userAnswer: null,
             score:0,
             disabled: true, //Enable or disable Next Button
-            disabledOptions: false, //Enable or disable Answer Options
             option1: false, //Radio button all initially not checked, so set to false initially
             option2: false,
             option3: false,
-            option4: false,
-            endQuiz: false, //Checks if the quiz have ended (Current index gotten to the last)
-            disabledCheck:true //Enable or disable Check Answer button
+            option4: false
         }
-
-        //Bind this keyword
-        this.checkAnswer = this.checkAnswer.bind(this)
-        this.answerIsCorrect = this.answerIsCorrect.bind(this)
+        this.btn = "לשאלה הבאה"
     }
     
-    //Reads the question from IndexedDB and load them into the questionBank
+    // Reads the question from IndexedDB and load them into the questionBank
     loadQuestions = () => {
         let arr = [];
-        db.questions.each((item) => arr.push(item))
-        .then(() => this.setState({questionBank: arr}));
+        db[this.props.level].each((item) => arr.push(item))
+        .then(() => this.setState({questionBank: arr})); 
     }
 
-    //Load the question from indexedDB when component mounts
+    // Load the question from indexedDB when component mounts
     componentDidMount(){
         this.loadQuestions()
-        
     }
 
-    //Increment the currentIndex when next button is clicked
+    // Increment the currentIndex when next button is clicked
     nextQuestionHander = () => {
+        this.checkAnswer()
         this.setState({
             currentIndex:  this.state.currentIndex + 1,
-            disabled:true,
-            disabledOptions: false,
-            disabledCheck: true,
+            disabled: true,
             option1: false,
             option2: false,
             option3: false,
             option4: false,
-            correctAnswer: '',
             userAnswer: ''
         })
+        if(this.state.currentIndex === this.state.questionBank.length - 2)
+            this.btn = "סיום"
     }
 
-    //Check if UserAnser is correct 
+    // Check if UserAnser is correct 
     answerIsCorrect(userAnswer){
         const {currentIndex, questionBank} = this.state
         if(userAnswer === questionBank[currentIndex].answer) {
@@ -64,22 +57,17 @@ export class Quiz extends Component {
         } else {return false}
     }
 
-    //Increment score if answer is correct and enable Next Button
-    checkAnswer = () =>{
-        const {score, userAnswer, questionBank, currentIndex} = this.state
+    // Increment score if answer is correct
+    checkAnswer = () => {
+        const {score, userAnswer} = this.state
             if(this.answerIsCorrect(userAnswer)){
                 this.setState({
                     score: score + 1
                 })
             }
-            this.setState({
-                disabledOptions:true,
-                disabled: false,
-                correctAnswer: questionBank[currentIndex].answer
-            })
     }
     
-    //Set the User answer depending on which option the user clicked
+    // Set the User answer depending on which option the user clicked and enable Next Button
     setUserAnswer = (event) => {
         if(event.target.id === "o1") { 
             this.setState({option1: event.target.checked, userAnswer: event.target.value })       
@@ -93,38 +81,36 @@ export class Quiz extends Component {
         else if(event.target.id ==="o4") {
             this.setState({option4: event.target.checked, userAnswer: event.target.value })
         }
-        this.setState({disabledCheck:false})
+        // Enable Next Button
+        this.setState({disabled:false})
     }
 
-    render() {       
-        const {currentIndex,  endQuiz, questionBank, score, userAnswer, correctAnswer} = this.state
+    render() {  
+        const {currentIndex, questionBank, score} = this.state
         var currentQuestion = questionBank[currentIndex]    
-
-        if((currentIndex <= questionBank.length -1) && (endQuiz === false)) {
+        // If the loadQuestions has not finished running
+        if(questionBank.length === 0)
+            return(
+                <div></div>
+            )
+        //  Quiz
+        else if((currentIndex <= questionBank.length -1)) {
             return (
-                <div>
-
                 <div className="container">                    
-                 
-                    <h2> {currentQuestion.question}</h2>
-                    <h4>Question {currentIndex + 1} of {questionBank.length} </h4>
-                    <fieldset disabled={this.state.disabledOptions}>
+                    <h4>שאלה {currentIndex + 1} מתוך {questionBank.length} </h4>
+                    <h2> מה התרגום של המילה {currentQuestion.question}</h2>
+                    <fieldset>
                         <div className="options"><input id="o1" onChange={this.setUserAnswer} type="radio" name="group1" value={currentQuestion.option1} checked={this.state.option1}/> {currentQuestion.option1}</div>
                         <div className="options"><input id="o2" onChange={this.setUserAnswer} type="radio" name="group1" value={currentQuestion.option2} checked={this.state.option2}/> {currentQuestion.option2}</div>
                         <div className="options"><input id="o3" onChange={this.setUserAnswer} type="radio" name="group1" value={currentQuestion.option3} checked={this.state.option3}/> {currentQuestion.option3}</div>
                         <div className="options"><input id="o4" onChange={this.setUserAnswer} type="radio" name="group1" value={currentQuestion.option4} checked={this.state.option4}/> {currentQuestion.option4}</div>
                     </fieldset> 
-
-                    <button className="button" onClick={this.nextQuestionHander} disabled = {this.state.disabled}>Next</button>                          
+                    <button className="button" onClick={this.nextQuestionHander} disabled = {this.state.disabled}>{this.btn}</button>                          
                 </div >
-                <div> 
-                    <center><button onClick={()=>{this.setState({endQuiz:true})}} >End Quiz Now</button></center>
-                    <br></br>
-                </div>
-                </div>
             )
         }
-        else { //Quiz have ended so, we load the Scoresheet component
+
+        else { // Quiz have ended so, we load the Scoresheet component
             return (
                 <div >
                     <Scoresheet score={score} totalQuestions={questionBank.length} />

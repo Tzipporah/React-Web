@@ -3,7 +3,6 @@ import Footer from '../Footer';
 import Navbar from '../Navbar';
 import words from '../../data/levels.json';
 import Hangman from '../game/Hangman';
-import { Container } from "@material-ui/core";
 import CategorySection from '../CategorySection'
 import './Game.css'
 
@@ -13,8 +12,8 @@ function Game({ match }) {
 
     let arr = []
     // Introducing the Hebrew and English words into the arr from the words file by levels
-    words[level].map((word, index = 0) => {
-        arr[index++] = [word.en.toLowerCase(), word.he.toLowerCase()]
+    words[level].forEach((word, index) => {
+        arr[index++] = [word.en.toLowerCase(), word.he]
     })
 
     function shuffleArray(array) {

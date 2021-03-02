@@ -1,8 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import FlashcardList from '../Tests/FlashcardList';
+import React from 'react';
 import './Test.css'
-import axios from 'axios'
-import { Button } from '../Button'
 import Navbar from '../Navbar'
 import Footer from '../Footer'
 import Quiz from '../Tests/Quiz';
@@ -11,21 +8,22 @@ import words from '../../data/levels.json';
 
 
 function Test({ match }) {
+    
     const level = match.params.level
     
     let arr = []
     // Introducing the Hebrew and English words into the arr from the words file by levels
-    words[level].map((word, index = 0) => {
+    words[level].forEach((word, index) => {
         arr[index++] = [word.en, word.he]
     })
 
-    createQuestions(arr)
+    createQuestions(arr, level)
 
     return (
       <>  
       <Navbar/>
       <div className = "test-body">
-        <Quiz/>
+        <Quiz level={level}/>
       </div>
       <Footer/>
       </>
