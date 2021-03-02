@@ -25,13 +25,6 @@ video {
     font-family: 'Amatic SC', cursive;
   }
   
-  .category-container > p {
-    margin-top: 8px;
-    color: #fff;
-    font-size: 32px;
-    font-family: 'Amatic SC', cursive;
-  }
-  
   .category-btns {
     margin-top: 32px;
   }

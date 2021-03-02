@@ -7,10 +7,12 @@ import Navbar from '../Navbar'
 import words from '../../data/levels.json';
 import { Button } from '../Button';
 import CategorySection from '../CategorySection'
+import { connect } from 'react-redux'
+import { updateProgress } from '../../store/actions/userProgressAction'
 
-function Learn({ match }) { 
+function Learn(props) { 
 
-    const level = match.params.level;
+    const level = props.match.params.level;
     
     let arr = []
     // Introducing the Hebrew and English words into the arr from the words file by levels
@@ -35,8 +37,11 @@ function Learn({ match }) {
             setWord(arr[i][0])
             setWordHe(arr[i][1])
             setBtn("<< למילה הבאה")
-            if (i == arr.length - 1)
+            if (i == arr.length - 1){
                 setBtn("סיום")
+                console.log(props)
+                props.updateProgress('learn', level)
+            }     
         }
     }
 
@@ -95,4 +100,10 @@ function Learn({ match }) {
 
 }
 
-export default Learn;
+const mapDispatchToProps = dispatch => {
+    return {
+      updateProgress: (category, level) => dispatch(updateProgress(category, level))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Learn);

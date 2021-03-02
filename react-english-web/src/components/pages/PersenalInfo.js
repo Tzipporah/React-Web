@@ -1,16 +1,41 @@
 import ProgressBar from '../progress bar/ProgressBar'
+import { Component } from 'react'
+import { connect } from 'react-redux'
 
-const PersonalInfo = () =>
-{
- return (
-     <>
-        <h1>hi</h1>
-        <ProgressBar done="90"/>
-        <ProgressBar done="70"/>
-        <ProgressBar done="100"/>
-        <ProgressBar done="60"/>
-    </>
- )
+class PersonalInfo extends Component{
+    
+    levelProgress = (level) => {
+        
+        let category, totalLevelProgress = 0
+        for (category in this.props.profile[level]){
+            totalLevelProgress += parseInt(this.props.profile[level][category])
+            
+        }
+        return String(totalLevelProgress)
+    }
+    
+    render() {
+        
+        const levels = ['beginners', 'students', 'advancers', 'business', 'spoken']
+        return (
+            <>
+            {
+                levels.map((level) => {
+                    return (
+                        <ProgressBar done={this.levelProgress(level)}/> 
+                    )
+                })
+            }
+            </>
+        )
+    }
+ 
 }
 
-export default PersonalInfo
+const mapStateToProps = (state) => {
+    // console.log(state)
+    return {
+        profile: state.firebase.profile
+    }
+}
+export default connect(mapStateToProps)(PersonalInfo)

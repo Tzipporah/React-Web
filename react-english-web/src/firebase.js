@@ -6,6 +6,7 @@ import './firebase-styling.global.css'; // Import globally.
 import { Button } from './components/Button';
 import firebase from './config/fbconfig'
 import { connect } from 'react-redux'
+import { createNewProgress } from './store/actions/userProgressAction'
 
 class Firebase extends React.Component {
     
@@ -26,12 +27,14 @@ class Firebase extends React.Component {
     componentDidMount = () => {
       firebase.auth().onAuthStateChanged(user => {
         this.setState({ isSignedIn: !!user })
+        // console.log(this.state.isSignedIn)
+        if (this.state.isSignedIn){
+          this.props.createNewProgress(user.uid)
+        }
       })
     }
 
-
     render() {
-      
       const returnComp = this.state.isSignedIn ? 
           // User is sigend in, display the main page content.
           <Redirect to='/main-page'  />
@@ -59,5 +62,11 @@ class Firebase extends React.Component {
   }
   
 
-  export default Firebase
+  const mapDispatchToProps = (dispatch)=> {
+    return {
+      createNewProgress: (userID) => dispatch(createNewProgress(userID))
+    }
+  }
+  
+  export default connect(null, mapDispatchToProps)(Firebase)
   

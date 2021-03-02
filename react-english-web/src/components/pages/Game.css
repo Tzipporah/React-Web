@@ -1,14 +1,73 @@
+
 .p-game{
   font-size: 30px;
   color: #fff;
   text-align: center;
+  padding: 10px;
 }
 
 .game-div{
-  position : absolute;
-  background-color: rgba(32, 29, 29, 0.6);
+  background-color: rgba(15, 14, 14, 0.6);
   text-align: center;
-  padding: 20px;
   font-size: 30px;
-  position : relative;
+}
+
+#split-container{
+  height:100%;
+  width:100%;
+  margin:0 auto;
+  
+}
+.split-item{
+  display:inline-block;
+  vertical-align:center;
+  height:100%;
+  width:50%;
+ 
+}
+
+
+.trans{
+  border-radius: 2px;
+  cursor: pointer;
+  background-color: transparent;
+  color: #fff;
+  padding: 8px 20px;
+  border: 1px solid var(--primary);
+}
+
+.trans:hover {
+  transition: all 0.3s ease-out;
+  background: #fff;
+  color: #242424;
+  transition: 250ms;
+}
+
+.transClicked {
+  background: #fff;
+  color: #242424;
+}
+
+audio {
+  cursor: pointer;
+  background-color: transparent;
+
+  width: 290px;
+  height: 50px;
+
+}
+@media screen and (max-width: 820px) {
+  .btn {
+    width: auto;
+  }
+
+  audio {
+    width: 170px;
+    height: 50px;
+  
+  }
+
+  .split-item{
+    height: 10px;
+  }
 }

@@ -3,7 +3,9 @@ import Image from './Image'
 import { Button } from "../Button"
 import Voice from '../Voice'
 import Scoresheet from '../Scoresheet'
-
+import { connect } from 'react-redux'
+import { updateProgress } from '../../store/actions/userProgressAction'
+import { Container } from "@material-ui/core";
 
 class Hangman extends Component {
   static defaultProps = {
@@ -15,7 +17,7 @@ class Hangman extends Component {
     this.i = 0
     this.score = 0
     this.end = false
-    this.btn = "המילה הבאה"
+    this.btn = "<< למילה הבאה"
     this.state = {
       mistake: 0,
       guessed: new Set([]),
@@ -39,7 +41,8 @@ class Hangman extends Component {
   generateButtons() {
     return "abcdefghijklmnopqrstuvwxyz".split("").map(letter => (
       <button
-        className='btn btn-lg btn-primary m-2'
+        type='button'
+        className={this.state.guessed.has(letter)? 'btn' : "btn trans"}
         key={letter}
         value={letter}
         onClick={this.handleGuess}
@@ -77,31 +80,48 @@ class Hangman extends Component {
 
     if(this.i != this.props.arr.length) { 
       return (
-        <div className="game-div">
-            <p className="p-game">
-              {"ניחושים שגויים:\n"}
-              {`${this.state.mistake} \n מתוך ${this.props.maxWrong}`}  
-            </p>
+        <Container className='game-div'>
+            <Container className='p-game'>
+            <div id='split-container'>
+            
+            <div className="split-item">
               <Image step = {this.state.mistake} />
-              <Voice  word ={this.props.arr[this.i][0]}/>
-              <p className="p-game">
-                :מה התרגום של המילה {this.props.arr[this.i][1]}
-              </p>
+            </div>
+            <div className='split-item'>
+              
+                
+            
+              'מה התרגום של  '{this.props.arr[this.i][1]}
               <br/>
-              <p className="p-game">
-                {!gameOver ? this.guessedWord() : this.state.answer}
+
+              {!gameOver ? this.guessedWord() : this.state.answer}
+              <br/>
+              <br/>
+              <Voice  word ={this.props.arr[this.i][0]}/>
+              
+              
+            {"ניחושים :\n"}
+            {`${this.state.mistake} \n \\ ${this.props.maxWrong}`}  
+            
+            </div>
+            </div>
+              <p>
+              {gameStat}
               </p>
-              <br />
-              <p className="p-game">{gameStat}</p>
+              </Container>
               {(isWinner || gameOver) 
                 ?
-                  <Button className='btn btn-info' onClick={this.resetButton}>{this.btn}</Button>
+                  <Button className='btns'
+                  buttonStyle='btn--outline'
+                  buttonSize='btn--large' onClick={this.resetButton}>{this.btn}</Button>
                 :
                   ""
               }
-        </div>
+        </Container>
         )}
         else{
+          if ((this.score / this.props.arr.length) * 100 >= 70)
+            this.props.updateProgress('game', this.props.level)
           return(
             <div className="game-div">
               <Scoresheet score={this.score} totalQuestions={this.props.arr.length} level={this.props.level}/>
@@ -111,4 +131,10 @@ class Hangman extends Component {
   }
 }
 
-export default Hangman;
+const mapDispatchToProps = dispatch => {
+  return {
+    updateProgress: (category, level) => dispatch(updateProgress(category, level))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(Hangman);
