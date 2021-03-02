@@ -18,6 +18,7 @@ export class Quiz extends Component {
             option3: false,
             option4: false
         }
+        this.btn = "לשאלה הבאה"
     }
     
     // Reads the question from IndexedDB and load them into the questionBank
@@ -44,6 +45,8 @@ export class Quiz extends Component {
             option4: false,
             userAnswer: ''
         })
+        if(this.state.currentIndex == this.state.questionBank.length - 2)
+            this.btn = "סיום"
     }
 
     // Check if UserAnser is correct 
@@ -94,16 +97,15 @@ export class Quiz extends Component {
         else if((currentIndex <= questionBank.length -1)) {
             return (
                 <div className="container">                    
-                    <h2> {currentQuestion.question}</h2>
-                    <h4>
-                        שאלה {currentIndex + 1} מתוך {questionBank.length} </h4>
+                    <h4>שאלה {currentIndex + 1} מתוך {questionBank.length} </h4>
+                    <h2> מה התרגום של המילה {currentQuestion.question}</h2>
                     <fieldset>
                         <div className="options"><input id="o1" onChange={this.setUserAnswer} type="radio" name="group1" value={currentQuestion.option1} checked={this.state.option1}/> {currentQuestion.option1}</div>
                         <div className="options"><input id="o2" onChange={this.setUserAnswer} type="radio" name="group1" value={currentQuestion.option2} checked={this.state.option2}/> {currentQuestion.option2}</div>
                         <div className="options"><input id="o3" onChange={this.setUserAnswer} type="radio" name="group1" value={currentQuestion.option3} checked={this.state.option3}/> {currentQuestion.option3}</div>
                         <div className="options"><input id="o4" onChange={this.setUserAnswer} type="radio" name="group1" value={currentQuestion.option4} checked={this.state.option4}/> {currentQuestion.option4}</div>
                     </fieldset> 
-                    <button className="button" onClick={this.nextQuestionHander} disabled = {this.state.disabled}>לשאלה הבאה</button>                          
+                    <button className="button" onClick={this.nextQuestionHander} disabled = {this.state.disabled}>{this.btn}</button>                          
                 </div >
             )
         }
