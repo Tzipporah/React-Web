@@ -103,7 +103,7 @@ export class Quiz extends Component {
                         <div className="options"><input id="o3" onChange={this.setUserAnswer} type="radio" name="group1" value={currentQuestion.option3} checked={this.state.option3}/> {currentQuestion.option3}</div>
                         <div className="options"><input id="o4" onChange={this.setUserAnswer} type="radio" name="group1" value={currentQuestion.option4} checked={this.state.option4}/> {currentQuestion.option4}</div>
                     </fieldset> 
-                    <button className="button" onClick={this.nextQuestionHander} disabled = {this.state.disabled}>Next</button>                          
+                    <button className="button" onClick={this.nextQuestionHander} disabled = {this.state.disabled}>לשאלה הבאה</button>                          
                 </div >
             )
         }
