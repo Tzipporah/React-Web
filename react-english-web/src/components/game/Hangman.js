@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Image from './Image'
 import { Button } from "../Button"
 import Voice from '../Voice'
-import Scoresheet from './Scoresheet'
+import Scoresheet from '../Scoresheet'
 
 
 class Hangman extends Component {

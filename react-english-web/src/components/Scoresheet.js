@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
-import  { Redirect } from 'react-router-dom'
-import { Button } from '../Button'
+import { Button } from './Button'
 
 function Scoresheet(props) {
 
@@ -8,7 +7,7 @@ function Scoresheet(props) {
 
     const [restart, setRestart] = useState(false) // Hook to check if Restart button was clicked
 
-    // restart the game
+    // restart the page
     if(restart === true){
         window.location.reload(false);
     }
