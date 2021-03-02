@@ -16,7 +16,7 @@ function Image(props) {
         <div>
            <img 
                 src={images[props.step]} 
-                alt='Travel Image'
+                alt='Hangman'
             /> 
         </div>
     )

@@ -45,7 +45,7 @@ export class Quiz extends Component {
             option4: false,
             userAnswer: ''
         })
-        if(this.state.currentIndex == this.state.questionBank.length - 2)
+        if(this.state.currentIndex === this.state.questionBank.length - 2)
             this.btn = "סיום"
     }
 

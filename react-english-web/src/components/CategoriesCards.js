@@ -1,10 +1,10 @@
 import React from 'react';
-import './Levels_cards.css';
+import './Cards.css';
 import CardItem from './CardItem';
 import Navbar from './Navbar';
 import Footer from './Footer'
 
-function Learning_cards({ match }) {
+function CategoriesCards({ match }) {
 
   const level = match.params.level;
  
@@ -49,4 +49,4 @@ function Learning_cards({ match }) {
   );
 }
 
-export default Learning_cards;
+export default CategoriesCards;

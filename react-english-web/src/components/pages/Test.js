@@ -13,7 +13,7 @@ function Test({ match }) {
     
     let arr = []
     // Introducing the Hebrew and English words into the arr from the words file by levels
-    words[level].map((word, index) => {
+    words[level].forEach((word, index) => {
         arr[index++] = [word.en, word.he]
     })
 

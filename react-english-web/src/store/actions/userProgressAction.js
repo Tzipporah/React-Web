@@ -14,7 +14,7 @@ export const createNewProgress = (userId) => {
                     word_completion: '0',
                     Test: '0'
                 }
-                // Add a NEW user progress, should always be 0 at the beginning.
+                // Add a new user progress, should always be 0 at the beginning.
                 firestore.doc('users/' + userId).set({
                     beginners: categories,
                     students: categories,
@@ -46,7 +46,7 @@ export const updateProgress = (category, level) => {
         // console.log(currentProgress, category, level)
 
         // If the current progress is zero, then update.(so should not update twice)
-        if (currentProgress == 0) {
+        if (currentProgress === 0) {
             const newProgress = 25
             
             // async call to DB

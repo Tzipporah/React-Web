@@ -26,7 +26,7 @@ function createQuestions (arr, level)
         questionArr[0] = words[index][1]
 
         questionArr[5] = words[index][0]
-        getOptions( words[index][0], words ).map( (option, i) => {
+        getOptions( words[index][0], words ).forEach( (option, i) => {
             questionArr[++i] = option
         })
         
@@ -58,7 +58,7 @@ function getOptions(correctWord, words) {
         const j = Math.floor(Math.random() * (words.length));
 
         //Not exists in the array
-        if( arr.indexOf( words[j][0]) == -1 )
+        if( arr.indexOf( words[j][0]) === -1 )
         {
             arr[index] = words[j][0]
             index ++;

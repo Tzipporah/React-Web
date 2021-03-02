@@ -8,18 +8,21 @@ function Voice(props) {
     
     const [meanings, setMeanings] = useState([]);   
 
-    const dictionaryApi = async() =>{
-        try {
-            const data = await axios.get(
-                `http://api.dictionaryapi.dev/api/v2/entries/en/${word}`
-            );
-            setMeanings(data.data);
-        } catch (error) {
-            console.log(error);
-        }
-    };
+    
     
     useEffect(()=>{
+
+        const dictionaryApi = async() =>{
+            try {
+                const data = await axios.get(
+                    `http://api.dictionaryapi.dev/api/v2/entries/en/${word}`
+                );
+                setMeanings(data.data);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+
         dictionaryApi();
     },[word])
 

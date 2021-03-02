@@ -78,7 +78,7 @@ class Hangman extends Component {
     if (gameOver) 
       gameStat = "!!!נכשלת"
 
-    if(this.i != this.props.arr.length) { 
+    if(this.i !== this.props.arr.length) { 
       return (
         <Container className='game-div'>
             <Container className='p-game'>
