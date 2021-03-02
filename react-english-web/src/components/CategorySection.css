@@ -59,6 +59,9 @@ video {
       text-decoration: none;
     }
   
+    .category-btns .btn {
+      margin: 2px;
+    }
     .btn {
       width: 100%;
     }

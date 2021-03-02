@@ -73,12 +73,12 @@ class Hangman extends Component {
     let gameStat = this.generateButtons();
 
     if (isWinner) {
-      gameStat = "!!!הצלחת"
+      gameStat = "!הצלחת"
       this.score ++
     }
 
     if (gameOver) 
-      gameStat = "!!!נכשלת"
+      gameStat = "!נכשלת"
 
     if(this.i != this.props.arr.length) { 
       return (
@@ -92,8 +92,11 @@ class Hangman extends Component {
             <div className='split-item'>
               
                 
-            
-              'מה התרגום של  '{this.props.arr[this.i][1]}
+            מה התרגום של
+            <br/>
+              
+               {this.props.arr[this.i][1]}
+                
               <br/>
 
               {!gameOver ? this.guessedWord() : this.state.answer}
