@@ -104,7 +104,7 @@ class Hangman extends Component {
               
               
             {"ניחושים :\n"}
-            {`${this.props.maxWrong} \n / ${this.state.mistake}`}  
+            {`${this.state.mistake} \n \\ ${this.props.maxWrong}`}  
             
             </div>
             </div>
