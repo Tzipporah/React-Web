@@ -14,7 +14,7 @@ var state =
 //the function gets an ordered array
 function createQuestions (arr, level)
 {
-    
+
     // All words are mixed
     let words = mixArray(arr)
 

@@ -127,7 +127,7 @@ class Hangman extends Component {
             this.props.updateProgress('game', this.props.level)
           return(
             <div className="game-div">
-              <Scoresheet score={this.score} totalQuestions={this.props.arr.length} level={this.props.level}/>
+              <Scoresheet score={this.score} totalQuestions={this.props.arr.length} type='משחק'/>
             </div>
           )
         }

@@ -91,12 +91,12 @@ export class Quiz extends Component {
 
     render() {
         const {currentIndex, questionBank, score} = this.state
-        var currentQuestion = questionBank[currentIndex]    
+        var currentQuestion = questionBank[currentIndex]
+            
         // If the loadQuestions has not finished running
         if(questionBank.length === 0)
-            return(
-                <div></div>
-            )
+            return(<div></div>)
+        
         //  Quiz
         else if((currentIndex <= questionBank.length -1)) {
             return (
@@ -112,6 +112,7 @@ export class Quiz extends Component {
                         <div className="options"><input id="o3" onChange={this.setUserAnswer} type="radio" name="group1" value={currentQuestion.option3} checked={this.state.option3}/> {currentQuestion.option3}</div>
                         <div className="options"><input id="o4" onChange={this.setUserAnswer} type="radio" name="group1" value={currentQuestion.option4} checked={this.state.option4}/> {currentQuestion.option4}</div>
                     </fieldset> 
+                    <br />
                     <button className={this.state.disabled? '': 'next-btn'} onClick={this.nextQuestionHander} disabled = {this.state.disabled}>{this.btn}</button>                          
                 </div >
                 </CategorySection>
@@ -119,7 +120,6 @@ export class Quiz extends Component {
         }
 
         else { // Quiz have ended so, we load the Scoresheet component
-            
             let title = '): נכשלת במבחן'
             // User passed the test
             if (((score) / (questionBank.length)) * 100 >= 70){
@@ -131,7 +131,7 @@ export class Quiz extends Component {
                 videoLink='/videos/Pexels Videos 2450250.mp4'
                 title={title}>
                 <div  className="quiz-container">
-                    <Scoresheet score={score} totalQuestions={questionBank.length} />
+                    <Scoresheet score={score} totalQuestions={questionBank.length} type='מבחן'/>
                     <br />               
                 </div>
                 </CategorySection>
