@@ -92,7 +92,11 @@ const sentences = ({page,level, score}) =>
     return( 
         <div class="main">
             <div class="story">
-            <div>{listItems} <br/><p className = "last_index">{last_index}</p> </div>
+              <div>
+                {listItems} 
+                <br/>
+                <p className = "last_index">{last_index}</p> 
+              </div>
             </div>
         </div>     
     );

@@ -19,7 +19,7 @@
 .story{
     margin: 50px 50px 45px 50px;
 
-    
+
 }
 .sentence{
     display: inline-block;
@@ -28,16 +28,45 @@
     text-align-last: right;
     
 }
- p{
-    
-    float: left;
-    font-size: 8vh;
+.last_index{
+    font-size: 30px;
 }
+
+p{  
+    float: left;
+    font-size: 30px;
+}
+
 
 .sentence .col-offset-4{
     float: left;
     margin-left: 10px;
     
+}
+.sentence .css-cndqux-control {
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+.sentence .css-2613qy-menu .css-5q3rez-control {
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+.sentence .css-1uccc91-singleValue {
+    color: #fff;
+}
+
+.sentence .css-1uccc91-singleValue:hover {
+    color: #fff;
+}
+
+.sentence .css-5q3rez-control {
+    background-color: transparent;
+    color: #fff;
+    border-color: #fff;
 }
 .sentence img{
     height: 10%;
@@ -45,15 +74,24 @@
     float: left;
     margin-left: 10px;
 }
-.btn-senteces{
-    padding: 12px 25px;
-    border-radius: 2px;
+.btn-senteces{    
     position: absolute;
     bottom: 2px;
     left: 50%;
-    border-radius: 15px;
+
+    background-color: transparent;
+    color: #fff;
+    padding: 8px 20px;
+    border: 1px solid #fff;
+    transition: all 0.3s ease-out;
 }
 
+.btn-senteces:hover {
+    transition: all 0.3s ease-out;
+    background: #fff;
+    color: #242424;
+    transition: 250ms;
+}
 @media (max-width: 100px) {
 
     .story {
