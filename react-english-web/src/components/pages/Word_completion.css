@@ -1,35 +1,35 @@
-.word_completion{
-    background-color: #fff;
-    text-align: center;
-    padding: 1rem;
-}
-.container{
+.w-container{
     display: flex;
     flex-flow: column;
     align-items: center;
     width: 100%;
     margin: 0;
     padding: 0;
+    
 }
 .page{
     position: relative;
     margin: 50px 0 45px;
-    background-color: aquamarine;
+    background-color:rgba(15, 14, 14, 0.6);
+    color: white;
+    
     width: 140vh;
     left: 15%;
 }
 .story{
     margin: 50px 50px 45px 50px;
+
     
-   
 }
 .sentence{
     display: inline-block;
     display: flex;
     flex-direction: row; 
     text-align-last: right;
+    
 }
  p{
+    
     float: left;
     font-size: 8vh;
 }

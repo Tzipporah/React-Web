@@ -7,6 +7,7 @@ import Sentences from '../sentences';
 import { Button } from '../Button'
 import Footer from '../Footer';
 import Navbar from '../Navbar'
+import CategorySection from '../CategorySection'
 
 function Word_completion({ match }) { 
     const level = match.params.level;
@@ -36,21 +37,23 @@ function Word_completion({ match }) {
     return(
         <>
             <Navbar/>
-            <div className='word_completion'>
-            <div className='container'>
-            <div className='page'>
-            <Sentences 
-                className="sentences"
-                page = {story_arr[page]}
-                level = {level}
-                score = {score}
-            />
-           <button class = "btn-senteces" onClick={handleClick}>
-                    {btn}
-            </button>
+            <CategorySection
+            videoLink='/videos/Pexels Videos story.mp4'>
+            
+                <div className='w-container'>
+                    <div className='page'>
+                        <Sentences 
+                            className="sentences"
+                            page = {story_arr[page]}
+                            level = {level}
+                            score = {score}
+                        />
+                    <button class = "btn-senteces" onClick={handleClick}>
+                                {btn}
+                        </button>
+                    </div>
             </div>
-            </div>
-            </div>
+            </CategorySection>
             <Footer />
         </>
        
