@@ -2,7 +2,8 @@
     "beginners":[
         {
             "en":"Air",
-            "he":"אויר"
+            "he":"אויר",
+            "picture":"https://images.pexels.com/photos/907274/pexels-photo-907274.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
         },
         {
             "en":"Catch",
@@ -10,19 +11,23 @@
         },
         {
             "en":"Color",
-            "he":"צבע"
+            "he":"צבע",
+            "picture":"https://cdn.britannica.com/70/191970-050-1EC34EBE/Color-wheel-light-color-spectrum.jpg"
         },
         {
             "en":"Farmer",
-            "he":"איכר"
+            "he":"איכר",
+            "picture": "https://www.intheblack.com/-/media/intheblack/allimages/magazine-2020/06-june/farmer-standing-in-field.jpg?rev=a3738b7326974d349044fc34db4db590"
         },
         {
             "en":"Fox",
-            "he":"שועל"
+            "he":"שועל",
+            "picture": "https://media-cdn.tripadvisor.com/media/photo-s/15/cb/7d/7d/fox.jpg"
         },
         {
             "en":"Grape",
-            "he":"ענב"
+            "he":"ענב",
+            "picture":"https://pbs.twimg.com/profile_images/1293796354263678976/0WBMFrtk.jpg"
         },
         {
             "en":"He",
@@ -34,7 +39,8 @@
         },
         {
             "en":"Home",
-            "he":"בית"
+            "he":"בית",
+            "picture":"https://greenqueen.co.il/store/wp-content/uploads/2020/04/homesweet.jpg"
         },
         {
             "en":"Hungry",
@@ -54,7 +60,8 @@
         },
         {
             "en":"Mouth",
-            "he":"פה"
+            "he":"פה",
+            "picture":"https://images.twinkl.co.uk/tr/image/upload/illustation/Laughing-Mouth.png"
         },
         {
             "en":"One",
@@ -78,17 +85,20 @@
         },
         {
             "en":"Wall",
-            "he":"קיר"
+            "he":"קיר",
+            "picture":"https://www.kerendenis.com/wp-content/uploads/2020/10/white-brick-wall-70100-450x315.jpg"
         }
     ],
     "students":[
         {
             "en":"Antibodies",
-            "he":"נוגדנים"
+            "he":"נוגדנים",
+            "picture":"https://www.sciencenews.org/wp-content/uploads/2020/09/092120_eg_monoclonal-antibodies_feat-1028x579.jpg"
         },
         {
             "en":"Blood",
-            "he":"דם"
+            "he":"דם",
+            "picture":"https://media.wired.com/photos/5bd262d4b1e96429a704ba17/master/w_2560%2Cc_limit/bloodyhand_top-1036615756.jpg"
         },
         {
             "en":"Capable",
@@ -96,7 +106,8 @@
         },
         {
             "en":"Cell",
-            "he":"תא"
+            "he":"תא",
+            "picture":"https://www.yourgenome.org/sites/default/files/illustrations/diagram/cell_diagram_yourgenome.png"
         },
         {
             "en":"Component",
@@ -104,7 +115,8 @@
         },
         {
             "en":"Debris",
-            "he":"פסולת"
+            "he":"פסולת",
+            "picture":"https://www.packagingdigest.com/sites/packagingdigest.com/files/styles/article_featured_retina/public/Nick%20Mallos%20marine%20debris%2072%20dpi.jpg?itok=bb9hWNm7"
         },
         {
             "en":"Decrease",
@@ -116,11 +128,13 @@
         },
         {
             "en":"Disease",
-            "he":"מחלה"
+            "he":"מחלה",
+            "picture":"https://www.cdc.gov/diseasesconditions/images/cards/covid19.jpg"
         },
         {
             "en":"Drug",
-            "he":"תרופה"
+            "he":"תרופה",
+            "picture":"https://safecareafrica.com/wp-content/uploads/2018/10/051717_testingdrugs_THUMB_LARGE.jpg"
         },
         {
             "en":"Exertion",
@@ -140,7 +154,8 @@
         },
         {
             "en":"Infection",
-            "he":"זיהום"
+            "he":"זיהום",
+            "picture":"https://cloud2.spineuniverse.com/sites/default/files/imagecache/large-content/wysiwyg_imageupload/3998/2017/01/03/infection_11119744_M.jpg"
         },
         {
             "en":"Intoxication",
@@ -156,22 +171,188 @@
         },
         {
             "en":"Nucleus",
-            "he":"גרעין"
+            "he":"גרעין",
+            "picture":"https://www.perkinselearning.org/sites/elearning.perkinsdev1.org/files/nucleus.png"
         },
         {
             "en":"Pain",
-            "he":"כאב"
+            "he":"כאב",
+            "picture":"https://health.clevelandclinic.org/wp-content/uploads/sites/3/2015/03/chestPain3-1083207532-770x553.jpg"
         },
         {
             "en":"Rest",
-            "he":"מנוחה"
+            "he":"מנוחה",
+            "picture":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy0hT_sr3FHdRgs6tcptpvzIICNF-IUqTGTQ&usqp=CAU"
         },
         {
             "en":"Value",
             "he":"ערך"
         }
     ],
-    "advancers":[],
-    "business":[],
-    "spoken":[]
+    "advancers":[
+        {
+            "en":"paddles",
+            "he":"משוטים",
+            "picture":"https://www.outdoorplay.com/images/sca-prod-imgs/Outfitter-Paddle.main.collage.01.jpg"
+        },
+        {
+            "en":"shallow",
+            "he":"רדוד"
+        },
+        {
+            "en":"drawing",
+            "he":"ציור",
+            "picture":"https://www.nguyenartgallery.com/wp-content/uploads/What-is-Sketching.jpg"
+        },
+        {
+            "en":"stern",
+            "he":"ירכתי ספינה",
+            "picture":"https://developers.redhat.com/blog/wp-content/uploads/2019/05/kubernetes-ttools.jpg"
+        },
+        {
+            "en":"thrust",
+            "he":"דחף"
+        },
+        {
+            "en":"ruthless",
+            "he":"חסר רחמים"
+        },
+        {
+            "en":"lucrative",
+            "he":"משתלם"
+        },
+        {
+            "en":"tributary",
+            "he":"יובל",
+            "picture":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Aerial_Photo_of_Harpers_Ferry_%2815646790473%29.jpg/655px-Aerial_Photo_of_Harpers_Ferry_%2815646790473%29.jpg"
+        },
+        {
+            "en":"entertainment",
+            "he":"בידוד"
+        }
+    ],
+    "business":[
+        {
+            "en":"broke",
+            "he":"חסר פרוטה"
+        },
+        {
+            "en":"owned",
+            "he":"בבעלות"
+        },
+        {
+            "en":"social security",
+            "he":"ביטוח לאומי",
+            "picture":"https://www.gannett-cdn.com/-mm-/9e1f6e2ee20f44aa1f3be4f71e9f3e52b6ae2c7e/c=0-110-2121-1303/local/-/media/2020/01/15/USATODAY/usatsports/social-security-card_gettyimages-480251980.jpg?width=1600&height=800&fit=crop&format=pjpg&auto=webp"
+        },
+        {
+            "en":"offer",
+            "he":"הצעה"
+        },
+        {
+            "en":"sell",
+            "he":"למכור"
+        },
+        {
+            "en":"owners",
+            "he":"בעלים",
+            "picture":"https://clutchpoints.com/wp-content/uploads/2019/07/NBA-1.jpg"
+        },
+        {
+            "en":"free",
+            "he":"חינם"
+        },
+        {
+            "en":"percentage",
+            "he":"אחוזים",
+            "picture":"https://cdn.inchcalculator.com/wp-content/uploads/2018/03/percent-of-percent.jpg"
+        },
+        {
+            "en":"deal",
+            "he":"עיסקה",
+            "picture":"https://ulpan.com/wp-content/uploads/2018/04/shutterstock_749516455.jpg"
+        },
+        {
+            "en":"restaurant",
+            "he":"מסעדה",
+            "picture":"https://upload.wikimedia.org/wikipedia/commons/e/ef/Restaurant_N%C3%A4sinneula.jpg"
+        }
+        
+    ],
+    "spoken":[
+        {
+            "en":"Little",
+            "he":"קטן"
+        },
+        {
+            "en":"wood",
+            "he":"עץ",
+            "picture":"https://images.pexels.com/photos/1787035/pexels-photo-1787035.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+        },
+        {
+            "en":"Hood",
+            "he":"ברדס",
+            "picture":"https://images.pexels.com/photos/2230895/pexels-photo-2230895.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+        },
+        {
+            "en":"granny",
+            "he":"סבתא",
+            "picture":"https://images.pexels.com/photos/2050981/pexels-photo-2050981.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+        },
+        {
+            "en":"basket",
+            "he":"סל",
+            "picture":"https://www.fruitgravycompany.com/wp-content/uploads/2018/12/basket.jpg"
+        },
+        {
+            "en":"wolf",
+            "he":"זאב",
+            "picture":"https://upload.wikimedia.org/wikipedia/commons/6/68/Eurasian_wolf_2.jpg"
+        },
+        {
+            "en":"bed",
+            "he":"מיטה",
+            "picture":"https://images.pexels.com/photos/279746/pexels-photo-279746.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+        },
+        {
+            "en":"later",
+            "he":"יותר מאוחר"
+        },
+        {
+            "en":"eyes",
+            "he":"עיניים",
+            "picture":"https://www.kirkeyecenter.com/wp-content/uploads/2020/04/eye-img.jpg"
+        },
+        {
+            "en":"ears",
+            "he":"אוזניים",
+            "picture":"https://singularityhub.com/wp-content/uploads/2018/11/vector-human-ear-photorealistic-illustration_shutterstock_516060400-900x506.jpg"
+        },
+        {
+            "en": "smell",
+            "he": "להריח"
+        },
+        {
+            "en": "teeth",
+            "he": "שיניים"
+        },
+        {
+            "en": "woodcutter",
+            "he": "חוטב עצים",
+            "picture":"https://cdnb.artstation.com/p/assets/images/images/006/920/911/large/tanya-mykhailetska-.jpg?1502269349"
+        },
+        {
+            "en": "scream",
+            "he": "לצרוח"
+        },
+        {
+            "en": "head",
+            "he": "ראש",
+            "picture":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Human_head_and_brain_diagram.svg/1200px-Human_head_and_brain_diagram.svg.png"
+        },
+        {
+            "en": "never",
+            "he": "אף פעם"
+        }
+    ]
 }

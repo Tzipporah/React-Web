@@ -13,8 +13,6 @@ function CategoriesCards({ match }) {
     'advancers': 'מתקדמים - אנגלית למי שרוצה להשתפר',
     'students': 'תלמידים - חיים קלים באקדמיה',
     'beginners': 'מתחילים - להתחיל את האנגלית שלך פה'
-
-
   }
  
   return (
