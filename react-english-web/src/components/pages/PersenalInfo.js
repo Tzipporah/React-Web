@@ -33,6 +33,8 @@ class PersonalInfo extends Component{
         return (
             <>
             <Navbar/>
+            <video src='/videos/Pexels Videos personalInfo.mp4' autoPlay loop muted />
+            <h1>{this.props.user.displayName} שלום</h1>
             {
                 levels.map((level) => {
                     return (
@@ -53,7 +55,8 @@ class PersonalInfo extends Component{
 const mapStateToProps = (state) => {
     // console.log(state)
     return {
-        profile: state.firebase.profile
+        profile: state.firebase.profile,
+        user: state.firebase.auth
     }
 }
 export default connect(mapStateToProps)(PersonalInfo)
