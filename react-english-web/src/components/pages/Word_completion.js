@@ -11,39 +11,27 @@ import Navbar from '../Navbar'
 function Word_completion({ match }) { 
     const level = match.params.level;
     let arr = []
-    words[level].map((word, index=0) => {
+    words[level].map((word, index) => {
         arr[index++] = [word.en, word.he, word.picture]
     })
     let story_arr =[]
-    stories[level].map((page, index=0) => {
+    stories[level].map((page, index) => {
         story_arr[index++] = page.story
     })
-    const [i, setI] = useState(0);
-    const [arr_t, setArr] = useState("");
-    const [word, setWord] = useState("");
-    const [word_picture, setWord_picture] = useState("");
-    const [word_sentece, setWord_sentece] = useState("");
+    
     const [btn, setBtn] = useState("לעמוד הבא");
     const [page, setPage] = useState(0);
+    const[score, setScore] = useState(0)
     
     function handleClick() {
-       /* if (i < arr.length){
-            setI(i+1)
-            setWord(arr[i][0])
-            setWord_picture(arr[i][3])
-            setWord_sentece(arr[i][4])
-            setArr(arr)
-            setBtn("למשפט הבא")
-        }
-        
-        if(i >= arr.length-1)
-            setBtn("סיום")*/
-        if (page < story_arr.length-1){
+        if (page < story_arr.length-2){
             setPage(page+1)
             setBtn("לעמוד הבא")
         }     
-        else
+        else{
+            setPage(page+1)
             setBtn("סיום")
+        }            
     }
     return(
         <>
@@ -52,9 +40,10 @@ function Word_completion({ match }) {
             <div className='container'>
             <div className='page'>
             <Sentences 
-                className="sentenc"
+                className="sentences"
                 page = {story_arr[page]}
                 level = {level}
+                score = {score}
             />
            <button class = "btn-senteces" onClick={handleClick}>
                     {btn}

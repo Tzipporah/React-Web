@@ -16,21 +16,34 @@
     margin: 50px 0 45px;
     background-color: aquamarine;
     width: 140vh;
-    height: 100vh;
     left: 15%;
 }
 .story{
-    margin: 50px 0 45px;
+    margin: 50px 50px 45px 50px;
+    
+   
 }
-.sentenc{
+.sentence{
     display: inline-block;
+    display: flex;
+    flex-direction: row; 
+    text-align-last: right;
 }
  p{
-    float: right;
+    float: left;
     font-size: 8vh;
 }
-.sentenc .col-offset-4{
+
+.sentence .col-offset-4{
     float: left;
+    margin-left: 10px;
+    
+}
+.sentence img{
+    height: 10%;
+    width: 10%;
+    float: left;
+    margin-left: 10px;
 }
 .btn-senteces{
     padding: 12px 25px;
