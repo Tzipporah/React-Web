@@ -10,7 +10,7 @@ import Learn from './components/pages/Learn';
 import Word_completion from './components/pages/Word_completion'
 import ScrollToTop from './ScrollToTop'
 import Game from './components/pages/Game'
-import PersonalInfo from './components/pages/PersenalInfo'
+import PersonalInfo from './components/pages/PersonalInfo'
 
 
 function App() {

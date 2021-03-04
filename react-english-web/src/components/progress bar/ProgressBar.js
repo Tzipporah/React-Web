@@ -14,11 +14,16 @@ const ProgressBar = ({done}) => {
 	}, 200);
 	
 	return (
+		<>
+		{done==0?<i className='fas fa-lock'/>:done==100?<i className='fas fa-lock'/>:<i className='fas fa-glasses'/>}
 		<div className="progress">
 			<div className="progress-done" style={style}>
-				{done}%
+				{done!=0?done:''}{done!=0?'%':''}
+
 			</div>
+			
 		</div>
+		</>
 	)
 }
 

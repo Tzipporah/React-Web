@@ -6,4 +6,38 @@ video {
     z-index: -1;
   }
   
-  
+  #p-split-container{
+    height:100%;
+    width:100%;
+    margin:0 auto;
+    color: white;
+    
+  }
+  .p-split-item{
+    display:inline-block;
+    vertical-align:center;
+    height:100%;
+    margin-top: 0%;
+    width:25%;
+    background-color: rgba(15, 14, 14, 0.6);
+    font-size: 20px;
+  }
+
+.p-title{
+    display:inline-block;
+    vertical-align:top;
+    height:100%;
+    margin-top: 0%;
+    width:75%;
+    font-size: 30px;
+}
+
+#progresses {
+    float: right;
+    margin: 18px;
+}
+
+#level{
+    float: right;  
+    margin: 0px;
+}
