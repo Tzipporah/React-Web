@@ -2,6 +2,7 @@ import React from 'react';
 import Select from 'react-select';
 import './pages/Word_completion.css';
 import words from '../data/levels.json'
+
 //import { handleInputChange } from 'react-select/src/utils';
 
 const sentences = ({page,level, score, updateScore, updateQuestion,question }) =>
@@ -23,7 +24,7 @@ const sentences = ({page,level, score, updateScore, updateQuestion,question }) =
           page_list.push(word.toLowerCase())
         }      
     })
-   // update() 
+  
     function update(){
       question+= page_list.length
       updateQuestion(question)
@@ -56,13 +57,10 @@ const sentences = ({page,level, score, updateScore, updateQuestion,question }) =
           score++
           updateScore(score)
         }
-          
-        console.log(score, val, correctVal);  
       }
 
       function splitMulti(str, tokens){
         str = " " +str.replace(/[^a-zA-Z ]/g, " ") 
-        console.log(str);
         var tempChar = tokens[0] + " "; // We can use the first token as a temporary join character
         for(var i = 1; i < tokens.length; i++){
             tokens[i] = " " +tokens[i] +" "
@@ -70,7 +68,7 @@ const sentences = ({page,level, score, updateScore, updateQuestion,question }) =
             str += "\t"
         }
         str = str.split(tempChar);
-        console.log(str);
+
         return str;
       }
       function to_lower_case(arr){
@@ -80,10 +78,9 @@ const sentences = ({page,level, score, updateScore, updateQuestion,question }) =
           }
           return arr
       }
-      
+
       //Get the text divided into an array according to the words that need to be found
       const text = splitMulti(page.toLowerCase(),to_lower_case(array1) )
-      console.log(page_list)
       const last_index = text[text.length-1]
       const text_slice = text.slice(0,text.length-1)
       let i= 0
