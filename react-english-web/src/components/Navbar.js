@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import './Navbar.css';
 import { connect } from 'react-redux'
 import { signOut } from '../store/actions/authActions'
+import 'antd/dist/antd.css';
+import { Avatar } from 'antd';
 
 function Navbar(props) {
 
@@ -43,6 +45,7 @@ function Navbar(props) {
     <>
       <nav className='navbar'>
         <div className='navbar-container'>
+          <Avatar size={40} icon={userName} src={profilePicture}/>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
             {userName}
             <i className='fas fa-glasses' />

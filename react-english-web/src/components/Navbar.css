@@ -29,6 +29,10 @@
   align-items: center;
 }
 
+.navbar-logo:hover {
+  color: #fff;
+}
+
 .fa-glasses {
   margin-left: 0.5rem;
   font-size: 1.8rem;
@@ -43,6 +47,8 @@
   width: 60vw;
   justify-content: end;
   margin-right: 2rem;
+  margin-bottom: 0em;
+  row-gap: 5px;
 }
 
 .nav-item {
@@ -60,6 +66,7 @@
 
 .nav-links:hover {
   border-bottom: 4px solid #fff;
+  color: #fff;
   transition: all 0.2s ease-out;
 }
 
