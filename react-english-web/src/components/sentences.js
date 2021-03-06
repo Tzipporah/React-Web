@@ -4,7 +4,7 @@ import './pages/Word_completion.css';
 import words from '../data/levels.json'
 //import { handleInputChange } from 'react-select/src/utils';
 
-const sentences = ({page,level, score}) =>
+const sentences = ({page,level, score, updateScore, updateQuestion,question }) =>
 {
      //declare the array of the words picture
      let array_picture = []
@@ -23,8 +23,11 @@ const sentences = ({page,level, score}) =>
           page_list.push(word.toLowerCase())
         }      
     })
-   
-    console.log("array_picture",array_picture);
+   // update() 
+    function update(){
+      question+= page_list.length
+      updateQuestion(question)
+    }
     //the function above for Select tag
     var technologyList = [];
     array1.map((element) =>{
@@ -49,14 +52,16 @@ const sentences = ({page,level, score}) =>
       }
      
       function handleValueChange(val, correctVal) {
-        if (val === correctVal)
+        if (val === correctVal){
           score++
-        console.log(score, val, correctVal);   
+          updateScore(score)
+        }
+          
+        console.log(score, val, correctVal);  
       }
 
       function splitMulti(str, tokens){
-        
-        str = " " +str.replace(/[^a-zA-Z ]/g, "") + " "
+        str = " " +str.replace(/[^a-zA-Z ]/g, " ") 
         console.log(str);
         var tempChar = tokens[0] + " "; // We can use the first token as a temporary join character
         for(var i = 1; i < tokens.length; i++){

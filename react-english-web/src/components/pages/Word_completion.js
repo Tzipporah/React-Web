@@ -8,6 +8,7 @@ import { Button } from '../Button'
 import Footer from '../Footer';
 import Navbar from '../Navbar'
 import CategorySection from '../CategorySection'
+import Scoresheet from '../Scoresheet'
 
 function Word_completion({ match }) { 
     const level = match.params.level;
@@ -23,6 +24,17 @@ function Word_completion({ match }) {
     const [btn, setBtn] = useState("לעמוד הבא");
     const [page, setPage] = useState(0);
     const[score, setScore] = useState(0)
+    const[question, setQuestion] = useState(0)
+    const[end, setEnd] = useState(false)
+    
+    function updateScore(new_score){
+        setScore(new_score)
+        
+    }
+    function updateQuestion(new_question){
+        setQuestion(new_question)
+        console.log("update: ", question);
+    }
     
     function handleClick() {
         if (page < story_arr.length-2){
@@ -34,29 +46,43 @@ function Word_completion({ match }) {
             setBtn("סיום")
         }            
     }
-    return(
-        <>
-            <Navbar/>
-            <CategorySection
-            videoLink='/videos/Pexels Videos story.mp4'>
-            
-                <div className='w-container'>
-                    <div className='page'>
-                        <Sentences 
-                            className="sentences"
-                            page = {story_arr[page]}
-                            level = {level}
-                            score = {score}
-                        />
-                    <button class = "btn-senteces" onClick={handleClick}>
-                                {btn}
-                        </button>
-                    </div>
+    if (page <= story_arr.length-1){
+        return(
+            <>
+                <Navbar/>
+                <CategorySection
+                videoLink='/videos/Pexels Videos story.mp4'>
+                
+                    <div className='w-container'>
+                        <div className='page'>
+                            <Sentences 
+                                className="sentences"
+                                page = {story_arr[page]}
+                                level = {level}
+                                score = {score}
+                                updateScore = {updateScore}
+                                question = {question}
+                                updateQuestion = {updateQuestion}
+                            />
+                        <button class = "btn-senteces" onClick={handleClick}>
+                                    {btn}
+                            </button>
+                        </div>
+                </div>
+                </CategorySection>
+                
+                <Footer />
+            </>
+           
+        );
+    }
+    else{
+        return(
+            <div>
+                 <Scoresheet score={score} totalQuestions={question} type='סיפור'/> 
             </div>
-            </CategorySection>
-            <Footer />
-        </>
-       
-    );
+        );
+    }
+    
 }
 export default Word_completion;
