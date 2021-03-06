@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 import './Navbar.css';
 import { connect } from 'react-redux'
 import { signOut } from '../store/actions/authActions'
-import 'antd/dist/antd.css';
-import { Avatar } from 'antd';
+import Avatar from 'antd/lib/avatar'
+import 'antd/lib/avatar/style/index.css';
+
 
 function Navbar(props) {
 

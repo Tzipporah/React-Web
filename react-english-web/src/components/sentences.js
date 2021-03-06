@@ -39,8 +39,8 @@ const sentences = ({page,level, score, updateScore, updateQuestion,question }) =
           ...provided,
           width: 80,
           borderBottom: '2px  green',
-          color: state.isSelected ? 'yellow' : 'black',
-          backgroundColor: state.isSelected ? 'green' : 'white'
+          color: state.isSelected ? 'white' : 'black',
+          backgroundColor: state.isSelected ? 'black' : 'white'
         }),
     
         control: (provided) => ({

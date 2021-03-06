@@ -6,9 +6,7 @@
   font-family: 'Amatic SC', cursive;
 }
 
-.home,
-.services,
-.products,
+.main-page,
 .sign-up {
   display: flex;
   height: 90vh;
