@@ -33,7 +33,6 @@ function Word_completion({ match }) {
     }
     function updateQuestion(new_question){
         setQuestion(new_question)
-        console.log("update: ", question);
     }
     
     function handleClick() {
