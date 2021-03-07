@@ -6,9 +6,7 @@ function Voice(props) {
 
     const word = props.word;
     
-    const [meanings, setMeanings] = useState([]);   
-
-    
+    const [meanings, setMeanings] = useState([]);     
     
     useEffect(()=>{
 
