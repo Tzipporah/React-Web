@@ -37,7 +37,7 @@ function createQuestions (arr, level)
     }
 }
 
-//Mix the words
+// Mix the words
 function mixArray(array) {
     let i = array.length - 1;
     for (; i > 0; i--) {

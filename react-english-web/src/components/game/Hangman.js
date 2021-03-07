@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import Image from './Image'
 import { Button } from "../Button"
 import Voice from '../Voice'
-import Scoresheet from '../Scoresheet'
-import { connect } from 'react-redux'
-import { updateProgress } from '../../store/actions/userProgressAction'
 import { Container } from "@material-ui/core";
 import CategorySection from '../CategorySection'
 
@@ -63,7 +60,9 @@ class Hangman extends Component {
       if(this.i === this.props.arr.length-1)
         this.btn = "סיום"
       if(this.i < this.props.arr.length)
-        this.setState({answer: this.props.arr[this.i][0]});     
+        this.setState({answer: this.props.arr[this.i][0]});    
+      if(this.i === this.props.arr.length)
+        this.props.end(true, this.score)
   }
 
   render() {
@@ -79,69 +78,41 @@ class Hangman extends Component {
     if (gameOver) 
       gameStat = "!נכשלת"
 
-    if(this.i !== this.props.arr.length) { 
-      return (
-        <Container className='game-div'>
-            <Container className='p-game'>
-            <div id='split-container'>
-            
+    return (
+      <Container className='game-div'>
+          <Container className='p-game'>
+          <div id='split-container'>
             <div className="split-item">
               <Image step = {this.state.mistake} />
             </div>
-            <div className='split-item'>
-              
-                
-            מה התרגום של
-            <br/>
-              
-               {this.props.arr[this.i][1]}
-                
+            <div className='split-item'>                
+              מה התרגום של
               <br/>
-
+              {this.props.arr[this.i][1]}
+              <br/>
               {!gameOver ? this.guessedWord() : this.state.answer}
               <br/>
               <br/>
               <Voice  word ={this.props.arr[this.i][0]}/>
-              
-              
-            {"ניחושים :\n"}
-            {`${this.state.mistake} \n \\ ${this.props.maxWrong}`}  
-            
+              {"ניחושים :\n"}
+              {`${this.state.mistake} \n \\ ${this.props.maxWrong}`}  
             </div>
-            </div>
-              <p>
-              {gameStat}
-              </p>
-              </Container>
-              {(isWinner || gameOver) 
-                ?
-                  <Button className='btns'
+          </div>
+            <p>
+            {gameStat}
+            </p>
+            </Container>
+            {(isWinner || gameOver) 
+              ?
+                <Button className='btns'
                   buttonStyle='btn--outline'
                   buttonSize='btn--large' onClick={this.resetButton}>{this.btn}</Button>
-                :
-                  ""
-              }
-        </Container>
-        )}
-        else{
-          if ((this.score / this.props.arr.length) * 100 >= 70)
-            this.props.updateProgress('game', this.props.level)
-          return(
-            <CategorySection 
-              videoLink='/videos/Pexels Videos game.mp4'>
-              <div className="game-div">
-                <Scoresheet score={this.score} totalQuestions={this.props.arr.length} type='משחק'/>
-              </div>
-            </CategorySection>
-          )
-        }
+              :
+                ""
+            }
+      </Container>
+    )
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    updateProgress: (category, level) => dispatch(updateProgress(category, level))
-  }
-}
-
-export default connect(null, mapDispatchToProps)(Hangman);
+export default Hangman;
