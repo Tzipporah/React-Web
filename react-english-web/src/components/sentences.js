@@ -1,26 +1,16 @@
 import React from 'react';
 import Select from 'react-select';
 import './pages/Word_completion.css';
-import words from '../data/levels.json'
 import StoryImage from './StoryImage'
 
 //import { handleInputChange } from 'react-select/src/utils';
 
-const sentences = ({page,level, score, updateScore, updateQuestion,question }) =>
+const sentences = ({page, array_picture, array_words, score, updateScore, updateQuestion,question }) =>
 {
-     //declare the array of the words picture
-     let array_picture = []
-     words[level].map((word, index) => {
-       array_picture[word.en.toLowerCase()] = word.picture
-     })
-    let array1 = []
-    words[level].map((word, index) => {
-        array1[index++] = word.en
-    })
     var page_list=[];
     //the function get from the story all the learning word ordered
-    page.match(/\b(\w+)\b/g).map((word) => {
-        let temp_arr = to_lower_case(array1)
+    page.match(/\b(\w+)\b/g).forEach((word) => {
+        let temp_arr = to_lower_case(array_words)
         if(temp_arr.indexOf(word.toLowerCase()) > -1){
           page_list.push(word.toLowerCase())
         }      
@@ -32,7 +22,7 @@ const sentences = ({page,level, score, updateScore, updateQuestion,question }) =
     }
     //the function above for Select tag
     var technologyList = [];
-    array1.map((element) =>{
+    array_words.forEach((element) => {
         technologyList.push({ label:element, value: element })  
     });
     //the style for Select tag
@@ -81,7 +71,7 @@ const sentences = ({page,level, score, updateScore, updateQuestion,question }) =
       }
 
       //Get the text divided into an array according to the words that need to be found
-      const text = splitMulti(page.toLowerCase(),to_lower_case(array1) )
+      const text = splitMulti(page.toLowerCase(),to_lower_case(array_words))
       const last_index = text[text.length-1]
       const text_slice = text.slice(0,text.length-1)
       let i= 0

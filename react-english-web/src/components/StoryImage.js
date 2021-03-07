@@ -4,9 +4,9 @@ import './StoryImage.css'
 
 class Zoom extends Component {
     src = this.props.img
-  state = {
-    backgroundImage: `url(${this.src})`,
-    backgroundPosition: '0% 0%'
+    state = {
+      backgroundImage: `url(${this.src})`,
+      backgroundPosition: '0% 0%'
   }
 
   handleMouseMove = e => {
@@ -18,7 +18,7 @@ class Zoom extends Component {
 
   render = () =>
     <figure onMouseMove={this.handleMouseMove} style={this.state} className='story-fig'>
-      <img src={this.src} className='story-img'/>
+      <img src={this.src} className='story-img' alt="Story"/>
     </figure>
 }
 

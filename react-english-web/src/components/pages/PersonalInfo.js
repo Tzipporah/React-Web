@@ -3,7 +3,6 @@ import { Component } from 'react'
 import { connect } from 'react-redux'
 import Navbar from '../Navbar'
 import Footer from '../Footer'
-import { Container } from "@material-ui/core"
 import './personalInfo.css'
 
 

@@ -1,7 +1,6 @@
-import { useSelector } from 'react-redux'
 // Create a new user progress
 export const createNewProgress = (userId) => {
-    return (dispatch, getState, { getFirestore }) => {
+    return (dispatch, { getFirestore }) => {
         const firestore = getFirestore();
   
         // Check if the user exist already      
@@ -55,8 +54,6 @@ export const updateProgress = (category, level) => {
                     type: 'UPDATE_PROGRESS',
                 })
             )
-        }
-        
-        
+        }       
     }
 }
