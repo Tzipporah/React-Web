@@ -3,9 +3,9 @@ import Image from './Image'
 import { Button } from "../Button"
 import Voice from '../Voice'
 import { Container } from "@material-ui/core";
-import CategorySection from '../CategorySection'
 
 class Hangman extends Component {
+  
   static defaultProps = {
     maxWrong: 6
   }
@@ -37,7 +37,7 @@ class Hangman extends Component {
   }
 
   generateButtons() {
-    return "abcdefghijklmnopqrstuvwxyz".split("").map(letter => (
+    return "abcdefghijklmnopqrstuvwxyz-".split("").map(letter => (
       <button
         type='button'
         className={this.state.guessed.has(letter)? 'btn' : "btn trans"}
@@ -80,7 +80,7 @@ class Hangman extends Component {
 
     return (
       <Container className='game-div'>
-          <Container className='p-game'>
+        <Container className='p-game'>
           <div id='split-container'>
             <div className="split-item">
               <Image step = {this.state.mistake} />
@@ -98,18 +98,17 @@ class Hangman extends Component {
               {`${this.state.mistake} \n \\ ${this.props.maxWrong}`}  
             </div>
           </div>
-            <p>
+          <p>
             {gameStat}
-            </p>
-            </Container>
-            {(isWinner || gameOver) 
-              ?
-                <Button className='btns'
-                  buttonStyle='btn--outline'
-                  buttonSize='btn--large' onClick={this.resetButton}>{this.btn}</Button>
-              :
-                ""
-            }
+          </p>
+        </Container>
+        {(isWinner || gameOver) ?
+            <Button className='btns'
+              buttonStyle='btn--outline'
+              buttonSize='btn--large' onClick={this.resetButton}>{this.btn}</Button>
+          :
+            ""
+        }
       </Container>
     )
   }
