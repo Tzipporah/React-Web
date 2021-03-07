@@ -19,7 +19,7 @@ function Scoresheet(props) {
             <br/>
             <Button className='btns'
                     buttonStyle='btn--outline'
-                    buttonSize='btn--large'onClick={handleClick}> <h1>{` ${props.type}  חדש >>`}</h1> </Button>        
+                    buttonSize='btn--large'onClick={handleClick}> {` ${props.type}  חדש >>`} </Button>        
         </div>
     )
 }
