@@ -65,12 +65,7 @@ p{
     color: #fff;
     border-color: #fff;
 }
-.sentence img{
-    height: 10%;
-    width: 10%;
-    float: left;
-    margin-left: 10px;
-}
+
 .btn-senteces{    
     position: absolute;
     bottom: 2px;

@@ -2,6 +2,7 @@ import React from 'react';
 import Select from 'react-select';
 import './pages/Word_completion.css';
 import words from '../data/levels.json'
+import StoryImage from './StoryImage'
 
 //import { handleInputChange } from 'react-select/src/utils';
 
@@ -87,7 +88,7 @@ const sentences = ({page,level, score, updateScore, updateQuestion,question }) =
       const listItems = text_slice.map((line) =>
         <div class="sentence">
            <p>{line}</p>
-           <img src={array_picture[page_list[i]]}/>
+            <StoryImage img={array_picture[page_list[i]]}/>
            <Select name={page_list[i++]} className="col-md-8 col-offset-4" options={ technologyList } styles = { customStyles } onChange={(val, selectName) => handleValueChange(val.value, selectName.name)}  />
         </div> 
         );

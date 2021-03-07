@@ -1,0 +1,15 @@
+figure .story-fig {
+    background-repeat: no-repeat;
+    width: 60px;
+  }
+  
+.story-fig:hover .story-img {
+    opacity: 0;
+    display: block;
+}
+  
+.story-img {
+    pointer-events: none;
+    height: 50px;
+    width:50px;
+  }
