@@ -215,114 +215,133 @@
     ],
     "advancers":[
         {
-            "en":"paddles",
-            "he":"משוטים",
-            "picture":"https://www.outdoorplay.com/images/sca-prod-imgs/Outfitter-Paddle.main.collage.01.jpg"
-        },
-        {
-            "en":"shallow",
-            "he":"רדוד",
-            "picture":"https://previews.123rf.com/images/jehsomwang/jehsomwang1902/jehsomwang190200045/116571079-opposite-words-deep-and-shallow-vector-illustration.jpg"
-        },
-        {
-            "en":"drawing",
+            "en":"Drawing",
             "he":"ציור",
             "picture":"https://www.nguyenartgallery.com/wp-content/uploads/What-is-Sketching.jpg"
         },
         {
-            "en":"stern",
-            "he":"ירכתי ספינה",
-            "picture":"https://developers.redhat.com/blog/wp-content/uploads/2019/05/kubernetes-ttools.jpg"
+            "en":"Entertainment",
+            "he":"בידור",
+            "picture":"https://cdn.shortpixel.ai/spai/w_924+q_+ret_img+to_webp/https://giveitanudge.com/wp-content/uploads/2019/03/Entertainment.jpg"
         },
         {
-            "en":"thrust",
-            "he":"דחף",
-            "picture":"http://www.nasa.gov/sites/default/files/thumbnails/image/edu_thrust_large.png"
-        },
-        {
-            "en":"ruthless",
-            "he":"חסר רחמים",
-            "picture":"http://media.dods.co.uk/sites/media.dods.co.uk/files/image/unleash-your-ruthless-side-image.jpg"
-        },
-        {
-            "en":"lucrative",
+            "en":"Lucrative",
             "he":"משתלם",
             "picture":"https://lh3.googleusercontent.com/proxy/TrPJOdxoMWlPBcWcfsxiJMieIdsHgiIQy9lrN1PUKsYTnyox77U-Bm8Q90ceHMyu2TaenwgullKn1QabmOK-dwho0pN-W1AjuiLQT87Amj_H53aUn2REj2Uj7yg0Vykrt3aYQDFN0pIe5Hk8_co"
         },
         {
-            "en":"tributary",
-            "he":"יובל",
-            "picture":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Aerial_Photo_of_Harpers_Ferry_%2815646790473%29.jpg/655px-Aerial_Photo_of_Harpers_Ferry_%2815646790473%29.jpg"
+            "en":"Paddles",
+            "he":"משוטים",
+            "picture":"https://www.outdoorplay.com/images/sca-prod-imgs/Outfitter-Paddle.main.collage.01.jpg"
         },
         {
-            "en":"entertainment",
-            "he":"בידור",
-            "picture":"https://cdn.shortpixel.ai/spai/w_924+q_+ret_img+to_webp/https://giveitanudge.com/wp-content/uploads/2019/03/Entertainment.jpg"
+            "en":"Ruthless",
+            "he":"חסר רחמים",
+            "picture":"http://media.dods.co.uk/sites/media.dods.co.uk/files/image/unleash-your-ruthless-side-image.jpg"
+        },
+        {
+            "en":"Shallow",
+            "he":"רדוד",
+            "picture":"https://previews.123rf.com/images/jehsomwang/jehsomwang1902/jehsomwang190200045/116571079-opposite-words-deep-and-shallow-vector-illustration.jpg"
+        },
+        {
+            "en":"Stern",
+            "he":"ירכתי ספינה",
+            "picture":"https://developers.redhat.com/blog/wp-content/uploads/2019/05/kubernetes-ttools.jpg"
+        },
+        {
+            "en":"Thrust",
+            "he":"דחף",
+            "picture":"http://www.nasa.gov/sites/default/files/thumbnails/image/edu_thrust_large.png"
+        },
+        {
+            "en":"Tributary",
+            "he":"יובל",
+            "picture":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Aerial_Photo_of_Harpers_Ferry_%2815646790473%29.jpg/655px-Aerial_Photo_of_Harpers_Ferry_%2815646790473%29.jpg"
         }
     ],
     "business":[
         {
-            "en":"broke",
+            "en":"Broke",
             "he":"חסר פרוטה",
             "picture":"https://tannerycompany.com/wp-content/uploads/2018/10/broke.jpeg"
         },
         {
-            "en":"owned",
-            "he":"בבעלות",
-            "picture":"https://previews.123rf.com/images/lkeskinen/lkeskinen1701/lkeskinen170101638/68344293-owned-rubber-stamp.jpg"
-        },
-        {
-            "en":"social security",
-            "he":"ביטוח לאומי",
-            "picture":"https://www.gannett-cdn.com/-mm-/9e1f6e2ee20f44aa1f3be4f71e9f3e52b6ae2c7e/c=0-110-2121-1303/local/-/media/2020/01/15/USATODAY/usatsports/social-security-card_gettyimages-480251980.jpg?width=1600&height=800&fit=crop&format=pjpg&auto=webp"
-        },
-        {
-            "en":"offer",
-            "he":"הצעה",
-            "picture":"https://ae01.alicdn.com/kf/U061ddeea6f9d4d76b780199897a8678af/offer-special.jpg"
-        },
-        {
-            "en":"sell",
-            "he":"למכור",
-            "picture":"https://www.usnews.com/dims4/USNEWS/527c15d/2147483647/crop/2000x1313%2B0%2B0/resize/640x420/quality/85/?url=http%3A%2F%2Fmedia.beam.usnews.com%2Fbf%2F6f%2F72af92b74530b0ea949058bdceba%2F190425-sellinvestment-stock.jpg"
-        },
-        {
-            "en":"owners",
-            "he":"בעלים",
-            "picture":"https://clutchpoints.com/wp-content/uploads/2019/07/NBA-1.jpg"
-        },
-        {
-            "en":"free",
-            "he":"חינם",
-            "picture":"https://www.productfocus.com/wp/wp-content/uploads/2019/10/Free-Image.jpg"
-        },
-        {
-            "en":"percentage",
-            "he":"אחוזים",
-            "picture":"https://cdn.inchcalculator.com/wp-content/uploads/2018/03/percent-of-percent.jpg"
-        },
-        {
-            "en":"deal",
+            "en":"Deal",
             "he":"עיסקה",
             "picture":"https://ulpan.com/wp-content/uploads/2018/04/shutterstock_749516455.jpg"
         },
         {
-            "en":"restaurant",
+            "en":"Free",
+            "he":"חינם",
+            "picture":"https://www.productfocus.com/wp/wp-content/uploads/2019/10/Free-Image.jpg"
+        },
+        {
+            "en":"Offer",
+            "he":"הצעה",
+            "picture":"https://ae01.alicdn.com/kf/U061ddeea6f9d4d76b780199897a8678af/offer-special.jpg"
+        },
+        {
+            "en":"Owned",
+            "he":"בבעלות",
+            "picture":"https://previews.123rf.com/images/lkeskinen/lkeskinen1701/lkeskinen170101638/68344293-owned-rubber-stamp.jpg"
+        },
+        {
+            "en":"Owners",
+            "he":"בעלים",
+            "picture":"https://clutchpoints.com/wp-content/uploads/2019/07/NBA-1.jpg"
+        },
+        {
+            "en":"Percentage",
+            "he":"אחוזים",
+            "picture":"https://cdn.inchcalculator.com/wp-content/uploads/2018/03/percent-of-percent.jpg"
+        },
+        {
+            "en":"Restaurant",
             "he":"מסעדה",
             "picture":"https://upload.wikimedia.org/wikipedia/commons/e/ef/Restaurant_N%C3%A4sinneula.jpg"
-        }
-        
+        },  
+        {
+            "en":"Sell",
+            "he":"למכור",
+            "picture":"https://www.usnews.com/dims4/USNEWS/527c15d/2147483647/crop/2000x1313%2B0%2B0/resize/640x420/quality/85/?url=http%3A%2F%2Fmedia.beam.usnews.com%2Fbf%2F6f%2F72af92b74530b0ea949058bdceba%2F190425-sellinvestment-stock.jpg"
+        },
+        {
+            "en":"Social security",
+            "he":"ביטוח לאומי",
+            "picture":"https://www.gannett-cdn.com/-mm-/9e1f6e2ee20f44aa1f3be4f71e9f3e52b6ae2c7e/c=0-110-2121-1303/local/-/media/2020/01/15/USATODAY/usatsports/social-security-card_gettyimages-480251980.jpg?width=1600&height=800&fit=crop&format=pjpg&auto=webp"
+        }     
     ],
     "spoken":[
         {
-            "en":"Little",
-            "he":"קטן",
-            "picture":"https://cdn-prod.scalefast.com/public/assets/user/122595/image/33fe919c22c925e5b31da7471fb4d9cd.jpg"
+            "en":"Basket",
+            "he":"סל",
+            "picture":"https://www.fruitgravycompany.com/wp-content/uploads/2018/12/basket.jpg"
         },
         {
-            "en":"wood",
-            "he":"עץ",
-            "picture":"https://images.pexels.com/photos/1787035/pexels-photo-1787035.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+            "en":"Bed",
+            "he":"מיטה",
+            "picture":"https://images.pexels.com/photos/279746/pexels-photo-279746.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+        },
+        {
+            "en":"Ears",
+            "he":"אוזניים",
+            "picture":"https://singularityhub.com/wp-content/uploads/2018/11/vector-human-ear-photorealistic-illustration_shutterstock_516060400-900x506.jpg"
+        },
+        {
+            "en":"Eyes",
+            "he":"עיניים",
+            "picture":"https://www.kirkeyecenter.com/wp-content/uploads/2020/04/eye-img.jpg"
+        },
+        {
+            "en":"Granny",
+            "he":"סבתא",
+            "picture":"https://images.pexels.com/photos/2050981/pexels-photo-2050981.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+        },
+        {
+            "en": "Head",
+            "he": "ראש",
+            "picture":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Human_head_and_brain_diagram.svg/1200px-Human_head_and_brain_diagram.svg.png"
         },
         {
             "en":"Hood",
@@ -330,69 +349,49 @@
             "picture":"https://images.pexels.com/photos/2230895/pexels-photo-2230895.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
         },
         {
-            "en":"granny",
-            "he":"סבתא",
-            "picture":"https://images.pexels.com/photos/2050981/pexels-photo-2050981.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-        },
-        {
-            "en":"basket",
-            "he":"סל",
-            "picture":"https://www.fruitgravycompany.com/wp-content/uploads/2018/12/basket.jpg"
-        },
-        {
-            "en":"wolf",
-            "he":"זאב",
-            "picture":"https://upload.wikimedia.org/wikipedia/commons/6/68/Eurasian_wolf_2.jpg"
-        },
-        {
-            "en":"bed",
-            "he":"מיטה",
-            "picture":"https://images.pexels.com/photos/279746/pexels-photo-279746.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-        },
-        {
-            "en":"later",
+            "en":"Later",
             "he":"יותר מאוחר",
             "picture":"https://bluemail.help/assets/ic_action_later-.png"
         },
         {
-            "en":"eyes",
-            "he":"עיניים",
-            "picture":"https://www.kirkeyecenter.com/wp-content/uploads/2020/04/eye-img.jpg"
+            "en":"Little",
+            "he":"קטן",
+            "picture":"https://cdn-prod.scalefast.com/public/assets/user/122595/image/33fe919c22c925e5b31da7471fb4d9cd.jpg"
         },
         {
-            "en":"ears",
-            "he":"אוזניים",
-            "picture":"https://singularityhub.com/wp-content/uploads/2018/11/vector-human-ear-photorealistic-illustration_shutterstock_516060400-900x506.jpg"
+            "en": "Never",
+            "he": "אף פעם",
+            "picture":"https://supplychainbeyond.com/wp-content/uploads/2013/05/pic-never.jpg"
         },
         {
-            "en": "smell",
+            "en": "Scream",
+            "he": "לצרוח",
+            "picture":"https://preview.pixlr.com/images/800wm/1214/2/1214204862.jpg"
+        }, 
+        {
+            "en": "Smell",
             "he": "להריח",
             "picture":"https://venta-usa.com/wp-content/uploads/2014/03/Venta-scent.jpg"
         },
         {
-            "en": "teeth",
+            "en": "Teeth",
             "he": "שיניים",
             "picture":"https://stonehavendental.com/wp-content/uploads/2018/05/The_Different_Types_of_Teeth.jpg"
         },
         {
-            "en": "woodcutter",
+            "en":"Wolf",
+            "he":"זאב",
+            "picture":"https://upload.wikimedia.org/wikipedia/commons/6/68/Eurasian_wolf_2.jpg"
+        },
+        {
+            "en":"Wood",
+            "he":"עץ",
+            "picture":"https://images.pexels.com/photos/1787035/pexels-photo-1787035.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+        },      
+        {
+            "en": "Woodcutter",
             "he": "חוטב עצים",
             "picture":"https://cdnb.artstation.com/p/assets/images/images/006/920/911/large/tanya-mykhailetska-.jpg?1502269349"
-        },
-        {
-            "en": "scream",
-            "he": "לצרוח",
-            "picture":"https://preview.pixlr.com/images/800wm/1214/2/1214204862.jpg"
-        },
-        {
-            "en": "head",
-            "he": "ראש",
-            "picture":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Human_head_and_brain_diagram.svg/1200px-Human_head_and_brain_diagram.svg.png"
-        },
-        {
-            "en": "never",
-            "he": "אף פעם",
-            "picture":"https://supplychainbeyond.com/wp-content/uploads/2013/05/pic-never.jpg"
         }
     ]
 }
