@@ -6,6 +6,7 @@ import Scoresheet from '../Scoresheet'
 import { connect } from 'react-redux'
 import { updateProgress } from '../../store/actions/userProgressAction'
 import { Container } from "@material-ui/core";
+import CategorySection from '../CategorySection'
 
 class Hangman extends Component {
   static defaultProps = {
@@ -126,9 +127,12 @@ class Hangman extends Component {
           if ((this.score / this.props.arr.length) * 100 >= 70)
             this.props.updateProgress('game', this.props.level)
           return(
-            <div className="game-div">
-              <Scoresheet score={this.score} totalQuestions={this.props.arr.length} type='משחק'/>
-            </div>
+            <CategorySection 
+              videoLink='/videos/Pexels Videos game.mp4'>
+              <div className="game-div">
+                <Scoresheet score={this.score} totalQuestions={this.props.arr.length} type='משחק'/>
+              </div>
+            </CategorySection>
           )
         }
   }

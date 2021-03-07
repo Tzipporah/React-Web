@@ -7,8 +7,6 @@ const Definitions = ({word, wordHe}) =>
     return(
         <div className = "definitions">
             <div className = "subTitle">
-                <Voice  word ={word}/>  
-                <hr/>
                 <span className="span">
                     <b className="b">:המילה באנגלית</b>
                     <br/>
@@ -20,6 +18,9 @@ const Definitions = ({word, wordHe}) =>
                     <br/>
                     {wordHe}
                 </span>
+                <hr/>
+                <br/>
+                <Voice  word ={word}/>  
                 <hr/>
             </div>
         </div>

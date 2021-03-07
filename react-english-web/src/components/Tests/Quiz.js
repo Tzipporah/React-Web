@@ -128,12 +128,12 @@ export class Quiz extends Component {
             }
             return (
                 <CategorySection 
-                videoLink='/videos/Pexels Videos 2450250.mp4'
-                title={title}>
-                <div  className="quiz-container">
-                    <Scoresheet score={score} totalQuestions={questionBank.length} type='מבחן'/>
-                    <br />               
-                </div>
+                    videoLink='/videos/Pexels Videos 2450250.mp4'
+                    title={title}>
+                    <div  className="quiz-container">
+                        <Scoresheet score={score} totalQuestions={questionBank.length} type='מבחן'/>
+                        <br />               
+                    </div>
                 </CategorySection>
             )
         }

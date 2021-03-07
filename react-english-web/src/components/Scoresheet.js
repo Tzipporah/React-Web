@@ -10,8 +10,8 @@ function Scoresheet(props) {
     }
     
     return (
-        <div className="container small">
-            <p>ה{props.type} נגמר</p>
+        <div className="container small" style={{textAlign: "center", direction: "rtl"}}>
+            <h4>ה{props.type} נגמר</h4>
             <br />
             <h3>{"הניקוד שלך :\n"}
               {`${props.score} \n מתוך ${props.totalQuestions}`}</h3>
@@ -19,7 +19,7 @@ function Scoresheet(props) {
             <br/>
             <Button className='btns'
                     buttonStyle='btn--outline'
-                    buttonSize='btn--large'onClick={handleClick}>{`<< ${props.type} חוזר`} </Button>        
+                    buttonSize='btn--large'onClick={handleClick}> <h1>{` ${props.type}  חדש >>`}</h1> </Button>        
         </div>
     )
 }
