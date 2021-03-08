@@ -1,7 +1,6 @@
 import React from 'react';
 import Select from 'react-select';
 import './pages/Word_completion.css';
-import StoryImage from './StoryImage'
 
 //import { handleInputChange } from 'react-select/src/utils';
 
@@ -71,11 +70,14 @@ const sentences = ({page, array_picture, array_words, score, updateScore}) =>
       const last_index = text[text.length-1]
       const text_slice = text.slice(0,text.length-1)
       let i= 0
+      let space = ' '
       const listItems = text_slice.map((line) =>
         <div class="sentence">
-           <p>{line}</p>
-           {/* <img src={array_picture[page_list[i]]}></img> */}
-           <StoryImage img={array_picture[page_list[i]]}/>
+           <p className="story-text"><p>{space}</p> {line}</p>
+           {<img src={array_picture[page_list[i]]} className='story-fig'></img>}
+           
+           {/*<StoryImage img={array_picture[page_list[i]]}/>*/}
+        
            <Select name={page_list[i++]}  className="col-md-8 col-offset-4" options={ technologyList } styles = { customStyles } onChange={(val, selectName) => handleValueChange(val.value, selectName.name)}  />
         </div> 
         );

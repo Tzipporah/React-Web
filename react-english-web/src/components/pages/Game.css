@@ -8,6 +8,8 @@
 
 .game-div{
   background-color: rgba(15, 14, 14, 0.6);
+  color: #fff;
+  padding: 10px;
   text-align: center;
   font-size: 30px;
 }
