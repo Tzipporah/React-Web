@@ -5,7 +5,7 @@ import StoryImage from './StoryImage'
 
 //import { handleInputChange } from 'react-select/src/utils';
 
-const sentences = ({page, array_picture, array_words, score, updateScore, updateQuestion,question }) =>
+const sentences = ({page, array_picture, array_words, score, updateScore}) =>
 {
     var page_list=[];
     //the function get from the story all the learning word ordered
@@ -16,10 +16,6 @@ const sentences = ({page, array_picture, array_words, score, updateScore, update
         }      
     })
   
-    function update(){
-      question+= page_list.length
-      updateQuestion(question)
-    }
     //the function above for Select tag
     var technologyList = [];
     array_words.forEach((element) => {
@@ -51,7 +47,7 @@ const sentences = ({page, array_picture, array_words, score, updateScore, update
       }
 
       function splitMulti(str, tokens){
-        str = " " +str.replace(/[^a-zA-Z ]/g, " ") 
+        str = " " +str.replace(/[^a-zA-Z_]/g, " ") 
         var tempChar = tokens[0] + " "; // We can use the first token as a temporary join character
         for(var i = 1; i < tokens.length; i++){
             tokens[i] = " " +tokens[i] +" "
@@ -78,14 +74,15 @@ const sentences = ({page, array_picture, array_words, score, updateScore, update
       const listItems = text_slice.map((line) =>
         <div class="sentence">
            <p>{line}</p>
-            <StoryImage img={array_picture[page_list[i]]}/>
-           <Select name={page_list[i++]} className="col-md-8 col-offset-4" options={ technologyList } styles = { customStyles } onChange={(val, selectName) => handleValueChange(val.value, selectName.name)}  />
+           {/* <img src={array_picture[page_list[i]]}></img> */}
+           <StoryImage img={array_picture[page_list[i]]}/>
+           <Select name={page_list[i++]}  className="col-md-8 col-offset-4" options={ technologyList } styles = { customStyles } onChange={(val, selectName) => handleValueChange(val.value, selectName.name)}  />
         </div> 
         );
     return( 
         <div class="main">
             <div class="story">
-              <div>
+              <div className="contain-sentence">
                 {listItems} 
                 <br/>
                 <p className = "last_index">{last_index}</p> 

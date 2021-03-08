@@ -38,7 +38,7 @@ class Firebase extends React.Component {
       const returnComp = this.state.isSignedIn ? 
           // User is sigend in, display the main page content.
           <Redirect to='/main-page'  />
-          : 
+          :
           // User is signed out, dispaly login options.
           <>
             <div  className='sign-in-container'>

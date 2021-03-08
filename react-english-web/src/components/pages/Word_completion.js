@@ -7,6 +7,7 @@ import Footer from '../Footer';
 import Navbar from '../Navbar'
 import CategorySection from '../CategorySection'
 import Scoresheet from '../Scoresheet'
+import {Button} from '../Button'
 
 function Word_completion({ match }) { 
     const level = match.params.level;
@@ -15,8 +16,8 @@ function Word_completion({ match }) {
     let array_picture = []
     let array_words = []
     words[level].forEach((word, index) => {
-      array_picture[word.en.toLowerCase()] = word.picture
-      array_words[index++] = word.en
+        array_picture[word.en.replace("-", "_").toLowerCase()] = word.picture
+        array_words[index++] = word.en.replace("-", "_")
     })
 
     let story_arr =[]
@@ -34,8 +35,17 @@ function Word_completion({ match }) {
         setScore(new_score)
     }
 
-    function updateQuestion(new_question){
-        setQuestion(new_question)
+    function updateQuestion(){
+        if (level === "beginners")
+            setQuestion(36)
+        if (level === "students")
+            setQuestion(25)
+        if (level === "advancers")
+            setQuestion(12)
+        if (level === "business")
+            setQuestion(9)
+        if (level === "spoken")
+            setQuestion(43)
     }
     
     function handleClick() {
@@ -46,6 +56,7 @@ function Word_completion({ match }) {
         else{
             setPage(page+1)
             setBtn("סיום")
+            updateQuestion()
         }            
     }
 
@@ -59,10 +70,9 @@ function Word_completion({ match }) {
                             array_words = {array_words}
                             score = {score}
                             updateScore = {updateScore}
-                            question = {question}
-                            updateQuestion = {updateQuestion}
                         />
-                        <button class = "btn-senteces" onClick={handleClick}>{btn}</button>
+                        {/* <br/><br/> */}
+                        <Button className = "btn-senteces" onClick={handleClick}>{btn}</Button>
                     </div>
                 </div>
     }
