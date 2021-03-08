@@ -13,7 +13,7 @@ function Time(props) {
             {props.time[1]}
             </h1>
             <br/>
-            <h2>{"השימוש: "}</h2>
+            <h2><u>{"השימוש: "}</u></h2>
             <h3><ul>
                 {use_arr.map((use, index) => (
                     <li key={index}>
@@ -22,7 +22,7 @@ function Time(props) {
                 ))}
             </ul></h3>
             <br/>
-            <h2>{"הצורה: "}</h2>
+            <h2><u>{"הצורה: "}</u></h2>
             <h3><ul>
                 {shape_arr.map((shape, index) => (
                     <li key={index}>
@@ -31,7 +31,7 @@ function Time(props) {
                 ))}
             </ul></h3>
             <br/>
-            <h2>{"בשלילה: "}</h2>
+            <h2><u>{"בשלילה: "}</u></h2>
             <h3>{props.time[4]}</h3>
         </div>
     )
