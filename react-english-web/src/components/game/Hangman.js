@@ -33,7 +33,7 @@ class Hangman extends Component {
   }
 
   guessedWord() {
-    return this.state.answer.split("").map(letter => (this.state.guessed.has(letter) ? letter : " _ "));
+    return this.state.answer.split("").map(letter => (this.state.guessed.has(letter) || letter==="-" ? letter : " _ "));
   }
 
   generateButtons() {
