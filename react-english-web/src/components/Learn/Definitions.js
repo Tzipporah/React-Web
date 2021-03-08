@@ -1,6 +1,6 @@
 import React from 'react';
-import './pages/Learn.css';
-import Voice from './Voice'
+import '../pages/Learn.css';
+import Voice from '../Voice'
 
 const Definitions = ({word, wordHe}) =>
 {

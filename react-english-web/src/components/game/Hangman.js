@@ -37,7 +37,7 @@ class Hangman extends Component {
   }
 
   generateButtons() {
-    return "abcdefghijklmnopqrstuvwxyz-".split("").map(letter => (
+    return "abcdefghijklmnopqrstuvwxyz".split("").map(letter => (
       <button
         type='button'
         className={this.state.guessed.has(letter)? 'btn' : "btn trans"}
@@ -98,7 +98,7 @@ class Hangman extends Component {
               {`${this.state.mistake} \n \\ ${this.props.maxWrong}`}  
             </div>
           </div>
-          <p>
+          <p className='game-stat'>
             {gameStat}
           </p>
         </Container>

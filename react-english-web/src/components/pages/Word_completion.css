@@ -15,8 +15,10 @@
 }
 .story{
     margin: 50px 50px 45px 50px;
+}
 
-
+.contain-sentence{
+    font-size: 50px;
 }
 /* .contain-sentence{
     width: 800px;
@@ -33,35 +35,39 @@
     flex: 0 1 160px;
 } */
 .sentence{
-    display: inline-block;
-    display: flex; 
-    flex-direction:row;
-    
-}
-/* .contain-sentence img{
-    float: left;
-    height: 5%;
-    width: 5%;
-} */
-.last_index{
-    font-size: 30px;
+    display: inline-flex; 
 }
 
-p{  
-    float: left;
-    font-size: 30px;
+.sentence .story-fig {
+    height: 70px;
+    width: 70px;
+  }
+.sentence .story-text{
+    display: inline-flex;
+  
+}
+.contain-sentence .story-fig{
+    margin: 20px;
+    display: inline-flex; 
+}
+.last_index{
+    font-size: 50px;
 }
 
 
 .sentence .col-offset-4{
     float: left;
-    margin-left: 10px;
+    margin: 10px;
     
 }
 .sentence .css-cndqux-control {
     background-color: transparent;
     color: white;
     cursor: pointer;
+}
+
+.sentence .css-2b097c-container {
+    font-size: 20px;
 }
 
 .sentence .css-2613qy-menu .css-5q3rez-control {

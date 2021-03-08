@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Learn.css';
 import { Container } from "@material-ui/core";
-import Definitions from "../Definitions";
+import Definitions from "../Learn/Definitions";
 import Footer from '../Footer';
 import Navbar from '../Navbar'
 import words from '../../data/levels.json';
@@ -9,6 +9,7 @@ import { Button } from '../Button';
 import CategorySection from '../CategorySection'
 import { connect } from 'react-redux'
 import { updateProgress } from '../../store/actions/userProgressAction'
+import Grammar from '../Learn/Grammar';
 
 function Learn(props) { 
 
@@ -16,7 +17,7 @@ function Learn(props) {
     
     let arr = []
     // Introducing the Hebrew and English words into the arr from the words file by levels
-    words[level].forEach((word, index = 0) => {
+    words[level].forEach((word, index) => {
         arr[index++] = [word.en, word.he]
     })
 
@@ -25,8 +26,29 @@ function Learn(props) {
     const [wordHe, setWordHe] = useState(""); // The word in hebrew
     const [btn, setBtn] = useState("אני רוצה ללמוד"); // The words above the button
     const [end, setEnd] = useState(false) // Flag - If the words are over
+    const [types, setTypes] = useState(type())
+    const [learn, setLearn] = useState( <div>
+                                            <Button buttonStyle='btn--primary' buttonSize='btn--large' onClick={grammar}>דקדוק</Button>
+                                            <Button buttonStyle='btn--primary' buttonSize='btn--large' onClick={wordsDefinitions}>לימוד מילים</Button>
+                                        </div>)
 
-    // Set new word of arr to word and wordHe
+    function type(){
+        if(level === "advancers")
+            return true
+        else
+            return false
+    }
+    
+    function grammar(){
+        setLearn(<Grammar end={set_End}/>)
+    }
+
+    function wordsDefinitions(){
+        setTypes(false)
+    }
+
+
+    // Set new word to arr : word and wordHe
     function handleClick() {
         setI(i+1)
         if (i === arr.length){
@@ -39,7 +61,6 @@ function Learn(props) {
             setBtn("<< למילה הבאה")
             if (i === arr.length - 1){
                 setBtn("סיום")
-                console.log(props)
                 props.updateProgress('learn', level)
             }     
         }
@@ -50,6 +71,11 @@ function Learn(props) {
         window.location.reload(false);
     }
     
+    function set_End(end){
+        setEnd(end)
+        setBtn("<< חזרה ללימוד")
+    }
+
     return(
         <>
         <Navbar/>
@@ -58,24 +84,24 @@ function Learn(props) {
             title='.לימוד אנגלית בכיף'>
             <Container maxWidth="md" className="container-learn">
                 {!end ? 
-                (
-                    <>
-                        <Button onClick={handleClick}
-                            className='btns'
-                            buttonStyle='btn--outline'
-                            buttonSize='btn--large'>
-                            <h3>{btn}</h3>
-                        </Button>   
-                        {word===""?(""):
-                            // Calls to Definitions component
-                            <div className="learn">
-                                <Definitions className = "definitions"
-                                    word={word} 
-                                    wordHe={wordHe} 
-                                />
-                            </div>
-                        }
-                    </>)
+                (<>
+                    {types?
+                        (learn)
+                        :
+                        (<div>
+                            <Button onClick={handleClick}
+                                    className='btns'
+                                    buttonStyle='btn--outline'
+                                    buttonSize='btn--large'>
+                                    <h3>{btn}</h3>
+                            </Button>
+                            {word===""?(""):
+                                // Calls to Definitions component
+                                <div className="learn">
+                                    <Definitions className = "definitions" word={word} wordHe={wordHe}/>
+                                </div>}
+                        </div>)}
+                </>)
                 :
                 (<>
                     <Button onClick={refreshPage}
