@@ -2,7 +2,7 @@ import {  useState } from 'react';
 import './Word_completion.css';
 import words from '../../data/levels.json'
 import stories from '../../data/stories.json'
-import Sentences from '../Sentences';
+import Sentences from '../sentences';
 import Footer from '../Footer';
 import Navbar from '../Navbar'
 import CategorySection from '../CategorySection'
@@ -26,7 +26,7 @@ function Word_completion(props) {
         story_arr[index++] = page.story
     })
     let story;
-    const [btn, setBtn] = useState("לעמוד הבא");
+    const [btn, setBtn] = useState("<< לעמוד הבא");
     const [page, setPage] = useState(0);
     const [score, setScore] = useState(0)
     const [questions, setQuestions] = useState(0)
@@ -39,7 +39,7 @@ function Word_completion(props) {
         setQuestions(questions+num)
         if (page < story_arr.length-2){
             setPage(page+1)
-            setBtn("לעמוד הבא")
+            setBtn("<< לעמוד הבא")
         }     
         else{
             setPage(page+1)
