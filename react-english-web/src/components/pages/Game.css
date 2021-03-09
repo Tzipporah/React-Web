@@ -14,6 +14,13 @@
   font-size: 30px;
 }
 
+.game-Scoresheet{
+  background-color: rgba(15, 14, 14, 0.6);
+  padding: 10px;
+  border-radius: 5%;
+  font-size: 30px;
+}
+
 #split-container{
   height:100%;
   width:100%;

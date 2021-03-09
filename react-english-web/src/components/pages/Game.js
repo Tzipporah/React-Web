@@ -48,7 +48,7 @@ class Game extends Component{
         if(this.state.end){
             if ((this.state.score / this.arr.length) * 100 >= 70)
                 this.props.updateProgress('game', this.level)
-            this.game = <div className="game-div">
+            this.game = <div className="game-Scoresheet">
                             <Scoresheet score={this.state.score} totalQuestions={this.arr.length} type='משחק'/>
                         </div>
         }
