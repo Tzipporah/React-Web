@@ -1,8 +1,7 @@
 import React from 'react';
 import '../../App.css';
-
 import Navbar from '../Navbar'
-import Cards2 from '../Cards2'
+import Cards2 from '../cards/Cards2'
 
 export default function Services(props) {
     return (

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Home from './components/pages/Home';
 import SignUp from './components/pages/SignUp';
-import CategoriesCards from './components/CategoriesCards';
+import CategoriesCards from './components/cards/CategoriesCards';
 import MainPage from './components/pages/MainPage';
 import Test from './components/pages/Test';
 import Learn from './components/pages/Learn';

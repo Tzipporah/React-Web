@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../App.css';
 import Navbar from '../Navbar'
-import LevelsCards from '../LevelsCards'
+import LevelsCards from '../cards/LevelsCards'
 import Footer from '../Footer'
 
 
