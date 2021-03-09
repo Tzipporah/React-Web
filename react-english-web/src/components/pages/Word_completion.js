@@ -77,12 +77,12 @@ function Word_completion(props) {
                 </div>
     }
     else {
-        let status = <h1>נכשלת:( נסה שוב </h1>
+        let status = <h1 className ="status">נכשלת :( נסה שוב </h1>
         if ((score / question) * 100 >= 70) {
             props.updateProgress('word_completion',level)
-             status = <h1>:)עברת בהצלחה</h1>
+            status = <h1 className ="status">:) עברת בהצלחה</h1>
         }
-        story = <>{status}<Scoresheet score={score} totalQuestions={question} type='סיפור'/> </>
+        story = <div className='w-container'>{status}<Scoresheet score={score} totalQuestions={question} type='סיפור'/> </div>
     }
         
 

@@ -28,7 +28,7 @@ function Grammar({end}) {
         end(true)
     }
 
-    if(i == -1){
+    if(i === -1){
         return (
             <Button onClick={handleClick}
                     className='btns'

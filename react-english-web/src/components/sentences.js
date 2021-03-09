@@ -74,7 +74,7 @@ const sentences = ({page, array_picture, array_words, score, updateScore}) =>
       const listItems = text_slice.map((line) =>
         <div class="sentence">
            <p className="story-text"><p>{space}</p> {line}</p>
-           {<img src={array_picture[page_list[i]]} className='story-fig'></img>}        
+           {<img src={array_picture[page_list[i]]} className='story-fig' alt="story"></img>}        
            <Select name={page_list[i++]}  className="col-md-8 col-offset-4" options={ technologyList } styles = { customStyles } onChange={(val, selectName) => handleValueChange(val.value, selectName.name)}  />
         </div> 
         );

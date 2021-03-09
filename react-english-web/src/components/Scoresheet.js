@@ -10,7 +10,7 @@ function Scoresheet(props) {
     }
     
     return (
-        <div className="container small" style={{textAlign: "center", direction: "rtl"}}>
+        <div className="container small" style={{textAlign: "center", direction: "rtl", color: "white"}}>
             <h4>ה{props.type} נגמר</h4>
             <br />
             <h3>{"הניקוד שלך :\n"}
