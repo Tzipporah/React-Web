@@ -67,7 +67,6 @@ class PersonalInfo extends Component{
 }
 
 const mapStateToProps = (state) => {
-    // console.log(state)
     return {
         profile: state.firebase.profile,
         user: state.firebase.auth

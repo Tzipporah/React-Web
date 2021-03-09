@@ -42,7 +42,6 @@ export const updateProgress = (category, level) => {
         
         // Get the current progress of the user in this level and this category.
         const currentProgress = parseInt(getState().firebase.profile[level][category])
-        // console.log(currentProgress, category, level)
 
         // If the current progress is zero, then update.(so should not update twice)
         if (currentProgress === 0) {

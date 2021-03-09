@@ -10,7 +10,6 @@ import 'antd/lib/avatar/style/index.css';
 
 function Navbar(props) {
 
-  // console.log(props)
   const { user } = props
   const userName = user.displayName
   const profilePicture = user.photoURL
