@@ -18,7 +18,8 @@ function Test({ match }) {
     })
 
     createQuestions(arr, level)
-
+    
+    // Returns the Quiz component
     return (
       <>  
       <Navbar/>

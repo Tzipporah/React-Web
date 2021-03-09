@@ -1,5 +1,6 @@
 import Dexie from 'dexie'
 
+// Database of test questions
 var db = new Dexie('QuestionsDB');
 db.version(1).stores({
     beginners: 'id, question, option1, option2, option3, option4, answer',

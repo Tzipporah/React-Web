@@ -66,6 +66,7 @@ function getOptions(correctWord, words) {
     }
     return mixArray(arr);
 }
+
 //Controlled form elements with React
 function createQuestion(arr) {
 
