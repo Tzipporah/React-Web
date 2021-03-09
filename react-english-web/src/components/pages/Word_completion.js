@@ -8,9 +8,11 @@ import Navbar from '../Navbar'
 import CategorySection from '../CategorySection'
 import Scoresheet from '../Scoresheet'
 import {Button} from '../Button'
+import { connect } from 'react-redux'
+import { updateProgress } from '../../store/actions/userProgressAction'
 
-function Word_completion({ match }) { 
-    const level = match.params.level;
+function Word_completion(props) { 
+    const level = props.match.params.level;
 
     // Declare the array of the words picture + array of words
     let array_picture = []
@@ -71,13 +73,19 @@ function Word_completion({ match }) {
                             score = {score}
                             updateScore = {updateScore}
                         />
-                        {/* <br/><br/> */}
                         <Button className = "btn-senteces" onClick={handleClick}>{btn}</Button>
                     </div>
                 </div>
     }
-    else
-        story = <Scoresheet score={score} totalQuestions={question} type='סיפור'/> 
+    else {
+        let status = <h1>נכשלת:( נסה שוב </h1>
+        if ((score / question) * 100 >= 70) {
+            props.updateProgress('word_completion',level)
+             status = <h1>:)עברת בהצלחה</h1>
+        }
+        story = <>{status}<Scoresheet score={score} totalQuestions={question} type='סיפור'/> </>
+    }
+        
 
     return(
         <>
@@ -91,4 +99,10 @@ function Word_completion({ match }) {
         
     );
 }
-export default Word_completion;
+const mapDispatchToProps = dispatch => {
+    return {
+      updateProgress: (category, level) => dispatch(updateProgress(category, level))
+    }
+  }  
+
+export default connect(null, mapDispatchToProps) (Word_completion);
