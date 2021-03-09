@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Select from 'react-select';
 import './pages/Word_completion.css';
 import { Button }from './Button'
