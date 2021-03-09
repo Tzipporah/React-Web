@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Select from 'react-select';
 import './pages/Word_completion.css';
+import { Button }from './Button'
 
 //import { handleInputChange } from 'react-select/src/utils';
 
-const sentences = ({page, array_picture, array_words, score, updateScore}) =>
+function Sentences ({page, array_picture, array_words, score, updateScore, updateQuestions, btn})
 {
     var page_list=[];
     //the function get from the story all the learning word ordered
@@ -12,9 +13,10 @@ const sentences = ({page, array_picture, array_words, score, updateScore}) =>
         let temp_arr = to_lower_case(array_words)
         if(temp_arr.indexOf(word.toLowerCase()) > -1){
           page_list.push(word.toLowerCase())
-        }      
+        }   
+         
     })
-  
+    
     //the function above for Select tag
     var technologyList = [];
     array_words.forEach((element) => {
@@ -65,7 +67,12 @@ const sentences = ({page, array_picture, array_words, score, updateScore}) =>
           return arr
       }
 
-      //Get the text divided into an array according to the words that need to be found
+      function handleClick() {
+        updateQuestions(page_list.length)     
+    }
+
+
+      // Get the text divided into an array according to the words that need to be found
       const text = splitMulti(page.toLowerCase(),to_lower_case(array_words))
       const last_index = text[text.length-1]
       const text_slice = text.slice(0,text.length-1)
@@ -87,8 +94,9 @@ const sentences = ({page, array_picture, array_words, score, updateScore}) =>
                 <p className = "last_index">{last_index}</p> 
               </div>
             </div>
+            <Button className = "btn-senteces" onClick={handleClick}>{btn}</Button> 
         </div>     
     );
 }
 
-export default sentences 
+export default Sentences 

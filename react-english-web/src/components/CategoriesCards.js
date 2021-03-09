@@ -56,7 +56,7 @@ function CategoriesCards({ match }) {
   return (
     <>
       <Navbar />
-      <div className='cards'>
+      <div className='cards' style={{direction: "rtl"}}>
         <h1>{mapLeveltoHebrew[level]}</h1>
         <div className='cards__container'>
           <div className='cards__wrapper'>

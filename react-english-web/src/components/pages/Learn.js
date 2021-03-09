@@ -26,12 +26,14 @@ function Learn(props) {
     const [wordHe, setWordHe] = useState(""); // The word in hebrew
     const [btn, setBtn] = useState("אני רוצה ללמוד"); // The words above the button
     const [end, setEnd] = useState(false) // Flag - If the words are over
-    const [types, setTypes] = useState(type())
+    const [types, setTypes] = useState(type()) // Flag to know if the study includes grammar
     const [learn, setLearn] = useState( <div>
                                             <Button buttonStyle='btn--primary' buttonSize='btn--large' onClick={grammar}>דקדוק</Button>
                                             <Button buttonStyle='btn--primary' buttonSize='btn--large' onClick={wordsDefinitions}>לימוד מילים</Button>
-                                        </div>)
+                                        </div>) // What is displayed on the  - advancers screen
+    const [title, setTitle] = useState("לימוד אנגלית בכייף") // The title of the page
 
+    // Returns true if the level is advanced, for the types
     function type(){
         if(level === "advancers")
             return true
@@ -39,21 +41,22 @@ function Learn(props) {
             return false
     }
     
+    // If the user want learn grammar changes learn to grammar comp
     function grammar(){
+        setTitle("")
         setLearn(<Grammar end={set_End}/>)
     }
 
+    // If the user want learn words changes types to false
     function wordsDefinitions(){
         setTypes(false)
     }
-
 
     // Set new word to arr : word and wordHe
     function handleClick() {
         setI(i+1)
         if (i === arr.length){
-            setBtn("<< חזרה ללימוד")
-            setEnd(true)
+            set_End(true)
         }
         else{
             setWord(arr[i][0])
@@ -71,6 +74,7 @@ function Learn(props) {
         window.location.reload(false);
     }
     
+    // Set true to end, and change btn
     function set_End(end){
         setEnd(end)
         setBtn("<< חזרה ללימוד")
@@ -81,10 +85,12 @@ function Learn(props) {
         <Navbar/>
         <CategorySection
             videoLink='/videos/Pexels Learn.mp4'
-            title='.לימוד אנגלית בכיף'>
+            title={title}>
             <Container maxWidth="md" className="container-learn">
+                {/* If end = false: The study will be displayed; else - Back buttons will be displayed */}
                 {!end ? 
                 (<>
+                    {/* If types = true:  learn will be displayed; else - Learning words will be displayed*/}
                     {types?
                         (learn)
                         :

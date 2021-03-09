@@ -1,7 +1,7 @@
 import React from 'react';
-import '../pages/Learn.css';
 import Voice from '../Voice'
 
+// Displays a word in English + Hebrew translation + audio of the word
 const Definitions = ({word, wordHe}) =>
 {
     return(

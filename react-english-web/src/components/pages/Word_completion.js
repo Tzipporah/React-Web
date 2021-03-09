@@ -2,12 +2,11 @@ import {  useState } from 'react';
 import './Word_completion.css';
 import words from '../../data/levels.json'
 import stories from '../../data/stories.json'
-import Sentences from '../sentences';
+import Sentences from '../Sentences';
 import Footer from '../Footer';
 import Navbar from '../Navbar'
 import CategorySection from '../CategorySection'
 import Scoresheet from '../Scoresheet'
-import {Button} from '../Button'
 import { connect } from 'react-redux'
 import { updateProgress } from '../../store/actions/userProgressAction'
 
@@ -30,26 +29,14 @@ function Word_completion(props) {
     const [btn, setBtn] = useState("לעמוד הבא");
     const [page, setPage] = useState(0);
     const [score, setScore] = useState(0)
-    const [question, setQuestion] = useState(0)
-    
+    const [questions, setQuestions] = useState(0)
+
     function updateScore(new_score){
         setScore(new_score)
     }
 
-    function updateQuestion(){
-        if (level === "beginners")
-            setQuestion(40)
-        if (level === "students")
-            setQuestion(25)
-        if (level === "advancers")
-            setQuestion(28)
-        if (level === "business")
-            setQuestion(10)
-        if (level === "spoken")
-            setQuestion(43)
-    }
-    
-    function handleClick() {
+    function updateQuestions(num) {
+        setQuestions(questions+num)
         if (page < story_arr.length-2){
             setPage(page+1)
             setBtn("לעמוד הבא")
@@ -57,7 +44,6 @@ function Word_completion(props) {
         else{
             setPage(page+1)
             setBtn("סיום")
-            updateQuestion()
         }            
     }
 
@@ -71,18 +57,19 @@ function Word_completion(props) {
                             array_words = {array_words}
                             score = {score}
                             updateScore = {updateScore}
+                            updateQuestions = {updateQuestions}
+                            btn = {btn}
                         />
-                        <Button className = "btn-senteces" onClick={handleClick}>{btn}</Button>
                     </div>
                 </div>
     }
     else {
         let status = <h1 className ="status">נכשלת :( נסה שוב </h1>
-        if ((score / question) * 100 >= 70) {
+        if ((score / questions) * 100 >= 70) {
             props.updateProgress('word_completion',level)
             status = <h1 className ="status">:) עברת בהצלחה</h1>
         }
-        story = <div className='w-container'>{status}<Scoresheet score={score} totalQuestions={question} type='סיפור'/> </div>
+        story = <div className='w-container'>{status}<Scoresheet score={score} totalQuestions={questions} type='סיפור'/> </div>
     }
         
 

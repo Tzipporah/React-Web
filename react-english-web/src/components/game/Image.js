@@ -7,7 +7,7 @@ import step4 from "../../images/game-images/4.jpg";
 import step5 from "../../images/game-images/5.jpg";
 import step6 from "../../images/game-images/6.jpg";
 
-
+// Displays a errors image
 function Image(props) {
     
     const images = [step0, step1, step2, step3, step4, step5, step6]
