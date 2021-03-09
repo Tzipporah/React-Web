@@ -10,36 +10,32 @@ function Time(props) {
     
     return (
         <div style = {{ direction: "rtl" }}>
-            <h1>
+            <h2>
             {props.time[0]}
             {" - "}
             {props.time[1]}
-            </h1>
+            </h2>
             <br/>
-            <h2><u>{"השימוש: "}</u></h2>
-            <h3>
-                <ul>
-                    {use_arr.map((use, index) => (
-                        <li key={index}>
-                            {use}
-                        </li>
-                    ))}
-                </ul>
-            </h3>
+            <h3><u>{"השימוש: "}</u></h3>
+            <h4>
+                {use_arr.map((use, index) => (
+                    <p key={index}>
+                        {use}
+                    </p>
+                ))}
+            </h4>
             <br/>
-            <h2><u>{"הצורה: "}</u></h2>
-            <h3>
-                <ul>
-                    {shape_arr.map((shape, index) => (
-                        <li key={index}>
-                            {shape}
-                        </li>
-                    ))}
-                </ul>
-            </h3>
+            <h3><u>{"הצורה: "}</u></h3>
+            <h4>
+                {shape_arr.map((shape, index) => (
+                    <p key={index}>
+                        {shape}
+                    </p>
+                ))}
+            </h4>
             <br/>
-            <h2><u>{"בשלילה: "}</u></h2>
-            <h3>{props.time[4]}</h3>
+            <h3><u>{"בשלילה: "}</u></h3>
+            <h4>{props.time[4]}</h4>
         </div>
     )
 }
