@@ -26,8 +26,8 @@
             "picture": "https://media-cdn.tripadvisor.com/media/photo-s/15/cb/7d/7d/fox.jpg"
         },
         {
-            "en":"Grape",
-            "he":"ענב",
+            "en":"Grapes",
+            "he":"ענבים",
             "picture":"https://pbs.twimg.com/profile_images/1293796354263678976/0WBMFrtk.jpg"
         },
         {
@@ -215,6 +215,36 @@
     ],
     "advancers":[
         {
+            "en":"Agricultural",
+            "he":"חַקלָאִי",
+            "picture":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Wheat-haHula-ISRAEL2.JPG/220px-Wheat-haHula-ISRAEL2.JPG"
+        },
+        {
+            "en":"Cargo",
+            "he":"מטען",
+            "picture":"https://www.wallets-online.com/webadmin/items/jfold/bags/JFOLD_4944.jpg"
+        },
+        {
+            "en":"Competition",
+            "he":"תחרות",
+            "picture":"https://talkroute.com/wp-content/uploads/2014/12/competition_is_good_-1043x1065.png"
+        },
+        {
+            "en":"Conditions",
+            "he":"תנאים",
+            "picture":"https://img.icons8.com/plasticine/2x/terms-and-conditions.png"
+        },
+        {
+            "en":"Cost",
+            "he":"עלות",
+            "picture":"https://ae01.alicdn.com/kf/HTB13u.6avjsK1Rjy1Xaq6zispXal/Extra-Cost.jpg"
+        },
+        {
+            "en":"Cotton",
+            "he":"כותנה",
+            "picture":"https://media.istockphoto.com/photos/raw-cotton-crops-picture-id157742904?k=6&m=157742904&s=612x612&w=0&h=QVJB3kxPCaL_ewTBYlQGUklKenreI1SfX1ssPhozFfs="
+        },
+        {
             "en":"Drawing",
             "he":"ציור",
             "picture":"https://www.nguyenartgallery.com/wp-content/uploads/What-is-Sketching.jpg"
@@ -225,14 +255,24 @@
             "picture":"https://cdn.shortpixel.ai/spai/w_924+q_+ret_img+to_webp/https://giveitanudge.com/wp-content/uploads/2019/03/Entertainment.jpg"
         },
         {
-            "en":"Lucrative",
-            "he":"משתלם",
-            "picture":"https://lh3.googleusercontent.com/proxy/TrPJOdxoMWlPBcWcfsxiJMieIdsHgiIQy9lrN1PUKsYTnyox77U-Bm8Q90ceHMyu2TaenwgullKn1QabmOK-dwho0pN-W1AjuiLQT87Amj_H53aUn2REj2Uj7yg0Vykrt3aYQDFN0pIe5Hk8_co"
+            "en":"Europe",
+            "he":"אירופה",
+            "picture":"https://upload.wikimedia.org/wikipedia/commons/b/b4/European_Union_Israel_Locator.png"
         },
         {
             "en":"Paddles",
             "he":"משוטים",
             "picture":"https://www.outdoorplay.com/images/sca-prod-imgs/Outfitter-Paddle.main.collage.01.jpg"
+        },
+        {
+            "en":"Rise",
+            "he":"לעלות",
+            "picture":"https://cdn4.iconfinder.com/data/icons/materia-flat-arrows-symbols-vol-4/24/018_159_arrow_chart_high_rise-512.png"
+        },
+        {
+            "en":"River",
+            "he":"נהר",
+            "picture":"https://s3-us-west-2.amazonaws.com/melingoimages/Images/81320.jpg"
         },
         {
             "en":"Ruthless",
@@ -245,6 +285,16 @@
             "picture":"https://previews.123rf.com/images/jehsomwang/jehsomwang1902/jehsomwang190200045/116571079-opposite-words-deep-and-shallow-vector-illustration.jpg"
         },
         {
+            "en":"Skyscraper",
+            "he":"גורד שחקים",
+            "picture":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/HK-2IFC-sj_cropped.jpg/220px-HK-2IFC-sj_cropped.jpg"
+        },
+        {
+            "en":"Steamboat",
+            "he":"סירת מנוע",
+            "picture":"https://media.tacdn.com/media/attractions-splice-spp-674x446/06/75/b2/18.jpg"
+        },
+        {
             "en":"Stern",
             "he":"ירכתי ספינה",
             "picture":"https://developers.redhat.com/blog/wp-content/uploads/2019/05/kubernetes-ttools.jpg"
@@ -255,9 +305,24 @@
             "picture":"http://www.nasa.gov/sites/default/files/thumbnails/image/edu_thrust_large.png"
         },
         {
+            "en":"Trade",
+            "he":"סחר",
+            "picture":"https://img.freepik.com/free-vector/illustration-financial_53876-5903.jpg?size=338&ext=jpg"
+        },
+        {
             "en":"Tributary",
-            "he":"יובל",
+            "he":"יוּבַל",
             "picture":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Aerial_Photo_of_Harpers_Ferry_%2815646790473%29.jpg/655px-Aerial_Photo_of_Harpers_Ferry_%2815646790473%29.jpg"
+        },
+        {
+            "en":"Queen",
+            "he":"מלכה",
+            "picture":"https://image.flaticon.com/icons/png/512/1330/1330320.png"
+        },
+        {
+            "en":"World",
+            "he":"העולם",
+            "picture":"https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg"
         }
     ],
     "business":[

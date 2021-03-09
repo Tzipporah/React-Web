@@ -31,7 +31,6 @@ function Word_completion(props) {
     const [page, setPage] = useState(0);
     const [score, setScore] = useState(0)
     const [question, setQuestion] = useState(0)
-    const [end, setEnd] = useState(false)
     
     function updateScore(new_score){
         setScore(new_score)
@@ -39,13 +38,13 @@ function Word_completion(props) {
 
     function updateQuestion(){
         if (level === "beginners")
-            setQuestion(36)
+            setQuestion(40)
         if (level === "students")
             setQuestion(25)
         if (level === "advancers")
-            setQuestion(12)
+            setQuestion(28)
         if (level === "business")
-            setQuestion(9)
+            setQuestion(10)
         if (level === "spoken")
             setQuestion(43)
     }
