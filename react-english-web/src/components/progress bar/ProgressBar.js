@@ -1,17 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './ProgressBar.css'
 
 const ProgressBar = ({done}) => {
 	const [style, setStyle] = React.useState({});
 	
-	setTimeout(() => {
-		const newStyle = {
-			opacity: 1,
-			width: `${done}%`
+	useEffect(() => {
+		const timeOut = setTimeout(() => {
+			const newStyle = {
+				opacity: 1,
+				width: `${done}%`
+			}
+			
+			setStyle(newStyle);
+		}, 200);
+		return () => {
+			clearTimeout(timeOut)
 		}
-		
-		setStyle(newStyle);
-	}, 200);
+	}, [])
+	
 	
 	return (
 		<>
