@@ -14,7 +14,7 @@ function Sentences ({page, array_picture, array_words, score, updateScore, updat
           page_list.push(word.toLowerCase())
         }   
 
-        // For the words in the plural‏
+        // For words in the plural‏
         let w = word + " "
         w = w.split("s ")[0]
         if(temp_arr.indexOf(w.toLowerCase()) > -1){
@@ -69,6 +69,7 @@ function Sentences ({page, array_picture, array_words, score, updateScore, updat
             t = " " +tokens[i] +" "
             str = str.split(t).join(" " +tempChar);
             str += "\t"
+            // For words in the plural
             t = " " +tokens[i] +"s "
             str = str.split(t).join(" " +tempChar);
             str += "\t"
@@ -94,15 +95,15 @@ function Sentences ({page, array_picture, array_words, score, updateScore, updat
 
       // Get the text divided into an array according to the words that need to be completed
       const text = splitMulti(page.toLowerCase(),to_lower_case(array_words))
-      const last_index = text[text.length-1]
+      const last_index = text[text.length-1].replaceAll(" . ", ". ").replaceAll(" , ", ", ").replaceAll(" ' ", "'").replaceAll("   ", " ")
       const text_slice = text.slice(0,text.length-1)
       let i= 0
       let space = ' '
       const listItems = text_slice.map((line, index) =>
         <div key={index} className="sentence">
-           <div className="story-text"><p component="span">{space}</p> {line}</div>
-           {<img src={array_picture[page_list[i]]} className='story-fig' alt="story"></img>}        
-           <Select  name={page_list[i++]}  className="col-md-8 col-offset-4" options={ technologyList }  styles = { customStyles } onChange={(val, selectName) => handleValueChange(val.value, selectName.name)}  />
+          <div className="story-text"><p component="span">{space}</p> {line.replaceAll(" . ", ". ").replaceAll(" , ", ", ").replaceAll(" ' ", "'").replaceAll("   ", " ")}</div>
+          {<img src={array_picture[page_list[i]]} className='story-fig' alt="story"></img>}        
+          <Select  name={page_list[i++]}  className="col-md-8 col-offset-4" options={ technologyList }  styles = { customStyles } onChange={(val, selectName) => handleValueChange(val.value, selectName.name)}  />
         </div> 
         );
     return( 
