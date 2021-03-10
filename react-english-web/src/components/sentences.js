@@ -13,8 +13,15 @@ function Sentences ({page, array_picture, array_words, score, updateScore, updat
         if(temp_arr.indexOf(word.toLowerCase()) > -1){
           page_list.push(word.toLowerCase())
         }   
-         
+
+        // For the words in the plural‏
+        let w = word + " "
+        w = w.split("s ")[0]
+        if(temp_arr.indexOf(w.toLowerCase()) > -1){
+          page_list.push(w.toLowerCase())
+        }    
     })
+
     
     //the function above for Select tag option
     var technologyList = [];
@@ -50,19 +57,24 @@ function Sentences ({page, array_picture, array_words, score, updateScore, updat
       function splitMulti(str, tokens){
         var s=""
         str.split("").forEach(character => {
-          if ((/[a-zA-Z]/).test(character))
+          if ((/[a-zA-Z_]/).test(character))
             s+= character
           else
             s+=" " + character + " "
         })
         str = " " + s + " "
         var tempChar = tokens[0] + " "; // We can use the first token as a temporary join character
+        var t = ""
         for(var i = 1; i < tokens.length; i++){
-            tokens[i] = " " +tokens[i] +" "
-            str = str.split(tokens[i]).join(" " +tempChar);
+            t = " " +tokens[i] +" "
+            str = str.split(t).join(" " +tempChar);
+            str += "\t"
+            t = " " +tokens[i] +"s "
+            str = str.split(t).join(" " +tempChar);
             str += "\t"
         }
         str = str.split(tempChar);
+
         return str;
       }
 
