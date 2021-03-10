@@ -36,7 +36,9 @@ function Navbar(props) {
   };
 
   useEffect(() => {
+    let unmounted = false;
     showButton();
+    return () => { unmounted = true };
   }, []);
 
   window.addEventListener('resize', showButton);
