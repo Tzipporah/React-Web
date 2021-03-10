@@ -78,9 +78,9 @@ function Sentences ({page, array_picture, array_words, score, updateScore, updat
       const text_slice = text.slice(0,text.length-1)
       let i= 0
       let space = ' '
-      const listItems = text_slice.map((line) =>
-        <div class="sentence">
-           <p className="story-text"><p>{space}</p> {line}</p>
+      const listItems = text_slice.map((line, index) =>
+        <div key={index} className="sentence">
+           <p className="story-text"><p component="span">{space}</p> {line}</p>
            {<img src={array_picture[page_list[i]]} className='story-fig' alt="story"></img>}        
            <Select name={page_list[i++]}  className="col-md-8 col-offset-4" options={ technologyList } styles = { customStyles } onChange={(val, selectName) => handleValueChange(val.value, selectName.name)}  />
         </div> 

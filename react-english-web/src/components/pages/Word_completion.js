@@ -85,6 +85,8 @@ function Word_completion(props) {
         
     );
 }
+
+//  In case the user passed the level
 const mapDispatchToProps = dispatch => {
     return {
       updateProgress: (category, level) => dispatch(updateProgress(category, level))

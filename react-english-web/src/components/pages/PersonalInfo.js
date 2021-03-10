@@ -47,11 +47,11 @@ class PersonalInfo extends Component{
                 
                 levels.map((level) => {
                     return (
-                        <>
-                        <div id="level">{mapLeveltoHebrew[level]}</div>
-                        <br/>
-                        <ProgressBar done={this.levelProgress(level)}/> 
-                        </>
+                        <div key={level}>
+                            <div id="level">{mapLeveltoHebrew[level]}</div>
+                            <br/>
+                            <ProgressBar done={this.levelProgress(level)}/> 
+                        </div>
                     )
                 })
                 

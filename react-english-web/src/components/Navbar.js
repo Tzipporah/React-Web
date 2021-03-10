@@ -46,7 +46,7 @@ function Navbar(props) {
     <>
       <nav className='navbar'>
         <div className='navbar-container'>
-          <Avatar size={40} icon={userName} src={profilePicture}/>
+          <Avatar size={40} src={profilePicture}/>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
             {userName}
             <i className='fas fa-glasses' />
