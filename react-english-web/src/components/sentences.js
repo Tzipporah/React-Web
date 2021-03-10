@@ -13,8 +13,15 @@ function Sentences ({page, array_picture, array_words, score, updateScore, updat
         if(temp_arr.indexOf(word.toLowerCase()) > -1){
           page_list.push(word.toLowerCase())
         }   
-         
+
+        // For the words in the plural‏
+        let w = word + " "
+        w = w.split("s ")[0]
+        if(temp_arr.indexOf(w.toLowerCase()) > -1){
+          page_list.push(w.toLowerCase())
+        }    
     })
+
     
     //the function above for Select tag option
     var technologyList = [];
@@ -47,22 +54,50 @@ function Sentences ({page, array_picture, array_words, score, updateScore, updat
       }
 
       //the function split the story by the words that need no be complited
+      // function splitMulti(str, tokens){
+      //   console.log("before, ", str);
+      //   var s=""
+      //   str.split("").forEach(character => {
+      //     if ((/[a-zA-Z_]/).test(character))
+      //       s+= character
+      //     else
+      //       s+=" " + character + " "
+      //   })
+      //   str = " " + s + " "
+      //   console.log("after, ", str);
+      //   var tempChar = tokens[0] + " "; // We can use the first token as a temporary join character
+      //   for(var i = 1; i < tokens.length; i++){
+      //       tokens[i] = " " +tokens[i] +" "
+      //       str = str.split(tokens[i]).join(" " +tempChar);
+      //       str += "\t"
+      //   }
+      //   str = str.split(tempChar);
+      //   return str;
+      // }
+
+      //the function split the story by the words that need no be complited
       function splitMulti(str, tokens){
         var s=""
         str.split("").forEach(character => {
-          if ((/[a-zA-Z]/).test(character))
+          if ((/[a-zA-Z_]/).test(character))
             s+= character
           else
             s+=" " + character + " "
         })
         str = " " + s + " "
         var tempChar = tokens[0] + " "; // We can use the first token as a temporary join character
+        var t = ""
         for(var i = 1; i < tokens.length; i++){
-            tokens[i] = " " +tokens[i] +" "
-            str = str.split(tokens[i]).join(" " +tempChar);
+            t = " " +tokens[i] +" "
+            str = str.split(t).join(" " +tempChar);
+            str += "\t"
+            t = " " +tokens[i] +"s "
+            str = str.split(t).join(" " +tempChar);
             str += "\t"
         }
         str = str.split(tempChar);
+        //str = str.replace(" ' ", "'")
+        console.log(page_list);
         return str;
       }
 
