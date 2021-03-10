@@ -1,6 +1,6 @@
 // Create a new user progress
 export const createNewProgress = (userId) => {
-    return (dispatch, { getFirestore }) => {
+    return (dispatch, getState, { getFirebase, getFirestore }) => {
         const firestore = getFirestore();
   
         // Check if the user exist already      
