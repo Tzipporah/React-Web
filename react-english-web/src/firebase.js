@@ -25,12 +25,18 @@ class Firebase extends React.Component {
     }
   
     componentDidMount = () => {
-      firebase.auth().onAuthStateChanged(user => {
+      this.unsubscribeUserAuthStateChangedListener = firebase.auth().onAuthStateChanged(user => {
         this.setState({ isSignedIn: !!user })
         if (this.state.isSignedIn){
           this.props.createNewProgress(user.uid)
         }
       })
+    }
+
+    componentWillUnmount() {
+      if (this.unsubscribeUserAuthStateChangedListener) {
+        this.unsubscribeUserAuthStateChangedListener();
+      }
     }
 
     render() {
