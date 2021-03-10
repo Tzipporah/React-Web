@@ -54,28 +54,6 @@ function Sentences ({page, array_picture, array_words, score, updateScore, updat
       }
 
       //the function split the story by the words that need no be complited
-      // function splitMulti(str, tokens){
-      //   console.log("before, ", str);
-      //   var s=""
-      //   str.split("").forEach(character => {
-      //     if ((/[a-zA-Z_]/).test(character))
-      //       s+= character
-      //     else
-      //       s+=" " + character + " "
-      //   })
-      //   str = " " + s + " "
-      //   console.log("after, ", str);
-      //   var tempChar = tokens[0] + " "; // We can use the first token as a temporary join character
-      //   for(var i = 1; i < tokens.length; i++){
-      //       tokens[i] = " " +tokens[i] +" "
-      //       str = str.split(tokens[i]).join(" " +tempChar);
-      //       str += "\t"
-      //   }
-      //   str = str.split(tempChar);
-      //   return str;
-      // }
-
-      //the function split the story by the words that need no be complited
       function splitMulti(str, tokens){
         var s=""
         str.split("").forEach(character => {
@@ -96,8 +74,7 @@ function Sentences ({page, array_picture, array_words, score, updateScore, updat
             str += "\t"
         }
         str = str.split(tempChar);
-        //str = str.replace(" ' ", "'")
-        console.log(page_list);
+
         return str;
       }
 
