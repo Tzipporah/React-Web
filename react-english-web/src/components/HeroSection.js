@@ -11,7 +11,7 @@ function HeroSection() {
       
       <video src='/videos/spincity.mp4' autoPlay loop muted />
       <h1>אנגלית</h1>
-      <p>.לעתיד שלך.שלנו</p>
+      <p>.לעתיד שלך. לנו</p>
       <div className='hero-btns'>
         <Button
           className='btns'

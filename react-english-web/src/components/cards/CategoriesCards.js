@@ -1,8 +1,8 @@
 import React from 'react';
 import './Cards.css';
 import CardItem from './CardItem';
-import Navbar from './Navbar';
-import Footer from './Footer'
+import Navbar from '../Navbar';
+import Footer from '../Footer'
 
 function CategoriesCards({ match }) {
 

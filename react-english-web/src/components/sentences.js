@@ -3,12 +3,11 @@ import Select from 'react-select';
 import './pages/Word_completion.css';
 import { Button }from './Button'
 
-//import { handleInputChange } from 'react-select/src/utils';
 
 function Sentences ({page, array_picture, array_words, score, updateScore, updateQuestions, btn})
 {
+     //the function get from the story all the learning word ordered
     var page_list=[];
-    //the function get from the story all the learning word ordered
     page.match(/\b(\w+)\b/g).forEach((word) => {
         let temp_arr = to_lower_case(array_words)
         if(temp_arr.indexOf(word.toLowerCase()) > -1){
@@ -17,7 +16,7 @@ function Sentences ({page, array_picture, array_words, score, updateScore, updat
          
     })
     
-    //the function above for Select tag
+    //the function above for Select tag option
     var technologyList = [];
     array_words.forEach((element) => {
         technologyList.push({ label:element, value: element })  
@@ -39,7 +38,7 @@ function Sentences ({page, array_picture, array_words, score, updateScore, updat
           height: 40,  
         })
       }
-     
+      //handle in select value changes, check if the correct word is selected
       function handleValueChange(val, correctVal) {
         if (val === correctVal){
           score++
@@ -47,8 +46,16 @@ function Sentences ({page, array_picture, array_words, score, updateScore, updat
         }
       }
 
+      //the function split the story by the words that need no be complited
       function splitMulti(str, tokens){
-        str = " " +str.replace(/[^a-zA-Z_]/g, " ") 
+        var s=""
+        str.split("").forEach(character => {
+          if ((/[a-zA-Z]/).test(character))
+            s+= character
+          else
+            s+=" " + character + " "
+        })
+        str = " " + s + " "
         var tempChar = tokens[0] + " "; // We can use the first token as a temporary join character
         for(var i = 1; i < tokens.length; i++){
             tokens[i] = " " +tokens[i] +" "
@@ -56,9 +63,10 @@ function Sentences ({page, array_picture, array_words, score, updateScore, updat
             str += "\t"
         }
         str = str.split(tempChar);
-
         return str;
       }
+
+      //the function get list of word, and convert each word to lower case
       function to_lower_case(arr){
         let i
           for (i=0; i< arr.length; i++){
@@ -67,12 +75,12 @@ function Sentences ({page, array_picture, array_words, score, updateScore, updat
           return arr
       }
 
+      //update the num of word that need to be completed
       function handleClick() {
         updateQuestions(page_list.length)     
     }
 
-
-      // Get the text divided into an array according to the words that need to be found
+      // Get the text divided into an array according to the words that need to be completed
       const text = splitMulti(page.toLowerCase(),to_lower_case(array_words))
       const last_index = text[text.length-1]
       const text_slice = text.slice(0,text.length-1)
@@ -82,7 +90,7 @@ function Sentences ({page, array_picture, array_words, score, updateScore, updat
         <div key={index} className="sentence">
            <p className="story-text"><p component="span">{space}</p> {line}</p>
            {<img src={array_picture[page_list[i]]} className='story-fig' alt="story"></img>}        
-           <Select name={page_list[i++]}  className="col-md-8 col-offset-4" options={ technologyList } styles = { customStyles } onChange={(val, selectName) => handleValueChange(val.value, selectName.name)}  />
+           <Select  name={page_list[i++]}  className="col-md-8 col-offset-4" options={ technologyList }  styles = { customStyles } onChange={(val, selectName) => handleValueChange(val.value, selectName.name)}  />
         </div> 
         );
     return( 

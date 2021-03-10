@@ -27,7 +27,6 @@ class Firebase extends React.Component {
     componentDidMount = () => {
       firebase.auth().onAuthStateChanged(user => {
         this.setState({ isSignedIn: !!user })
-        // console.log(this.state.isSignedIn)
         if (this.state.isSignedIn){
           this.props.createNewProgress(user.uid)
         }

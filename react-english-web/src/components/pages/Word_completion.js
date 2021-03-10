@@ -35,6 +35,7 @@ function Word_completion(props) {
         setScore(new_score)
     }
 
+    //the function handle in Go to the next page
     function updateQuestions(num) {
         setQuestions(questions+num)
         if (page < story_arr.length-2){

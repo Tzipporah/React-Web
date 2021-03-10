@@ -17,7 +17,8 @@ export class Quiz extends Component {
             userAnswer: null,
             score:0,
             disabled: true, //Enable or disable Next Button
-            option1: false, //Radio button all initially not checked, so set to false initially
+            // Radio button all initially not checked, so set to false initially:
+            option1: false, 
             option2: false,
             option3: false,
             option4: false
@@ -140,6 +141,7 @@ export class Quiz extends Component {
     }
 }
 
+// Updating the personal area
 const mapDispatchToProps = dispatch => {
     return {
       updateProgress: (category, level) => dispatch(updateProgress(category, level))
