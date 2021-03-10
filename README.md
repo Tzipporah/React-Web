@@ -6,4 +6,4 @@
   את הפקודות הבאות
 npm install  
   ואחכ 
-npm start
+npm start  
