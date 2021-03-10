@@ -11,7 +11,7 @@ var state =
     answer: ''        
 }
 
-//the function gets an ordered array
+// The function gets an ordered array
 function createQuestions (arr, level)
 {
 
@@ -49,7 +49,7 @@ function mixArray(array) {
     return array;
 }
 
-//The 4 options, then mix them
+// The 4 options, then mix them
 function getOptions(correctWord, words) {
     let arr = [correctWord] // the correct answer in index 0
     let index = 1; //4 options
@@ -57,7 +57,7 @@ function getOptions(correctWord, words) {
     {
         const j = Math.floor(Math.random() * (words.length));
 
-        //Not exists in the array
+        // Not exists in the array
         if( arr.indexOf( words[j][0]) === -1 )
         {
             arr[index] = words[j][0]
@@ -67,13 +67,13 @@ function getOptions(correctWord, words) {
     return mixArray(arr);
 }
 
-//Controlled form elements with React
+// Controlled form elements with React
 function createQuestion(arr) {
 
-    //the hebrew question
+    //The hebrew question
     state.question = arr[0]
 
-    //all 4 options of answers
+    // All 4 options of answers
     state.option1 = arr[1]
 
     state.option2 = arr[2]
@@ -82,15 +82,15 @@ function createQuestion(arr) {
 
     state.option4 = arr[4]
 
-    //the correct answer 
+    // The correct answer 
     state.answer = arr[5]
     
 }
 
-//Insert data into IndexedDB
+// Insert data into IndexedDB
 function insertData(index, level) {
  
-    //Actually Insert the data into the database
+    // Actually Insert the data into the database
     db[level].put({
         id: index,
         question: state.question, 
