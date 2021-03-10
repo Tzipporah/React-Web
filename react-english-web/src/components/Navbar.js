@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
@@ -35,14 +35,21 @@ function Navbar(props) {
     }
   };
 
-  useEffect(() => {
-    let unmounted = false;
-    showButton();
-    return () => { unmounted = true };
+  
+  useLayoutEffect(() => {
+   
+
+    if (window.innerWidth <= 960) {
+      setButton(false);
+    } else {
+       setButton(true);
+    }
+
   }, []);
 
   window.addEventListener('resize', showButton);
 
+ 
   return (
     <>
       <nav className='navbar'>

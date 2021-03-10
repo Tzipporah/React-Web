@@ -5,7 +5,7 @@ import CardItem from './CardItem';
 function LevelsCards() {
   return (
     <div className='cards' style={{direction: "rtl"}}>
-      <h1>.אנגלית ברמה המתאימה לך</h1>
+      <h1>אנגלית ברמה המתאימה לך.</h1>
       <div className='cards__container'>
         <div className='cards__wrapper'>
           <ul className='cards__items'>
