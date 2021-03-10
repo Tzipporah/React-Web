@@ -163,3 +163,10 @@
     transition: 250ms;
   }
 }
+
+@media screen and (max-width: 860px) {
+  .my-image {
+      display: none;
+      opacity: 0;
+  }
+}
