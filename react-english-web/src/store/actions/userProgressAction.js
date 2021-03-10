@@ -7,6 +7,7 @@ export const createNewProgress = (userId) => {
         firestore.collection("users").doc(userId).get().then((documentUser) => {
             if (!documentUser.exists) {
                 
+                // Each level will contain these categories.
                 const categories = {
                     learn: '0',
                     game: '0',
@@ -35,7 +36,7 @@ export const createNewProgress = (userId) => {
     }
 }
 
-
+// In case the user passed a level, update the progress.
 export const updateProgress = (category, level) => {
     return (dispatch, getState, { getFirebase, getFirestore }) => {
         const firebase = getFirebase();

@@ -4,6 +4,7 @@ import { Button } from './Button';
 import { Link } from 'react-router-dom';
 
 function Footer() {
+  // At each end of a page, there should be a footer
   return (
     <div className='footer-container'>
       <section className='footer-subscription'>

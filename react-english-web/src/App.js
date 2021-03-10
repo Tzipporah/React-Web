@@ -8,7 +8,7 @@ import MainPage from './components/pages/MainPage';
 import Test from './components/pages/Test';
 import Learn from './components/pages/Learn';
 import Word_completion from './components/pages/Word_completion'
-import ScrollToTop from './ScrollToTop'
+import ScrollToTop from './config/ScrollToTop'
 import Game from './components/pages/Game'
 import PersonalInfo from './components/pages/PersonalInfo'
 

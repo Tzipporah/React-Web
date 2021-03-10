@@ -1,16 +1,18 @@
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
 import React from 'react';
-import './components/pages/SignUp.css';
+import '../components/pages/SignUp.css';
 import  { Redirect } from 'react-router-dom'
 import './firebase-styling.global.css'; // Import globally.
-import { Button } from './components/Button';
-import firebase from './config/fbconfig'
+import { Button } from '../components/Button';
+import firebase from '../config/fbconfig'
 import { connect } from 'react-redux'
-import { createNewProgress } from './store/actions/userProgressAction'
+import { createNewProgress } from '../store/actions/userProgressAction'
 
 class Firebase extends React.Component {
     
-    state = { isSignedIn: false }
+    state = { isSignedIn: false } // State if user is signed in
+    
+    // Options for user to log in
     uiConfig = {
       signInFlow: "popup",
       signInOptions: [
@@ -68,11 +70,11 @@ class Firebase extends React.Component {
   }
   
 
-  const mapDispatchToProps = (dispatch)=> {
-    return {
-      createNewProgress: (userID) => dispatch(createNewProgress(userID))
-    }
+// In case the user is new user, create for him a new document of progress chracking.
+const mapDispatchToProps = (dispatch)=> {
+  return {
+    createNewProgress: (userID) => dispatch(createNewProgress(userID))
   }
-  
-  export default connect(null, mapDispatchToProps)(Firebase)
-  
+}
+
+export default connect(null, mapDispatchToProps)(Firebase)

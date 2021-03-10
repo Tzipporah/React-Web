@@ -9,6 +9,8 @@ import 'antd/lib/avatar/style/index.css';
 
 
 function Navbar(props) {
+  // Determine the navigation for the user in the website.
+  // This functional component will appear on the top of the page when the user is logged in.
 
   const { user } = props
   const userName = user.displayName
@@ -27,6 +29,7 @@ function Navbar(props) {
     closeMobileMenu();
     props.signOut();
   }
+
   const showButton = () => {
     if (window.innerWidth <= 960) {
       setButton(false);
@@ -37,16 +40,15 @@ function Navbar(props) {
 
   
   useLayoutEffect(() => {
-   
-
+    // If the window is smaller then 960 -> make the navbar shrink to a hamburger button
     if (window.innerWidth <= 960) {
       setButton(false);
     } else {
        setButton(true);
     }
-
   }, []);
 
+  // When the winow is resized.
   window.addEventListener('resize', showButton);
 
  
@@ -121,12 +123,14 @@ function Navbar(props) {
   );
 }
 
+// Attach to the components props the user details to dispaly.
 const mapStateToProps = (state) => {
   return {
     user: state.firebase.auth
   }
 }
 
+// Attach to the components props the sigout function.
 const mapDispatchToProps = (dispatch) => {
   return {
     signOut: () => dispatch(signOut())

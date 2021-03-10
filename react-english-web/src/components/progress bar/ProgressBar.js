@@ -4,6 +4,7 @@ import './ProgressBar.css'
 const ProgressBar = ({done}) => {
 	const [style, setStyle] = React.useState({});
 	
+	// Create a timeout so the progress bar makes an effect of filling up
 	useEffect(() => {
 		const timeOut = setTimeout(() => {
 			const newStyle = {
@@ -14,7 +15,6 @@ const ProgressBar = ({done}) => {
 			setStyle(newStyle);
 		}, 200);
 		return () => {
-			clearTimeout(timeOut)
 		}
 	}, [])
 	

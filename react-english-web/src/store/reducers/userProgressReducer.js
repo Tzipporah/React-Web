@@ -2,6 +2,7 @@ const initState = {
     progressError: null
   }
 
+// Reducer to track status and for futer functionality
 const userProgressReducer = (state = initState, action) => {
     switch(action.type){
       case 'CREATE_PROGRESS':
