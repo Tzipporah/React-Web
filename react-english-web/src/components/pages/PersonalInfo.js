@@ -7,9 +7,9 @@ import './personalInfo.css'
 
 
 class PersonalInfo extends Component{
-   
+   // This section shows the progress of the user.
 
-    // When the level is given, calculate all the atchivments of the user in the current level. 
+    // When the level is given, calculate all the total atchivments of the user in the current level. 
     levelProgress = (level) => {
         
         let category, totalLevelProgress = 0
@@ -22,14 +22,13 @@ class PersonalInfo extends Component{
     render() {
         
         const levels = ['beginners', 'students', 'advancers', 'business', 'spoken']
+        // For the title in each progress bar.
         const mapLeveltoHebrew = {
             'spoken': 'אנגלית מדוברת ',
             'business': ' אנגלית עיסקית',
             'advancers': 'מתקדמים',
             'students': 'תלמידים',
             'beginners': 'מתחילים'
-        
-        
           }
         
         return (
@@ -44,7 +43,7 @@ class PersonalInfo extends Component{
                 
             <div id="progresses">
             {
-                
+                // Map over each component and dispay its progress bar with the title.
                 levels.map((level) => {
                     return (
                         <div key={level}>

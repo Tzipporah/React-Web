@@ -7,6 +7,8 @@ import Footer from '../Footer'
 function CategoriesCards({ match }) {
 
   const level = match.params.level;
+
+  // The convincing phrase
   const mapLeveltoHebrew = {
     'spoken': 'אנגלית מדוברת - להבין את השפה ברחוב ',
     'business': ' אנגלית עיסקית - הצלחה בעסקים. מקצועיות',
@@ -15,6 +17,7 @@ function CategoriesCards({ match }) {
     'beginners': 'מתחילים - להתחיל את האנגלית שלך פה'
   }
 
+  // At eact level a different set of images are dispalyed -> to match colors.
   const mapLevelToImage = {
     'spoken': {
       'learn' : '../images/spoken/pink talk.jpg',
@@ -54,6 +57,7 @@ function CategoriesCards({ match }) {
   }
  
   return (
+    // Create alot of cardItems.
     <>
       <Navbar />
       <div className='cards' style={{direction: "rtl"}}>

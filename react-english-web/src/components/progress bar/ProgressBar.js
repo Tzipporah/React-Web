@@ -18,7 +18,7 @@ const ProgressBar = ({done}) => {
 		}
 	}, [])
 	
-	
+	// Check if the user is in progress 100 or 0 or in the middle, and according to that change the Icon displayed.
 	return (
 		<>
 		{done==='0'?<i className='fas fa-lock'/>:done==='100'?<i className='fas fa-check-circle'/>:<i className='fas fa-glasses'/>}

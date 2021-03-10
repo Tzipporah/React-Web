@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function CardItem(props) {
+  // This represents a single card, it contains a figure, and text.
   return (
     <>
       <li className='cards__item'>
