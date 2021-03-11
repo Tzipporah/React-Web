@@ -21,7 +21,7 @@ function Sentences ({page, array_picture, array_words, score, updateScore, updat
           page_list.push(w.toLowerCase())
         }    
     })
-
+    var selectRef = new Array(page_list.length).fill(1);
     
     //the function above for Select tag option
     var technologyList = [];
@@ -90,20 +90,22 @@ function Sentences ({page, array_picture, array_words, score, updateScore, updat
 
       //update the num of word that need to be completed
       function handleClick() {
-        updateQuestions(page_list.length)     
+        selectRef.map((s)=> s.select.setValue("select"));
+        updateQuestions(page_list.length)
     }
 
       // Get the text divided into an array according to the words that need to be completed
       const text = splitMulti(page.toLowerCase(),to_lower_case(array_words))
       const last_index = text[text.length-1].replaceAll(" . ", ". ").replaceAll(" , ", ", ").replaceAll(" ' ", "'").replaceAll("   ", " ")
       const text_slice = text.slice(0,text.length-1)
-      let i= 0
+      let i = 0
+      let j = 0
       let space = ' '
       const listItems = text_slice.map((line, index) =>
         <div key={index} className="sentence">
           <div className="story-text"><p component="span">{space}</p> {line.replaceAll(" . ", ". ").replaceAll(" , ", ", ").replaceAll(" ' ", "'").replaceAll("   ", " ")}</div>
           {<img src={array_picture[page_list[i]]} className='story-fig' alt="story"></img>}        
-          <Select  name={page_list[i++]}  className="col-md-8 col-offset-4" options={ technologyList }  styles = { customStyles } onChange={(val, selectName) => handleValueChange(val.value, selectName.name)}  />
+          <Select  name={page_list[i++]} ref={ref => {selectRef[j++] = ref;}} className="col-md-8 col-offset-4" options={ technologyList }  styles = { customStyles } onChange={(val, selectName) => handleValueChange(val.value, selectName.name)}  />
         </div> 
         );
     return( 
