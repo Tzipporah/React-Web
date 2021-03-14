@@ -6,6 +6,7 @@ const STYLES = ['btn--primary', 'btn--outline', 'btn--test'];
 
 const SIZES = ['btn--medium', 'btn--large'];
 
+// Determines a consistent pattern to design each button
 export const Button = ({
   children,
   type,

@@ -132,6 +132,7 @@ function Learn(props) {
 
 }
 
+// Updating the personal area
 const mapDispatchToProps = dispatch => {
     return {
       updateProgress: (category, level) => dispatch(updateProgress(category, level))

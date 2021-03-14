@@ -5,7 +5,7 @@ import './HeroSection.css';
 
 function HeroSection() {
 
-  
+  // Give the user the options to sign in, or sign up.
   return (
     <div className='hero-container'>
       

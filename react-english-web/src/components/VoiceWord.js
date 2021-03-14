@@ -1,6 +1,7 @@
 import React from 'react'
 
 function VoiceWord({word, meanings}) {
+    // Returns the audio of a single word
     return (
         <div>
             {meanings[0] && word && 

@@ -13,7 +13,7 @@ import { updateProgress } from '../../store/actions/userProgressAction'
 function Word_completion(props) { 
     const level = props.match.params.level;
 
-    // Declare the array of the words picture + array of words
+    // Declare the array of the picture of words + array of words
     let array_picture = []
     let array_words = []
     words[level].forEach((word, index) => {

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button } from './Button'
 
+// Returns the user's score according to the number of questions he was able to solve out of the total questions.
 function Scoresheet(props) {
 
     // restart the page

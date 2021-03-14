@@ -3,6 +3,7 @@ import './Cards.css';
 import CardItem from './CardItem';
 
 function LevelsCards() {
+  // Create alot of cardItems.
   return (
     <div className='cards' style={{direction: "rtl"}}>
       <h1>אנגלית ברמה המתאימה לך.</h1>

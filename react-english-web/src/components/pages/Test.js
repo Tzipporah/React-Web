@@ -1,5 +1,4 @@
 import React from 'react';
-import './Test.css'
 import Navbar from '../Navbar'
 import Footer from '../Footer'
 import Quiz from '../Tests/Quiz';
@@ -23,9 +22,7 @@ function Test({ match }) {
     return (
       <>  
       <Navbar/>
-      <div className = "test-body">
-        <Quiz level={level}/>
-      </div>
+      <Quiz level={level}/>
       <Footer/>
       </>
     );

@@ -35,7 +35,7 @@ class Game extends Component{
         return array;
     }
 
-    // Gets an sco & end_flag from HangmanWord comp
+    // Gets a sco & end_flag from HangmanWord comp
     endGame = (end_flag, sco) =>{
         this.setState({end:end_flag, score:sco})
     }

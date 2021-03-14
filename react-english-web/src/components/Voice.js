@@ -12,6 +12,7 @@ function Voice(props) {
 
         const dictionaryApi = async() =>{
             try {
+                // Reading HTTP for word information including the audio link.
                 const data = await axios.get(
                     `http://api.dictionaryapi.dev/api/v2/entries/en/${word}`
                 );
@@ -24,7 +25,8 @@ function Voice(props) {
         dictionaryApi();
     },[word])
 
-    return (        
+    return (  
+        // Sends the word and information of the word to the VoiceWord component including the audio link.
         <VoiceWord 
             word={word} 
             meanings={meanings}

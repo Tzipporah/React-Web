@@ -6,7 +6,6 @@ const initState = {
 const userProgressReducer = (state = initState, action) => {
     switch(action.type){
       case 'CREATE_PROGRESS':
-        // console.log('create new progress success')
         return {
           ...state,
           progressError: null
@@ -19,7 +18,6 @@ const userProgressReducer = (state = initState, action) => {
           progressError: action.err.message
         }
       case 'PROGRESS_EXISTS':
-        // console.log('user progress exists already, skipping creation')
         return {
           ...state,
           progressError: null
@@ -33,7 +31,6 @@ const userProgressReducer = (state = initState, action) => {
         case 'ERROR':
           console.log('error')
           return state;
-          break;
       default:
         return state
     }

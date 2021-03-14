@@ -88,7 +88,7 @@ function Sentences ({page, array_picture, array_words, score, updateScore, updat
           return arr
       }
 
-      //update the num of word that need to be completed
+      // update the num of word that need to be completed + reset the select
       function handleClick() {
         selectRef.map((s)=> s.select.setValue("select"));
         updateQuestions(page_list.length)
